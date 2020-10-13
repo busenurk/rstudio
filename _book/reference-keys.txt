@@ -22,11 +22,10 @@ karakterler
 faktörler-factors
 eksik-gözlemler-missing-values
 import-export-işlemleri
-references
+proje
 dplyr
 apply-ailesi
 grafikler
 döngüler
 fonksiyonlar
 referans
-proje
