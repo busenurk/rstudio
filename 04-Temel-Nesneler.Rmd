@@ -224,7 +224,7 @@ as.numeric(x)
 R, eksik gözlemleri **NA (non available)** olarak tanımlar. İmkansız değerleri ise **NaN (not a number)** (örn: 0/0) olarak tanımlar.
 
 
-Gözlemleri sıralamak için `sort()` komutu kullanılır. `sort()` kodu  default olarak küçükten büyüğe sıralama yapar, sıralama yönünü değiştirmek `decreasing` ile gerçekleştirilir.
+Gözlemleri sıralamak için `sort()` komutu kullanılır. `sort()` kodu  default olarak küçükten büyüğe sıralama yapar, sıralama yönünü değiştirme işlemi `decreasing` ile gerçekleştirilir.
 
 ```{r}
 y <- c(4,2,0,9,5,3,10)
