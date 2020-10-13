@@ -197,26 +197,26 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="aritmetik-arithmetic" class="section level2">
 <h2><span class="header-section-number">5.1</span> Aritmetik (Arithmetic)</h2>
 <p>R, en basit haliyle hesap makinesi olarak kullanılabilir. Toplama <code>+</code>, çıkarma <code>-</code>, çarpma <code>*</code>, bölme <code>/</code> operatörleri ile gerçekleştirilir.</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="temel-nesneler.html#cb12-1"></a><span class="dv">5</span><span class="op">+</span><span class="dv">4</span></span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="temel-nesneler.html#cb1-1"></a><span class="dv">5</span><span class="op">+</span><span class="dv">4</span></span></code></pre></div>
 <pre><code>## [1] 9</code></pre>
 <p><br></p>
 <p>Birden fazla matematiksel işlem aynı satırda gerçekleştirilebilir.</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="temel-nesneler.html#cb14-1"></a><span class="dv">3</span><span class="op">+</span><span class="dv">4</span>; <span class="dv">6</span><span class="op">*</span><span class="dv">4</span>; <span class="dv">10-2</span></span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="temel-nesneler.html#cb3-1"></a><span class="dv">3</span><span class="op">+</span><span class="dv">4</span>; <span class="dv">6</span><span class="op">*</span><span class="dv">4</span>; <span class="dv">10-2</span></span></code></pre></div>
 <pre><code>## [1] 7</code></pre>
 <pre><code>## [1] 24</code></pre>
 <pre><code>## [1] 8</code></pre>
 <p><br></p>
 <p>İşlemler parantez yardımıyla önceliğine göre yazılabilir, yazılmadığı taktirde matematiksel işlem önceliği geçerlidir.</p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="temel-nesneler.html#cb18-1"></a><span class="dv">10</span><span class="op">*</span><span class="dv">2-3</span></span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="temel-nesneler.html#cb7-1"></a><span class="dv">10</span><span class="op">*</span><span class="dv">2-3</span></span></code></pre></div>
 <pre><code>## [1] 17</code></pre>
 <p><br></p>
 <p>İşlem devam edecek biçimde tanımlanırsa console <code>+</code> simgesi ile devam edecek ve işlem tamamlanana kadar yeni işleme geçmenize engel olacaktır. İşlemi tamamlamalı veya yeni işleme geçmek için <code>esc</code> tuşunu kullanmalısınız.</p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="temel-nesneler.html#cb20-1"></a><span class="dv">10</span><span class="op">+</span><span class="dv">20</span><span class="op">+</span><span class="dv">30</span><span class="op">+</span></span>
-<span id="cb20-2"><a href="temel-nesneler.html#cb20-2"></a><span class="st">  </span><span class="dv">40</span></span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="temel-nesneler.html#cb9-1"></a><span class="dv">10</span><span class="op">+</span><span class="dv">20</span><span class="op">+</span><span class="dv">30</span><span class="op">+</span></span>
+<span id="cb9-2"><a href="temel-nesneler.html#cb9-2"></a><span class="st">  </span><span class="dv">40</span></span></code></pre></div>
 <pre><code>## [1] 100</code></pre>
 <p><br></p>
 <p>Yapılan işlemler sonucu elde edilen çok büyük veya çok küçük sonuçlar için output exponent olarak verilir.</p>
-<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="temel-nesneler.html#cb22-1"></a><span class="dv">12000</span><span class="op">*</span><span class="dv">3000</span></span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="temel-nesneler.html#cb11-1"></a><span class="dv">12000</span><span class="op">*</span><span class="dv">3000</span></span></code></pre></div>
 <pre><code>## [1] 3.6e+07</code></pre>
 <blockquote>
 <p>1.3e2 (130 anlamına gelir. e2: ondalık noktasını iki basamak sağa taşı)</p>
@@ -229,27 +229,27 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li><strong>floor:</strong> alta yuvarla</li>
 </ul>
-<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="temel-nesneler.html#cb24-1"></a><span class="kw">floor</span>(<span class="fl">5.2</span>); <span class="kw">floor</span>(<span class="fl">5.7</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="temel-nesneler.html#cb13-1"></a><span class="kw">floor</span>(<span class="fl">5.2</span>); <span class="kw">floor</span>(<span class="fl">5.7</span>)</span></code></pre></div>
 <pre><code>## [1] 5</code></pre>
 <pre><code>## [1] 5</code></pre>
 <p><br></p>
 <ul>
 <li><strong>ceilign:</strong> üste yuvarla</li>
 </ul>
-<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="temel-nesneler.html#cb27-1"></a><span class="kw">ceiling</span>(<span class="fl">3.2</span>); <span class="kw">ceiling</span>(<span class="fl">3.8</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="temel-nesneler.html#cb16-1"></a><span class="kw">ceiling</span>(<span class="fl">3.2</span>); <span class="kw">ceiling</span>(<span class="fl">3.8</span>)</span></code></pre></div>
 <pre><code>## [1] 4</code></pre>
 <pre><code>## [1] 4</code></pre>
 <p><br></p>
 <ul>
 <li><strong>round:</strong> 0.5 üzeri ise üste, 0.5 altı ise alta yuvarla</li>
 </ul>
-<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="temel-nesneler.html#cb30-1"></a><span class="kw">round</span>(<span class="fl">5.6</span>); <span class="kw">round</span>(<span class="fl">5.3</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="temel-nesneler.html#cb19-1"></a><span class="kw">round</span>(<span class="fl">5.6</span>); <span class="kw">round</span>(<span class="fl">5.3</span>)</span></code></pre></div>
 <pre><code>## [1] 6</code></pre>
 <pre><code>## [1] 5</code></pre>
 <p><span style="background-color: #FFFF99 ">Negatif sayılarda komutların nasıl işlediğini inceleyebilirsiniz. </span></p>
 <p><br></p>
 <p><strong>round</strong> komutu ile virgülden sonra kaç basamak olması gerektiğini belirterek yuvarlama işlemi yapabilirsiniz.</p>
-<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="temel-nesneler.html#cb33-1"></a><span class="kw">round</span>(<span class="fl">1.248</span>,<span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="temel-nesneler.html#cb22-1"></a><span class="kw">round</span>(<span class="fl">1.248</span>,<span class="dv">2</span>)</span></code></pre></div>
 <pre><code>## [1] 1.25</code></pre>
 <p>Kullanılabilecek matematiksel fonksiyonlara örnek olarak <span class="citation">(Crawley <a href="#ref-Crawley2012" role="doc-biblioref">2012</a>)</span></p>
 <p><img src="images/mfunc.png" /></p>
@@ -264,16 +264,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p>Değişken ismi sayı veya sembol ile başlayamaz. (<del>1a</del>, <del>&amp;b</del>)</p></li>
 </ul>
 <p>Değişken tanımlama işlemi <code>&lt;-</code> operatörü ile gerçekleştirilir. Tanımlanan değişken adı ile çağrılmazsa veya <code>print</code> komutu kullanılmazsa çıktı yazdırılmaz.</p>
-<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="temel-nesneler.html#cb35-1"></a>x&lt;-<span class="dv">3</span></span>
-<span id="cb35-2"><a href="temel-nesneler.html#cb35-2"></a><span class="kw">print</span>(x)</span></code></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="temel-nesneler.html#cb24-1"></a>x&lt;-<span class="dv">3</span></span>
+<span id="cb24-2"><a href="temel-nesneler.html#cb24-2"></a><span class="kw">print</span>(x)</span></code></pre></div>
 <pre><code>## [1] 3</code></pre>
 <p>Sayısal olmayan değer tanımlamaları tırnak içerisinde yapılmalıdır.</p>
-<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="temel-nesneler.html#cb37-1"></a>msg&lt;-<span class="st"> &quot;hello world&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="temel-nesneler.html#cb26-1"></a>msg&lt;-<span class="st"> &quot;hello world&quot;</span></span></code></pre></div>
 <p>Tanımlanan değişken veya fonksiyon ile ilgili notlar <code>#</code> ile tanımlanır.</p>
-<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="temel-nesneler.html#cb38-1"></a>x.ort&lt;-<span class="dv">20</span>  <span class="co"># ortalama değer</span></span></code></pre></div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="temel-nesneler.html#cb27-1"></a>x.ort&lt;-<span class="dv">20</span>  <span class="co"># ortalama değer</span></span></code></pre></div>
 <p>Çıktıda basılan <code>[.]</code> kaçıncı gözlemden devam edildiğini gösterir. Örneğin 30 gözleminin <code>[26]</code> ifadesinin yardımı ile 26. gözlem olduğunu kolaylıkla söyleyebiliriz. <code>[.]</code> ifadeleri asıl seride yer almaz, yalnızca yol gösterici olarak çıktıda gözlenir.</p>
-<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="temel-nesneler.html#cb39-1"></a>x&lt;-<span class="dv">5</span><span class="op">:</span><span class="dv">50</span></span>
-<span id="cb39-2"><a href="temel-nesneler.html#cb39-2"></a>x</span></code></pre></div>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="temel-nesneler.html#cb28-1"></a>x&lt;-<span class="dv">5</span><span class="op">:</span><span class="dv">50</span></span>
+<span id="cb28-2"><a href="temel-nesneler.html#cb28-2"></a>x</span></code></pre></div>
 <pre><code>##  [1]  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29
 ## [26] 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50</code></pre>
 <hr />
@@ -289,23 +289,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>complex</li>
 </ul>
 <p>yapıları içerebilir. <strong>Vektörler yalnızca aynı yapıda gözlemler içerebilir.</strong></p>
-<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="temel-nesneler.html#cb41-1"></a>x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="fl">0.5</span>, <span class="fl">0.6</span>) <span class="co"># numeric </span></span>
-<span id="cb41-2"><a href="temel-nesneler.html#cb41-2"></a>x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="ot">TRUE</span>, <span class="ot">FALSE</span>) <span class="co"># logical</span></span>
-<span id="cb41-3"><a href="temel-nesneler.html#cb41-3"></a>x &lt;-<span class="st"> </span><span class="kw">c</span>(T, F) <span class="co"># logical</span></span>
-<span id="cb41-4"><a href="temel-nesneler.html#cb41-4"></a>x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>, <span class="st">&quot;c&quot;</span>) <span class="co"># character</span></span>
-<span id="cb41-5"><a href="temel-nesneler.html#cb41-5"></a>x &lt;-<span class="st"> </span><span class="dv">9</span><span class="op">:</span><span class="dv">29</span> <span class="co"># integer</span></span>
-<span id="cb41-6"><a href="temel-nesneler.html#cb41-6"></a>x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span><span class="op">+</span>0i, <span class="dv">2</span><span class="op">+</span>4i) <span class="co"># complex</span></span></code></pre></div>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="temel-nesneler.html#cb30-1"></a>x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="fl">0.5</span>, <span class="fl">0.6</span>) <span class="co"># numeric </span></span>
+<span id="cb30-2"><a href="temel-nesneler.html#cb30-2"></a>x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="ot">TRUE</span>, <span class="ot">FALSE</span>) <span class="co"># logical</span></span>
+<span id="cb30-3"><a href="temel-nesneler.html#cb30-3"></a>x &lt;-<span class="st"> </span><span class="kw">c</span>(T, F) <span class="co"># logical</span></span>
+<span id="cb30-4"><a href="temel-nesneler.html#cb30-4"></a>x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>, <span class="st">&quot;c&quot;</span>) <span class="co"># character</span></span>
+<span id="cb30-5"><a href="temel-nesneler.html#cb30-5"></a>x &lt;-<span class="st"> </span><span class="dv">9</span><span class="op">:</span><span class="dv">29</span> <span class="co"># integer</span></span>
+<span id="cb30-6"><a href="temel-nesneler.html#cb30-6"></a>x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span><span class="op">+</span>0i, <span class="dv">2</span><span class="op">+</span>4i) <span class="co"># complex</span></span></code></pre></div>
 <p><code>T</code> ve <code>F</code>, <code>TRUE</code> ve <code>FALSE</code>’a karşılık kullanılan kısaltma yapılardır.</p>
-<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="temel-nesneler.html#cb42-1"></a>x &lt;-<span class="st"> </span><span class="kw">c</span>(T, F) <span class="co"># logical</span></span>
-<span id="cb42-2"><a href="temel-nesneler.html#cb42-2"></a>x</span></code></pre></div>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="temel-nesneler.html#cb31-1"></a>x &lt;-<span class="st"> </span><span class="kw">c</span>(T, F) <span class="co"># logical</span></span>
+<span id="cb31-2"><a href="temel-nesneler.html#cb31-2"></a>x</span></code></pre></div>
 <pre><code>## [1]  TRUE FALSE</code></pre>
 <p>Aynı zamanda <code>vector</code> komutu ile de vektör oluşturabilirsiniz. Vektörü tanımlarken belirlenen içerik yapısına göre oluşturulur.</p>
-<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="temel-nesneler.html#cb44-1"></a>x &lt;-<span class="st"> </span><span class="kw">vector</span>(<span class="st">&quot;numeric&quot;</span>, <span class="dt">length =</span> <span class="dv">7</span>)</span>
-<span id="cb44-2"><a href="temel-nesneler.html#cb44-2"></a>x</span></code></pre></div>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="temel-nesneler.html#cb33-1"></a>x &lt;-<span class="st"> </span><span class="kw">vector</span>(<span class="st">&quot;numeric&quot;</span>, <span class="dt">length =</span> <span class="dv">7</span>)</span>
+<span id="cb33-2"><a href="temel-nesneler.html#cb33-2"></a>x</span></code></pre></div>
 <pre><code>## [1] 0 0 0 0 0 0 0</code></pre>
-<p>Karakter elemanları içerecek bir vektör oluşturmak istendiğinde;</p>
-<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="temel-nesneler.html#cb46-1"></a>x &lt;-<span class="st"> </span><span class="kw">vector</span>(<span class="st">&quot;complex&quot;</span>, <span class="dt">length =</span> <span class="dv">7</span>)</span>
-<span id="cb46-2"><a href="temel-nesneler.html#cb46-2"></a>x</span></code></pre></div>
+<p>Complex elemanları içerecek bir vektör oluşturmak istendiğinde;</p>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="temel-nesneler.html#cb35-1"></a>x &lt;-<span class="st"> </span><span class="kw">vector</span>(<span class="st">&quot;complex&quot;</span>, <span class="dt">length =</span> <span class="dv">7</span>)</span>
+<span id="cb35-2"><a href="temel-nesneler.html#cb35-2"></a>x</span></code></pre></div>
 <pre><code>## [1] 0+0i 0+0i 0+0i 0+0i 0+0i 0+0i 0+0i</code></pre>
 <blockquote>
 <p>Aynı değişken adı birden fazla tanımlamada kullanılırsa yapılan son tanımlama geçerli olacaktır. Kod yazarken kullandığınız değişken isimlerine ve doğru yazıma dikkat ediniz.</p>
@@ -313,16 +313,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><br></p>
 <p><strong>Vektör aynı yapıda gözlemlerden oluşmuyorsa?</strong></p>
 <p>Bu durumda tüm gözlemler tek bir yapı olarak algılanır. Herhangi bir değişkenin hangi yapıda gözlem içerdiği <code>class()</code> komutu ile sorgulanabilir.</p>
-<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="temel-nesneler.html#cb48-1"></a>y &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="fl">1.7</span>, <span class="st">&quot;a&quot;</span>)  <span class="co"># character </span></span>
-<span id="cb48-2"><a href="temel-nesneler.html#cb48-2"></a><span class="kw">class</span>(y)</span></code></pre></div>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="temel-nesneler.html#cb37-1"></a>y &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="fl">1.7</span>, <span class="st">&quot;a&quot;</span>)  <span class="co"># character </span></span>
+<span id="cb37-2"><a href="temel-nesneler.html#cb37-2"></a><span class="kw">class</span>(y)</span></code></pre></div>
 <pre><code>## [1] &quot;character&quot;</code></pre>
 <p><br></p>
-<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="temel-nesneler.html#cb50-1"></a>y &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="ot">TRUE</span>, <span class="dv">2</span>) <span class="co"># numeric</span></span>
-<span id="cb50-2"><a href="temel-nesneler.html#cb50-2"></a><span class="kw">class</span>(y)</span></code></pre></div>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="temel-nesneler.html#cb39-1"></a>y &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="ot">TRUE</span>, <span class="dv">2</span>) <span class="co"># numeric</span></span>
+<span id="cb39-2"><a href="temel-nesneler.html#cb39-2"></a><span class="kw">class</span>(y)</span></code></pre></div>
 <pre><code>## [1] &quot;numeric&quot;</code></pre>
 <p><br></p>
-<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="temel-nesneler.html#cb52-1"></a>y &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;a&quot;</span>, <span class="ot">TRUE</span>) <span class="co"># character</span></span>
-<span id="cb52-2"><a href="temel-nesneler.html#cb52-2"></a><span class="kw">class</span>(y)</span></code></pre></div>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="temel-nesneler.html#cb41-1"></a>y &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;a&quot;</span>, <span class="ot">TRUE</span>) <span class="co"># character</span></span>
+<span id="cb41-2"><a href="temel-nesneler.html#cb41-2"></a><span class="kw">class</span>(y)</span></code></pre></div>
 <pre><code>## [1] &quot;character&quot;</code></pre>
 <p><br></p>
 <blockquote>
@@ -330,59 +330,66 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </blockquote>
 <p><br></p>
 <p>Kodlama yaparken sıklıkla kullanılan bir işlem türü de vektör yapısının değiştirilmesidir. Vektör içeriğinin aynı yapıda olması kuralına sadık kalarak tüm vektör içeriği farklı bir yapıya aktarılabilir. Burada <code>as.numeric</code>, <code>as.logical</code> gibi komutlardan faydalanılır.</p>
-<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="temel-nesneler.html#cb54-1"></a>x &lt;-<span class="st"> </span><span class="dv">0</span><span class="op">:</span><span class="dv">6</span></span>
-<span id="cb54-2"><a href="temel-nesneler.html#cb54-2"></a><span class="kw">class</span>(x)</span></code></pre></div>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="temel-nesneler.html#cb43-1"></a>x &lt;-<span class="st"> </span><span class="dv">0</span><span class="op">:</span><span class="dv">6</span></span>
+<span id="cb43-2"><a href="temel-nesneler.html#cb43-2"></a><span class="kw">class</span>(x)</span></code></pre></div>
 <pre><code>## [1] &quot;integer&quot;</code></pre>
 <p>x vektörünün <code>integer</code> yapıda olduğunu gördükten sonra <code>as.character</code> komutu ile yeni x vektörünü <code>numeric</code> olarak tanımlayabiliriz.</p>
-<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="temel-nesneler.html#cb56-1"></a>x&lt;-<span class="kw">as.character</span>(x)</span>
-<span id="cb56-2"><a href="temel-nesneler.html#cb56-2"></a>x; <span class="kw">class</span>(x)</span></code></pre></div>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="temel-nesneler.html#cb45-1"></a>x&lt;-<span class="kw">as.character</span>(x)</span>
+<span id="cb45-2"><a href="temel-nesneler.html#cb45-2"></a>x; <span class="kw">class</span>(x)</span></code></pre></div>
 <pre><code>## [1] &quot;0&quot; &quot;1&quot; &quot;2&quot; &quot;3&quot; &quot;4&quot; &quot;5&quot; &quot;6&quot;</code></pre>
 <pre><code>## [1] &quot;character&quot;</code></pre>
 <p><br></p>
 <p>Bazı durumlarda R dönüşüm için çözüm üretemez ve <code>NA</code> çıktı verir.</p>
-<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="temel-nesneler.html#cb59-1"></a>x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>, <span class="st">&quot;c&quot;</span>)</span>
-<span id="cb59-2"><a href="temel-nesneler.html#cb59-2"></a><span class="kw">as.numeric</span>(x)</span></code></pre></div>
+<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="temel-nesneler.html#cb48-1"></a>x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>, <span class="st">&quot;c&quot;</span>)</span>
+<span id="cb48-2"><a href="temel-nesneler.html#cb48-2"></a><span class="kw">as.numeric</span>(x)</span></code></pre></div>
 <pre><code>## Warning: NAs introduced by coercion</code></pre>
 <pre><code>## [1] NA NA NA</code></pre>
+<p>R, eksik gözlemleri <strong>NA (non available)</strong> olarak tanımlar. İmkansız değerleri ise <strong>NaN (not a number)</strong> (örn: 0/0) olarak tanımlar.</p>
+<p>Gözlemleri sıralamak için <code>sort()</code> komutu kullanılır. <code>sort()</code> kodu default olarak küçükten büyüğe sıralama yapar, sıralama yönünü değiştirmek <code>decreasing</code> ile gerçekleştirilir.</p>
+<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="temel-nesneler.html#cb51-1"></a>y &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">4</span>,<span class="dv">2</span>,<span class="dv">0</span>,<span class="dv">9</span>,<span class="dv">5</span>,<span class="dv">3</span>,<span class="dv">10</span>)</span>
+<span id="cb51-2"><a href="temel-nesneler.html#cb51-2"></a><span class="kw">sort</span>(y)</span></code></pre></div>
+<pre><code>## [1]  0  2  3  4  5  9 10</code></pre>
+<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="temel-nesneler.html#cb53-1"></a><span class="kw">sort</span>(y, <span class="dt">decreasing=</span><span class="ot">TRUE</span>)  <span class="co"># büyükten küçüğe sıralama</span></span></code></pre></div>
+<pre><code>## [1] 10  9  5  4  3  2  0</code></pre>
 <hr />
 </div>
 <div id="matrisler-matrices" class="section level2">
 <h2><span class="header-section-number">5.4</span> Matrisler (Matrices)</h2>
 <p>Matrisler, boyut niteliğine sahip vektörlerdir. Matris yapısında <em>satır (row)</em> ve <em>sütun (column)</em> tanımlanması gündeme gelmektedir. m içeriği boş bir matris olmak üzere;</p>
-<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb62-1"><a href="temel-nesneler.html#cb62-1"></a>m &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="dt">nrow =</span> <span class="dv">2</span>, <span class="dt">ncol =</span> <span class="dv">3</span>)</span>
-<span id="cb62-2"><a href="temel-nesneler.html#cb62-2"></a>m</span></code></pre></div>
+<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="temel-nesneler.html#cb55-1"></a>m &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="dt">nrow =</span> <span class="dv">2</span>, <span class="dt">ncol =</span> <span class="dv">3</span>)</span>
+<span id="cb55-2"><a href="temel-nesneler.html#cb55-2"></a>m</span></code></pre></div>
 <pre><code>##      [,1] [,2] [,3]
 ## [1,]   NA   NA   NA
 ## [2,]   NA   NA   NA</code></pre>
 <p><br></p>
 <p>Matris boyutu <code>dim()</code> komutu ile sorgulanır.</p>
-<div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb64-1"><a href="temel-nesneler.html#cb64-1"></a><span class="kw">dim</span>(m)</span></code></pre></div>
+<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="temel-nesneler.html#cb57-1"></a><span class="kw">dim</span>(m)</span></code></pre></div>
 <pre><code>## [1] 2 3</code></pre>
 <p><br></p>
 <p>Matris yapısında gözlemler sütun şeklinde sıralanır.</p>
-<div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb66-1"><a href="temel-nesneler.html#cb66-1"></a>m &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">6</span>, <span class="dt">nrow =</span> <span class="dv">2</span>, <span class="dt">ncol =</span> <span class="dv">3</span>) </span>
-<span id="cb66-2"><a href="temel-nesneler.html#cb66-2"></a>m</span></code></pre></div>
+<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="temel-nesneler.html#cb59-1"></a>m &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">6</span>, <span class="dt">nrow =</span> <span class="dv">2</span>, <span class="dt">ncol =</span> <span class="dv">3</span>) </span>
+<span id="cb59-2"><a href="temel-nesneler.html#cb59-2"></a>m</span></code></pre></div>
 <pre><code>##      [,1] [,2] [,3]
 ## [1,]    1    3    5
 ## [2,]    2    4    6</code></pre>
 <p><br></p>
 <p>Vektörler parçalanarak da matris yapısı oluşturabilirler.</p>
-<div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb68-1"><a href="temel-nesneler.html#cb68-1"></a>m &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">:</span><span class="dv">10</span> ;m</span></code></pre></div>
+<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb61-1"><a href="temel-nesneler.html#cb61-1"></a>m &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">:</span><span class="dv">10</span> ;m</span></code></pre></div>
 <pre><code>##  [1]  1  2  3  4  5  6  7  8  9 10</code></pre>
-<div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb70-1"><a href="temel-nesneler.html#cb70-1"></a><span class="kw">dim</span>(m) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">2</span>, <span class="dv">5</span>) ;m</span></code></pre></div>
+<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb63-1"><a href="temel-nesneler.html#cb63-1"></a><span class="kw">dim</span>(m) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">2</span>, <span class="dv">5</span>) ;m</span></code></pre></div>
 <pre><code>##      [,1] [,2] [,3] [,4] [,5]
 ## [1,]    1    3    5    7    9
 ## [2,]    2    4    6    8   10</code></pre>
 <p><br></p>
 <p>Matrisler, satır veya sütunların birleştirilmesi yoluyla da oluşturulabilir. Satıların bir araya getirilmesi için <code>rbind</code> komutu kullanılırken, sütunların bir araya getirilmesi için <code>cbind</code> komutu kullanılmaktadır.</p>
-<div class="sourceCode" id="cb72"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb72-1"><a href="temel-nesneler.html#cb72-1"></a>x &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">:</span><span class="dv">3</span></span>
-<span id="cb72-2"><a href="temel-nesneler.html#cb72-2"></a>y &lt;-<span class="st"> </span><span class="dv">10</span><span class="op">:</span><span class="dv">12</span></span>
-<span id="cb72-3"><a href="temel-nesneler.html#cb72-3"></a><span class="kw">cbind</span>(x, y)</span></code></pre></div>
+<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb65-1"><a href="temel-nesneler.html#cb65-1"></a>x &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">:</span><span class="dv">3</span></span>
+<span id="cb65-2"><a href="temel-nesneler.html#cb65-2"></a>y &lt;-<span class="st"> </span><span class="dv">10</span><span class="op">:</span><span class="dv">12</span></span>
+<span id="cb65-3"><a href="temel-nesneler.html#cb65-3"></a><span class="kw">cbind</span>(x, y)</span></code></pre></div>
 <pre><code>##      x  y
 ## [1,] 1 10
 ## [2,] 2 11
 ## [3,] 3 12</code></pre>
-<div class="sourceCode" id="cb74"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb74-1"><a href="temel-nesneler.html#cb74-1"></a><span class="kw">rbind</span>(x, y)</span></code></pre></div>
+<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb67-1"><a href="temel-nesneler.html#cb67-1"></a><span class="kw">rbind</span>(x, y)</span></code></pre></div>
 <pre><code>##   [,1] [,2] [,3]
 ## x    1    2    3
 ## y   10   11   12</code></pre>
