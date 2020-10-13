@@ -16,7 +16,7 @@ site: bookdown::bookdown_site
 # Ön Bilgi
 
 
-<img src="/Users/busenursarica/Desktop/R Lec Notes/comp3/_book/comp3_files/figure-html/vulcan.jpg" style="float: right;" width="230" height="300" title="Sheldon"/> 
+<img src="/Users/busenursarica/Documents/GitHub/rstudio/images/vulcan.jpg" style="float: right;" width="230" height="300" title="Sheldon"/> 
 
 
 R ders notları temelde _BSP2043 - Bilgisayar III_ ve _BSP2044 - Bilgisayar IV_ derslerine kaynaklık etmesi amacıyla tasarlanmış olup konu çerçevesinde kendisini geliştirmek isteyen herkesin faydalanabilmesi hedeflenmiştir.
@@ -59,7 +59,7 @@ Katkı ve öneriler için: `busenur.sarica@marmara.edu.tr`
 
 ## Hakkımda
 
-<img src="/Users/busenursarica/Desktop/R Lec Notes/comp3/_book/comp3_files/figure-html/busenur1.jpg" style="float: right;" width="270" height="350" title="Busenur" /> 
+<img src="/Users/busenursarica/Documents/GitHub/rstudio/images/busenur1.jpg" style="float: right;" width="270" height="350" title="Busenur" /> 
 
 2012 yılında Mimar Sinan G. S. Üniversitesi istatistik bölümünde lisans öğrenimimi tamamlamamın ardından 2014 yılı itibariyle Marmara Üniversitesi istatistik bölümünde araştırma görevlisi olarak göreve başladım. Eş zamanlı olarak başladığım yüksek lisans öğrenimimi yine Mimar Sinan G. S. Üniversitesi istatistik anabilim dalında tamamlarken artık çalışma alanım bulanık mantık ([fuzzy logic](https://en.wikipedia.org/wiki/Fuzzy_logic)) olarak şekillenmişti. Bir buçuk yılda tamamladığım yüksek lisansın ardından farklı bakış açısı kazanma fikriyle yönümü Yıldız Teknik Üniversitesi'ne çevirdim. 2015 yılında istatistik bölümünde başladığım doktora öğrenimimi 2020 yılında yine bulanık mantık ile öngörü üzerine hazırladığım tezim ile tamamladım. Doktora öğrenimim sırasında İstanbul Teknik Üniversitesi endüstri mühendisliği bölümünden de çeşitli dersler alarak alanında uzman hocaların^[[Prof. Dr. Cengiz Kahraman](http://akademi.itu.edu.tr/kahramanc/)] bilgilerinden faydalanma imkanı buldum. 
 

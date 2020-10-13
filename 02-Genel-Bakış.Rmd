@@ -2,7 +2,7 @@
 
 ## R: Nedir?
 
-<img src="/Users/busenursarica/Desktop/R Lec Notes/comp3/_book/comp3_files/figure-html/Rlogo.png" style="float: right;" width="250" height="200" title="R" />
+<img src="/Users/busenursarica/Documents/GitHub/rstudio/images/Rlogo.png" style="float: right;" width="250" height="200" title="R" />
 
 İstatistiksel analiz ve veri görselleştirme amacıyla geliştirilen R, açık kaynak olup ücretsizdir. R, dizayn olarak var olan iki dilden etkilenmiştir; Becker, Chambers & Wilks’in S programlama dili ve Sussman’ın Scheme programlama dilidir. R, başlangıçta Yeni Zelanda Auckland'daki Auckland Üniversitesi İstatistik Bölümü'nde Ross Ihaka ve Robert Gentleman tarafından yazılmıştır. Ek olarak, büyük bir grup insan, kod ve hata raporları göndererek katkıda bulunmuştur. Tarihçeyi merak edenler  *A Brief History of S* [@Becker2004] kaynağını inceleyebilir.
 
@@ -37,7 +37,7 @@ Programlama öğrenmenin en iyi yolu denemek ve hata yapmaktır.
 
 ### RStudio
 
-<img src="/Users/busenursarica/Desktop/R Lec Notes/comp3/_book/comp3_files/figure-html/RStudio.png" style="float: right;" width="250" height="90" title="RStudio" />
+<img src="/Users/busenursarica/Documents/GitHub/rstudio/images/RStudio.png" style="float: right;" width="250" height="90" title="RStudio" />
 
 R üzerinde doğrudan çalışabilir veya bir grafik ara yüzü olan RStudio'nun zengin özelliklerinden faydalanma imkanından yararlanabilirsiniz. Uygulama kolaylığı sağlayan bir entegre geliştirme ortamı *(integrated development environment (IDE))* olan RStudio, Windows, Mac ve Linux ile çalışabilir. RStudio'yu kullanışlı kılan birçok özellik mevcuttur, bunlardan birkaçı şu şekilde sıralanabilir.
 
@@ -87,7 +87,7 @@ R aynı zamanda bazı dezavantajlara da sahiptir.
 
 ## R: Help
 
-<img src="/Users/busenursarica/Desktop/R Lec Notes/comp3/_book/comp3_files/figure-html/help.jpg" style="float: right;" width="200" height="200" title="Help" />
+<img src="/Users/busenursarica/Documents/GitHub/rstudio/images/help.jpg" style="float: right;" width="200" height="200" title="Help" />
 
 R'da karşılacağınız problemler için menüde yer alan `Help` kısmını kullanabilir veya [Stackoverflow](https://stackoverflow.com/questions/tagged/r) gibi forumlardan faydalanabilirsiniz. Windows, Mac işletim sistemleri ve genel sorular için üç farklı [FAQ (Frequently Asked Questions)](https://cran.r-project.org/faqs.html) kısmı mevcuttur.
  
@@ -131,13 +131,13 @@ Paket yükleme işleminin hızlı olabilmesi için size en yakın mirror seçimi
 
 <br>
 
-![](/Users/busenursarica/Desktop/R Lec Notes/comp3/_book/comp3_files/figure-html/P1.png){width=85%}
+![](/Users/busenursarica/Documents/GitHub/rstudio/images/P1.png){width=85%}
 
-![](/Users/busenursarica/Desktop/R Lec Notes/comp3/_book/comp3_files/figure-html/P2.png){width=85%}
+![](/Users/busenursarica/Documents/GitHub/rstudio/images/P2.png){width=85%}
 
-![](/Users/busenursarica/Desktop/R Lec Notes/comp3/_book/comp3_files/figure-html/P3.png){width=85%}
+![](/Users/busenursarica/Documents/GitHub/rstudio/images/P3.png){width=85%}
 
-![](/Users/busenursarica/Desktop/R Lec Notes/comp3/_book/comp3_files/figure-html/P4.png){width=85%}
+![](/Users/busenursarica/Documents/GitHub/rstudio/images/P4.png){width=85%}
 
 ***
 

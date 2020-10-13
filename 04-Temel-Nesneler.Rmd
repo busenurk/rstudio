@@ -81,7 +81,7 @@ round(1.248,2)
 ```
 Kullanılabilecek matematiksel fonksiyonlara örnek olarak [@Crawley2012]
 
-<img src="/Users/busenursarica/Desktop/R Lec Notes/comp3/_book/comp3_files/figure-html/mfunc.png" />
+<img src="/Users/busenursarica/Documents/GitHub/rstudio/images/mfunc.png" />
 
 ***
 

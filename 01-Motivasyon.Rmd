@@ -6,7 +6,7 @@
 
 <center>
 
-![](/Users/busenursarica/Desktop/R Lec Notes/comp3/_book/comp3_files/figure-html/steve.png){width=85%}
+![](/Users/busenursarica/Documents/GitHub/rstudio/images/steve.png){width=85%}
 
 </center>
 
@@ -18,7 +18,7 @@ Programlama bilgisine sahip olmak iş yaşamındaki ihtiyacınızı karşılamas
 
 <center>
 
-![](/Users/busenursarica/Desktop/R Lec Notes/comp3/_book/comp3_files/figure-html/bill.png){width=85%}
+![](/Users/busenursarica/Documents/GitHub/rstudio/images/bill.png){width=85%}
 </center>
 
 
