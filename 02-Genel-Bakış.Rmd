@@ -1,0 +1,146 @@
+# Genel Bakış
+
+## R: Nedir?
+
+<img src="/Users/busenursarica/Desktop/R Lec Notes/comp3/_book/comp3_files/figure-html/Rlogo.png" style="float: right;" width="250" height="200" title="R" />
+
+İstatistiksel analiz ve veri görselleştirme amacıyla geliştirilen R, açık kaynak olup ücretsizdir. R, dizayn olarak var olan iki dilden etkilenmiştir; Becker, Chambers & Wilks’in S programlama dili ve Sussman’ın Scheme programlama dilidir. R, başlangıçta Yeni Zelanda Auckland'daki Auckland Üniversitesi İstatistik Bölümü'nde Ross Ihaka ve Robert Gentleman tarafından yazılmıştır. Ek olarak, büyük bir grup insan, kod ve hata raporları göndererek katkıda bulunmuştur. Tarihçeyi merak edenler  *A Brief History of S* [@Becker2004] kaynağını inceleyebilir.
+
+1997 ortalarından itibaren çekirdek bir yapı *(The R Core Team)* yönetimi sürdürmektedir. 
+
+
+[Resmi internet adresi](http://www.r-project.org)
+
+[Yükleme adresi](http://www.cran.r-project.org)
+
+[The R Journal](https://journal.r-project.org): R kullanıcıları için hakemli ve açık erişimli dergi
+
+[Kitaplar](https://www.r-project.org/doc/bib/R-books.html): R kullancıları için çeşitli alanlarda/dillerde kaynak kitaplar
+
+[Faydalı adres1](http://www.statmethods.net)
+
+[Faydalı adres2](https://stackoverflow.com/questions/tagged/r)
+
+<br>
+
+```
+Hangi komutun ne işe yaradığını anımsayamıyorsanız veya bir hata ile karşılaştıysanız
+GOOGLE kullanın.
+```
+
+~~~
+Programlama öğrenmenin en iyi yolu denemek ve hata yapmaktır.
+~~~
+
+
+***
+
+### RStudio
+
+<img src="/Users/busenursarica/Desktop/R Lec Notes/comp3/_book/comp3_files/figure-html/RStudio.png" style="float: right;" width="250" height="90" title="RStudio" />
+
+R üzerinde doğrudan çalışabilir veya bir grafik ara yüzü olan RStudio'nun zengin özelliklerinden faydalanma imkanından yararlanabilirsiniz. Uygulama kolaylığı sağlayan bir entegre geliştirme ortamı *(integrated development environment (IDE))* olan RStudio, Windows, Mac ve Linux ile çalışabilir. RStudio'yu kullanışlı kılan birçok özellik mevcuttur, bunlardan birkaçı şu şekilde sıralanabilir.
+
+- Script 
+
+- Kodlama geçmişi, güçlü grafiksel altyapı
+
+- Cheatsheetler
+
+- Değişken ve fonksiyon tamamlama özelliği
+
+***
+
+## R: Neden?
+
+Veri analizi için kullanılabilecek SAS, SPSS, Excel, MATLAB gibi birçok yazılım  mevcutken neden R kullanıyoruz?
+
+- Ücretsiz (open source)
+
+- Geniş kullanım kitlesi
+
+  - Dünyada 2 milyondan fazla kullanıcıya sahip
+
+  - Sürekli gelişmeye devam eden yapısı
+
+  - Geniş forum ağı
+
+- Uygulama ve kullanım kolaylığı
+
+- Grafik ve görsel üretimindeki başarısı
+
+- Paket kullanım imkanı
+
+- Raporlama kolaylığı ve RMarkdown sayesinde kolay sunum
+
+
+<br>
+
+R aynı zamanda bazı dezavantajlara da sahiptir.
+
+- Güncelleneme gereksinimi
+
+- Uzmanlaşmanın diğer programlara göre biraz daha zor olması
+
+
+***
+
+## R: Help
+
+<img src="/Users/busenursarica/Desktop/R Lec Notes/comp3/_book/comp3_files/figure-html/help.jpg" style="float: right;" width="200" height="200" title="Help" />
+
+R'da karşılacağınız problemler için menüde yer alan `Help` kısmını kullanabilir veya [Stackoverflow](https://stackoverflow.com/questions/tagged/r) gibi forumlardan faydalanabilirsiniz. Windows, Mac işletim sistemleri ve genel sorular için üç farklı [FAQ (Frequently Asked Questions)](https://cran.r-project.org/faqs.html) kısmı mevcuttur.
+ 
+ <br>
+ 
+Kullanacağınız fonksiyonun ismini biliyorsanız `?` kullanarak yine help içeriğinden faydalanabilirsiniz.
+
+```{r}
+?sum
+```
+
+Kullanacağınız fonksiyonun ismini biliyor fakat hangi pakette yer aldığını bilmiyorsanız bu noktada `find` komutu size yardımcı olacaktır.
+
+```{r}
+find("sum")
+```
+Kullanacağınız fonksiyon ile ilgili örnek araştırmak isterseniz `example` komutu işinizi görecektir.
+
+```{r}
+example(sum)
+```
+
+
+***
+
+## Paketler
+
+R programlama dili ile kendi döngülerinizi oluşturabilir, özgün kodlarınızı yazabilirsiniz, aynı zamanda paketler yardımı ile yazılmış olan zengin hazır kod içeriğinden de faydalanabilirsiniz. Bu zengin içeriğe hazırladığınız paketler ile dahil olma imkanınız da mevcut.
+
+```
+Paket indirme konusunda problem yaşıyorsanız R'ı yönetici olarak çalıştırmayı deneyin. 
+```
+
+```
+Paket yükleme işleminin hızlı olabilmesi için size en yakın mirror seçimini yapmalısınız.
+```
+
+<br>
+
+> Paketler kullanım kolaylığı ve zamandan kazanç sağlamakla birlikte kullanılmadan önce içeriğin dikkatlice incelenmesi önemlidir. Tanımlamaları iyi anlaşılmadan kullanılan paketlerle yanlış sonuçlar elde edilmesi kaçınılmazdır. 
+
+<br>
+
+![](/Users/busenursarica/Desktop/R Lec Notes/comp3/_book/comp3_files/figure-html/P1.png){width=85%}
+
+![](/Users/busenursarica/Desktop/R Lec Notes/comp3/_book/comp3_files/figure-html/P2.png){width=85%}
+
+![](/Users/busenursarica/Desktop/R Lec Notes/comp3/_book/comp3_files/figure-html/P3.png){width=85%}
+
+![](/Users/busenursarica/Desktop/R Lec Notes/comp3/_book/comp3_files/figure-html/P4.png){width=85%}
+
+***
+
+
+
+

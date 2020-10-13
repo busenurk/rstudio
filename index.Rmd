@@ -1,0 +1,77 @@
+--- 
+title: "R Ders Notları"
+author: "Dr. Busenur Kızılaslan"
+date: "`r Sys.Date()`"
+output: pdf_document
+documentclass: book
+bibliography:
+- book.bib
+- packages.bib
+biblio-style: apalike
+link-citations: yes
+description: R programming language lecture notes
+site: bookdown::bookdown_site
+---
+
+# Ön Bilgi
+
+
+<img src="/Users/busenursarica/Desktop/R Lec Notes/comp3/_book/comp3_files/figure-html/vulcan.jpg" style="float: right;" width="230" height="300" title="Sheldon"/> 
+
+
+R ders notları temelde _BSP2043 - Bilgisayar III_ ve _BSP2044 - Bilgisayar IV_ derslerine kaynaklık etmesi amacıyla tasarlanmış olup konu çerçevesinde kendisini geliştirmek isteyen herkesin faydalanabilmesi hedeflenmiştir.
+
+Kaynak, temel matematik ve ingilizce bilgisine sahip olan herkesin anlayıp uygulayabileceği basitlikte bir anlatıma sahiptir. 
+
+Ders dili Türkçe'dir. Bu bakımdan genel anlatımda Türkçe kullanılacaktır. Literatürü rahat takip edebilmeniz, komut karmaşası yaşamamanız ve araştırma sürecinde zengin forum imkanından yararlanabilmeniz adına temel terimler orijinal haliyle kullanılacaktır. 
+
+Aynı zamanda referans verilen kaynaklar da orijinal dili ile paylaşılacaktır. Bu nedenle İngilizce eksikliğinizi gidermeniz önerilir. 
+
+Kaynaklar;
+
+- Kitaplar
+
+[The R Book - Michael J. Crawley](https://www.cs.upc.edu/~robert/teaching/estadistica/TheRBook.pdf)
+
+[R for Data Science - Hadley Wickham, Garrett Grolemund](https://r4ds.had.co.nz)
+
+[Introduction to Data Science - Rafael A. Irizarry](https://rafalab.github.io/dsbook/)
+
+[R Programming for Data Science - Roger D. Peng](https://bookdown.org/rdpeng/rprogdatascience/)
+
+[The Book of R - Tilman M. Davies](https://web.itu.edu.tr/~tokerem/The_Book_of_R.pdf)
+
+<br>
+
+- Eğitimler
+
+[HarvardX - Data Science: R Basics](https://www.edx.org/course/data-science-r-basics) 
+
+[HarvardX - Data Science: Visualization](https://www.edx.org/course/data-science-visualization)
+
+[HarvardX - Data Science: Probability](https://www.edx.org/course/data-science-probability)
+
+<br>
+
+Katkı ve öneriler için: `busenur.sarica@marmara.edu.tr` 
+
+İyi eğlenceler!
+
+## Hakkımda
+
+<img src="/Users/busenursarica/Desktop/R Lec Notes/comp3/_book/comp3_files/figure-html/busenur1.jpg" style="float: right;" width="270" height="350" title="Busenur" /> 
+
+2012 yılında Mimar Sinan G. S. Üniversitesi istatistik bölümünde lisans öğrenimimi tamamlamamın ardından 2014 yılı itibariyle Marmara Üniversitesi istatistik bölümünde araştırma görevlisi olarak göreve başladım. Eş zamanlı olarak başladığım yüksek lisans öğrenimimi yine Mimar Sinan G. S. Üniversitesi istatistik anabilim dalında tamamlarken artık çalışma alanım bulanık mantık ([fuzzy logic](https://en.wikipedia.org/wiki/Fuzzy_logic)) olarak şekillenmişti. Bir buçuk yılda tamamladığım yüksek lisansın ardından farklı bakış açısı kazanma fikriyle yönümü Yıldız Teknik Üniversitesi'ne çevirdim. 2015 yılında istatistik bölümünde başladığım doktora öğrenimimi 2020 yılında yine bulanık mantık ile öngörü üzerine hazırladığım tezim ile tamamladım. Doktora öğrenimim sırasında İstanbul Teknik Üniversitesi endüstri mühendisliği bölümünden de çeşitli dersler alarak alanında uzman hocaların^[[Prof. Dr. Cengiz Kahraman](http://akademi.itu.edu.tr/kahramanc/)] bilgilerinden faydalanma imkanı buldum. 
+
+Akademik kariyer hedefiyle başlamadığım öğrenim yaşamımda ufku açık, aydınlık ve birikimli hocalarım yolumu bulmama yardımcı olmuştur. 2018 yılında Polonya'da gerçekleşen [International Conference on Trends and Perspectives in Linear Statistical Inference (LinStat'2018)](http://www.linstat2018.put.poznan.pl/ysa.html) kapsamında sunduğum, doktora tezimin bir kısmından oluşan çalışma ile aldığım Young Scientists Awards ikincilik ödülü de yanlış yolda olmadığımı göstermiştir. 
+
+Üzerimde emeği olan herkese teşekkürlerimle!
+
+<br>
+
+[**CV**](https://avesis.marmara.edu.tr/busenur.sarica), [**Google Scholar**](https://scholar.google.com.tr/citations?user=OKlYJEgAAAAJ&hl=tr), [**Linkedin**](https://www.linkedin.com/in/busenur-kızılaslan-795ab54a)
+
+
+
+
+

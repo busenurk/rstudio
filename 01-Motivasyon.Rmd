@@ -1,0 +1,27 @@
+# Motivasyon
+
+**'Bu dersi neden alıyorum?'** sorusuna karşılık olarak alacağınız cevap **'ilerleyen dönemlerde göreceğiniz derslerin uygulamalarında ihtiyaç duyacaksınız'**dan çok daha fazlası! Herhangi bir programlama diline hakim olmak veriyi anlamlandırabilmek adına zaten önemliyken özellikle R, Python gibi açık kaynak ve hızla gelişmeye devam eden programlama dillerini biliyor olmak sizleri donanımlı kılacaktır. 
+
+<br>
+
+<center>
+
+![](/Users/busenursarica/Desktop/R Lec Notes/comp3/_book/comp3_files/figure-html/steve.png){width=85%}
+
+</center>
+
+<br>
+
+Programlama bilgisine sahip olmak iş yaşamındaki ihtiyacınızı karşılamasının yanı sıra günlük yaşamdaki problem çözme yeteneğinizin gelişmesine de yardımcı olmaktadır. Programlama yapısını öğrenen kişinin diğer programlama dillerini öğrenmesi kolaylaşmaktadır. İş başvurularında birden fazla programlama dili biliyor olmanın sizi öne çıkaracağı da aşikar. Burada sorulması gereken asıl soru **'hangi programlama dilini/dillerini öğrenmeliyim?'** olmalıdır. Ders kapsamında R programlama dili ve özellikleri açıklanacaktır.
+
+<br>
+
+<center>
+
+![](/Users/busenursarica/Desktop/R Lec Notes/comp3/_book/comp3_files/figure-html/bill.png){width=85%}
+</center>
+
+
+
+
+

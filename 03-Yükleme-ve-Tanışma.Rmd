@@ -1,0 +1,77 @@
+# Yükleme ve Tanışma
+## Yükleme
+
+R'ın güncel versiyonun indirilmesi için [CRAN](http://www.cran.r-project.org) (The Comprehensive R Archive Network) sayfası ziyaret edilmelidir. Bilgisayarınızdaki mevcut işletim sistemi için uygun olan versiyon indirilmelidir. 
+
+<br>
+
+![](/Users/busenursarica/Desktop/R Lec Notes/comp3/_book/comp3_files/figure-html/D1.png)
+
+<br>
+
+Uygun işletim sistemi seçildikten sonra `install R for the first time` tıklanarak temel versiyon seçilmelidir.
+
+<br>
+
+![](/Users/busenursarica/Desktop/R Lec Notes/comp3/_book/comp3_files/figure-html/D2.png)
+
+Gelen ekranda seçtiğiniz işletim sistemine uygun olan güncel R versiyonu görülecektir. `Download` işlemi başlatılır ve uygun seçenekler dahilinde indirme işlemi ve kurulum tamamlanır.
+
+<br>
+
+![](/Users/busenursarica/Desktop/R Lec Notes/comp3/_book/comp3_files/figure-html/D3.png)
+
+R yükleme işlemi tamamlandıktan sonra RStudio kurulum işlemine başlanır. [RStudio](https://rstudio.com/products/rstudio/download/) sayfasına gidilir, bilgisayarınızdaki işletim sistemine uygun olan RStudio Desktop versiyonu indirilir ve kurulur. 
+
+<br>
+
+<img src="/Users/busenursarica/Desktop/R Lec Notes/comp3/_book/comp3_files/figure-html/play.png" style="float: left;" width="150" height="110" title="Play"/>
+
+[Yükleme destek videosu (R-Windows)](https://www.youtube.com/watch?v=Ohnk9hcxf9M&feature=youtu.be)
+
+[Yükleme destek videosu (R-Mac)](https://www.youtube.com/watch?v=uxuuWXU-7UQ&feature=youtu.be)
+
+[Yükleme destek videosu (RStudio)](https://www.youtube.com/watch?v=bM7Sfz-LADM&feature=youtu.be)
+
+<br>
+
+***
+
+## Tanışma
+
+R programlama dilini kullanmak için console erişimi yeterlidir. Console yalın haliyle kullanılabildiği gibi RStudio aracılığı ile de kullanılabilir.
+
+![](/Users/busenursarica/Desktop/R Lec Notes/comp3/_book/comp3_files/figure-html/00.png){width=70%}
+<br>
+
+RStudio editor, görsel ve uygulama avantajları sayesinde uygulama kolaylığı sağlamaktadır.
+
+<br>
+
+![](/Users/busenursarica/Desktop/R Lec Notes/comp3/_book/comp3_files/figure-html/01.png)
+<br>
+
+R kullanarak yaptığınız çalışmalarda lütfen referans vermeyi unutmayınız.
+```{r}
+citation()
+```
+
+<br>
+
+Yeni script oluşturmak için;
+
+<br>
+
+![](/Users/busenursarica/Desktop/R Lec Notes/comp3/_book/comp3_files/figure-html/02.png)
+<br>
+
+![](/Users/busenursarica/Desktop/R Lec Notes/comp3/_book/comp3_files/figure-html/03.png)
+<br>
+
+RStudio cheatsheat yapısı sayesinde bir çok konu başlığında özet bilgiye ulaşmak mümkün.   
+
+<br>
+
+![](/Users/busenursarica/Desktop/R Lec Notes/comp3/_book/comp3_files/figure-html/04.png)
+
+***

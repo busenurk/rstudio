@@ -1,0 +1,295 @@
+---
+output:
+  pdf_document: default
+  html_document: default
+---
+# Temel Nesneler
+Bu bölümde kodlama için ihtiyaç duyacağınız temel yapılar açıklanacak ve uygulamalar ile desteklenecektir. **Farklı uygulamalar ders esnasında eş zamanlı yapılacağından lütfen online dersleri takip ediniz.** 
+
+
+## Aritmetik (Arithmetic)
+
+R, en basit haliyle hesap makinesi olarak kullanılabilir. Toplama `+`, çıkarma `-`, çarpma `*`, bölme `/` operatörleri ile gerçekleştirilir.
+```{r}
+5+4
+```
+<br>
+
+Birden fazla matematiksel işlem aynı satırda gerçekleştirilebilir.
+```{r}
+3+4; 6*4; 10-2
+```
+
+<br>
+
+İşlemler parantez yardımıyla önceliğine göre yazılabilir, yazılmadığı taktirde matematiksel işlem önceliği geçerlidir.
+```{r}
+10*2-3
+```
+
+<br>
+
+İşlem devam edecek biçimde tanımlanırsa console `+` simgesi ile devam edecek ve işlem tamamlanana kadar yeni işleme geçmenize engel olacaktır. İşlemi tamamlamalı veya yeni işleme geçmek için `esc` tuşunu kullanmalısınız. 
+```{r}
+10+20+30+
+  40
+```
+
+<br>
+
+Yapılan işlemler sonucu elde edilen çok büyük veya çok küçük sonuçlar için output exponent olarak verilir.
+
+```{r}
+12000*3000
+```
+
+
+> 1.3e2   (130 anlamına gelir. e2: ondalık noktasını iki basamak sağa taşı)
+
+> 1.4e-1  (0.14 anlamına gelir. e-1: ondalık noktasını bir basamak sola taşı)
+
+<br>
+
+Uygulamada elde edilen sonucun integer (tamsayı) olması gerekebilir. Bu noktada elde edilen output üste, alta veya 0.5 üzeri ya da altı olma durumuna göre farklı komutlar yardımı ile yuvarlanabilir. 
+
+- **floor:** alta yuvarla
+
+```{r}
+floor(5.2); floor(5.7)
+```
+<br>
+
+- **ceilign:** üste yuvarla
+```{r}
+ceiling(3.2); ceiling(3.8)
+```
+
+<br>
+
+- **round:** 0.5 üzeri ise üste, 0.5 altı ise alta yuvarla
+```{r}
+round(5.6); round(5.3)
+```
+
+<span style="background-color: #FFFF99 ">Negatif sayılarda komutların nasıl işlediğini inceleyebilirsiniz. </span>
+
+<br>
+
+**round** komutu ile virgülden sonra kaç basamak olması gerektiğini belirterek yuvarlama işlemi yapabilirsiniz.
+```{r}
+round(1.248,2)
+```
+Kullanılabilecek matematiksel fonksiyonlara örnek olarak [@Crawley2012]
+
+<img src="/Users/busenursarica/Desktop/R Lec Notes/comp3/_book/comp3_files/figure-html/mfunc.png" />
+
+***
+
+## Nesneleri Tanımlama (Assigning Objects) 
+
+Temel işlevlerden bir diğeri kullanılacak değişkenlerin tanımlanmasıdır. Değişken için seçilecek isim mümkün olan en kısa haliyle tanımlanarak kavram kargaşası önlenmelidir.
+
+- R, büyük ve küçük harfe duyarlıdır, dolayısıyla tanımlanan $B$ ve $b$ iki farklı değişkeni temsil eder.
+
+- Değişken ismi iki veya daha fazla kelimeden oluşacaksa kelimeler arasında boşluk yerine nokta kullanılmalıdır. (~~neura link~~)
+
+- Değişken ismi sayı veya sembol ile başlayamaz. (~~1a~~, ~~&b~~)
+
+Değişken tanımlama işlemi `<-` operatörü ile gerçekleştirilir. Tanımlanan değişken adı ile çağrılmazsa veya `print` komutu kullanılmazsa çıktı yazdırılmaz.
+
+```{r echo=TRUE}
+x<-3
+print(x)
+```
+
+
+Sayısal olmayan değer tanımlamaları tırnak içerisinde yapılmalıdır.
+```{r}
+msg<- "hello world"
+```
+
+Tanımlanan değişken veya fonksiyon ile ilgili notlar `#` ile tanımlanır. 
+
+```{r}
+x.ort<-20  # ortalama değer
+```
+
+Çıktıda basılan `[.]` kaçıncı gözlemden devam edildiğini gösterir. Örneğin 30 gözleminin `[26]` ifadesinin yardımı ile 26. gözlem olduğunu kolaylıkla söyleyebiliriz. `[.]` ifadeleri asıl seride yer almaz, yalnızca yol gösterici olarak çıktıda gözlenir.
+```{r}
+x<-5:50
+x
+```
+
+
+***
+
+## Vektörler (Vectors)
+
+Vektör oluşturmak için `c()` operatör kullanılmaktadır. Vektörler 
+
+- numeric 
+- character 
+- logical
+- integer
+- complex
+
+yapıları içerebilir. **Vektörler yalnızca aynı yapıda gözlemler içerebilir.**
+
+```{r}
+x <- c(0.5, 0.6) # numeric 
+x <- c(TRUE, FALSE) # logical
+x <- c(T, F) # logical
+x <- c("a", "b", "c") # character
+x <- 9:29 # integer
+x <- c(1+0i, 2+4i) # complex
+```
+
+`T` ve `F`, `TRUE` ve `FALSE`'a karşılık kullanılan kısaltma yapılardır. 
+
+```{r}
+x <- c(T, F) # logical
+x
+```
+
+Aynı zamanda `vector` komutu ile de vektör oluşturabilirsiniz. Vektörü tanımlarken belirlenen içerik yapısına göre oluşturulur.
+
+```{r}
+x <- vector("numeric", length = 7)
+x
+```
+
+Karakter elemanları içerecek bir vektör oluşturmak istendiğinde;
+```{r}
+x <- vector("complex", length = 7)
+x
+```
+
+>Aynı değişken adı birden fazla tanımlamada kullanılırsa yapılan son tanımlama geçerli olacaktır. Kod yazarken kullandığınız değişken isimlerine ve doğru yazıma dikkat ediniz.
+
+<br>
+
+**Vektör aynı yapıda gözlemlerden oluşmuyorsa?**
+
+Bu durumda tüm gözlemler tek bir yapı olarak algılanır. Herhangi bir değişkenin hangi yapıda gözlem içerdiği `class()` komutu ile sorgulanabilir.
+
+```{r}
+y <- c(1.7, "a")  # character 
+class(y)
+```
+
+<br>
+
+```{r}
+y <- c(TRUE, 2) # numeric
+class(y)
+```
+
+<br>
+
+```{r}
+y <- c("a", TRUE) # character
+class(y)
+```
+
+<br>
+
+>Vektör farklı yapıda gözlemler için verimli kullanılamıyor olabilir ancak bu işlemi gerçekleştirebilen `list` komutu mevcuttur. İlerleyen başlıklarda bu komut detaylandırılacaktır.
+
+
+<br>
+
+Kodlama yaparken sıklıkla kullanılan bir işlem türü de vektör yapısının değiştirilmesidir. Vektör içeriğinin aynı yapıda olması kuralına sadık kalarak tüm vektör içeriği farklı bir yapıya aktarılabilir. Burada `as.numeric`, `as.logical` gibi komutlardan faydalanılır.
+
+```{r}
+x <- 0:6
+class(x)
+```
+
+x vektörünün `integer` yapıda olduğunu gördükten sonra `as.character` komutu ile yeni x vektörünü `numeric` olarak tanımlayabiliriz. 
+```{r}
+x<-as.character(x)
+x; class(x)
+
+```
+
+<br>
+
+Bazı durumlarda R dönüşüm için çözüm üretemez ve `NA` çıktı verir.
+
+```{r}
+x <- c("a", "b", "c")
+as.numeric(x)
+```
+
+***
+
+## Matrisler (Matrices)
+
+Matrisler, boyut niteliğine sahip vektörlerdir. Matris yapısında _satır (row)_ ve _sütun (column)_ tanımlanması gündeme gelmektedir. m içeriği boş bir matris olmak üzere;
+
+```{r}
+m <- matrix(nrow = 2, ncol = 3)
+m
+```
+
+<br>
+
+Matris boyutu `dim()` komutu ile sorgulanır. 
+```{r}
+dim(m)
+```
+
+<br>
+
+Matris yapısında gözlemler sütun şeklinde sıralanır.
+
+```{r}
+m <- matrix(1:6, nrow = 2, ncol = 3) 
+m
+```
+
+<br>
+
+Vektörler parçalanarak da matris yapısı oluşturabilirler. 
+
+```{r}
+m <- 1:10 ;m
+dim(m) <- c(2, 5) ;m
+```
+
+<br>
+
+Matrisler, satır veya sütunların birleştirilmesi yoluyla da oluşturulabilir. Satıların bir araya getirilmesi için `rbind` komutu kullanılırken, sütunların bir araya getirilmesi için `cbind` komutu kullanılmaktadır. 
+
+```{r}
+x <- 1:3
+y <- 10:12
+cbind(x, y)
+
+rbind(x, y)
+```
+
+***
+
+## Listeler ve Data Frameler (Lists and Data Frames)
+
+***
+
+
+## Nümerik Olmayan Değerler (Non-Numeric Values)
+
+***
+
+### Mantık İşlemleri
+
+***
+
+### Karakterler
+
+***
+
+### Faktörler (Factors) 
+
+***
+
+## Eksik Gözlemler (Missing Values)

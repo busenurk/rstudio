@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>R Ders Notları</title>
+  <meta name="description" content="R programming language lecture notes" />
+  <meta name="generator" content="bookdown 0.20.6 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="R Ders Notları" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="R programming language lecture notes" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="R Ders Notları" />
+  
+  <meta name="twitter:description" content="R programming language lecture notes" />
+  
+
+<meta name="author" content="Dr. Busenur Kızılaslan" />
+
+
+<meta name="date" content="2020-10-13" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+
+<link rel="next" href="motivasyon.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">R Ders Notları</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Ön Bilgi</a><ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#hakkımda"><i class="fa fa-check"></i><b>1.1</b> Hakkımda</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="motivasyon.html"><a href="motivasyon.html"><i class="fa fa-check"></i><b>2</b> Motivasyon</a></li>
+<li class="chapter" data-level="3" data-path="genel-bakış.html"><a href="genel-bakış.html"><i class="fa fa-check"></i><b>3</b> Genel Bakış</a><ul>
+<li class="chapter" data-level="3.1" data-path="genel-bakış.html"><a href="genel-bakış.html#r-nedir"><i class="fa fa-check"></i><b>3.1</b> R: Nedir?</a><ul>
+<li class="chapter" data-level="3.1.1" data-path="genel-bakış.html"><a href="genel-bakış.html#rstudio"><i class="fa fa-check"></i><b>3.1.1</b> RStudio</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="genel-bakış.html"><a href="genel-bakış.html#r-neden"><i class="fa fa-check"></i><b>3.2</b> R: Neden?</a></li>
+<li class="chapter" data-level="3.3" data-path="genel-bakış.html"><a href="genel-bakış.html#r-help"><i class="fa fa-check"></i><b>3.3</b> R: Help</a></li>
+<li class="chapter" data-level="3.4" data-path="genel-bakış.html"><a href="genel-bakış.html#paketler"><i class="fa fa-check"></i><b>3.4</b> Paketler</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="yükleme-ve-tanışma.html"><a href="yükleme-ve-tanışma.html"><i class="fa fa-check"></i><b>4</b> Yükleme ve Tanışma</a><ul>
+<li class="chapter" data-level="4.1" data-path="yükleme-ve-tanışma.html"><a href="yükleme-ve-tanışma.html#yükleme"><i class="fa fa-check"></i><b>4.1</b> Yükleme</a></li>
+<li class="chapter" data-level="4.2" data-path="yükleme-ve-tanışma.html"><a href="yükleme-ve-tanışma.html#tanışma"><i class="fa fa-check"></i><b>4.2</b> Tanışma</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="temel-nesneler.html"><a href="temel-nesneler.html"><i class="fa fa-check"></i><b>5</b> Temel Nesneler</a><ul>
+<li class="chapter" data-level="5.1" data-path="temel-nesneler.html"><a href="temel-nesneler.html#aritmetik-arithmetic"><i class="fa fa-check"></i><b>5.1</b> Aritmetik (Arithmetic)</a></li>
+<li class="chapter" data-level="5.2" data-path="temel-nesneler.html"><a href="temel-nesneler.html#nesneleri-tanımlama-assigning-objects"><i class="fa fa-check"></i><b>5.2</b> Nesneleri Tanımlama (Assigning Objects)</a></li>
+<li class="chapter" data-level="5.3" data-path="temel-nesneler.html"><a href="temel-nesneler.html#vektörler-vectors"><i class="fa fa-check"></i><b>5.3</b> Vektörler (Vectors)</a></li>
+<li class="chapter" data-level="5.4" data-path="temel-nesneler.html"><a href="temel-nesneler.html#matrisler-matrices"><i class="fa fa-check"></i><b>5.4</b> Matrisler (Matrices)</a></li>
+<li class="chapter" data-level="5.5" data-path="temel-nesneler.html"><a href="temel-nesneler.html#listeler-ve-data-frameler-lists-and-data-frames"><i class="fa fa-check"></i><b>5.5</b> Listeler ve Data Frameler (Lists and Data Frames)</a></li>
+<li class="chapter" data-level="5.6" data-path="temel-nesneler.html"><a href="temel-nesneler.html#nümerik-olmayan-değerler-non-numeric-values"><i class="fa fa-check"></i><b>5.6</b> Nümerik Olmayan Değerler (Non-Numeric Values)</a><ul>
+<li class="chapter" data-level="5.6.1" data-path="temel-nesneler.html"><a href="temel-nesneler.html#mantık-işlemleri"><i class="fa fa-check"></i><b>5.6.1</b> Mantık İşlemleri</a></li>
+<li class="chapter" data-level="5.6.2" data-path="temel-nesneler.html"><a href="temel-nesneler.html#karakterler"><i class="fa fa-check"></i><b>5.6.2</b> Karakterler</a></li>
+<li class="chapter" data-level="5.6.3" data-path="temel-nesneler.html"><a href="temel-nesneler.html#faktörler-factors"><i class="fa fa-check"></i><b>5.6.3</b> Faktörler (Factors)</a></li>
+</ul></li>
+<li class="chapter" data-level="5.7" data-path="temel-nesneler.html"><a href="temel-nesneler.html#eksik-gözlemler-missing-values"><i class="fa fa-check"></i><b>5.7</b> Eksik Gözlemler (Missing Values)</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="import-export-işlemleri.html"><a href="import-export-işlemleri.html"><i class="fa fa-check"></i><b>6</b> Import Export İşlemleri</a></li>
+<li class="chapter" data-level="7" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i><b>7</b> References</a></li>
+<li class="chapter" data-level="8" data-path="dplyr.html"><a href="dplyr.html"><i class="fa fa-check"></i><b>8</b> DPLYR</a></li>
+<li class="chapter" data-level="9" data-path="apply-ailesi.html"><a href="apply-ailesi.html"><i class="fa fa-check"></i><b>9</b> Apply Ailesi</a></li>
+<li class="chapter" data-level="10" data-path="grafikler.html"><a href="grafikler.html"><i class="fa fa-check"></i><b>10</b> Grafikler</a></li>
+<li class="chapter" data-level="11" data-path="döngüler.html"><a href="döngüler.html"><i class="fa fa-check"></i><b>11</b> Döngüler</a></li>
+<li class="chapter" data-level="12" data-path="fonksiyonlar.html"><a href="fonksiyonlar.html"><i class="fa fa-check"></i><b>12</b> Fonksiyonlar</a></li>
+<li class="chapter" data-level="13" data-path="referans.html"><a href="referans.html"><i class="fa fa-check"></i><b>13</b> Referans</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">R Ders Notları</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="header">
+<h1 class="title">R Ders Notları</h1>
+<p class="author"><em>Dr. Busenur Kızılaslan</em></p>
+<p class="date"><em>2020-10-13</em></p>
+</div>
+<div id="ön-bilgi" class="section level1">
+<h1><span class="header-section-number">Bölüm1</span> Ön Bilgi</h1>
+<p><img src="/Users/busenursarica/Desktop/R%20Lec%20Notes/comp3/_book/comp3_files/figure-html/vulcan.jpg" style="float: right;" width="230" height="300" title="Sheldon"/></p>
+<p>R ders notları temelde <em>BSP2043 - Bilgisayar III</em> ve <em>BSP2044 - Bilgisayar IV</em> derslerine kaynaklık etmesi amacıyla tasarlanmış olup konu çerçevesinde kendisini geliştirmek isteyen herkesin faydalanabilmesi hedeflenmiştir.</p>
+<p>Kaynak, temel matematik ve ingilizce bilgisine sahip olan herkesin anlayıp uygulayabileceği basitlikte bir anlatıma sahiptir.</p>
+<p>Ders dili Türkçe’dir. Bu bakımdan genel anlatımda Türkçe kullanılacaktır. Literatürü rahat takip edebilmeniz, komut karmaşası yaşamamanız ve araştırma sürecinde zengin forum imkanından yararlanabilmeniz adına temel terimler orijinal haliyle kullanılacaktır.</p>
+<p>Aynı zamanda referans verilen kaynaklar da orijinal dili ile paylaşılacaktır. Bu nedenle İngilizce eksikliğinizi gidermeniz önerilir.</p>
+<p>Kaynaklar;</p>
+<ul>
+<li>Kitaplar</li>
+</ul>
+<p><a href="https://www.cs.upc.edu/~robert/teaching/estadistica/TheRBook.pdf">The R Book - Michael J. Crawley</a></p>
+<p><a href="https://r4ds.had.co.nz">R for Data Science - Hadley Wickham, Garrett Grolemund</a></p>
+<p><a href="https://rafalab.github.io/dsbook/">Introduction to Data Science - Rafael A. Irizarry</a></p>
+<p><a href="https://bookdown.org/rdpeng/rprogdatascience/">R Programming for Data Science - Roger D. Peng</a></p>
+<p><a href="https://web.itu.edu.tr/~tokerem/The_Book_of_R.pdf">The Book of R - Tilman M. Davies</a></p>
+<p><br></p>
+<ul>
+<li>Eğitimler</li>
+</ul>
+<p><a href="https://www.edx.org/course/data-science-r-basics">HarvardX - Data Science: R Basics</a></p>
+<p><a href="https://www.edx.org/course/data-science-visualization">HarvardX - Data Science: Visualization</a></p>
+<p><a href="https://www.edx.org/course/data-science-probability">HarvardX - Data Science: Probability</a></p>
+<p><br></p>
+<p>Katkı ve öneriler için: <code>busenur.sarica@marmara.edu.tr</code></p>
+<p>İyi eğlenceler!</p>
+<div id="hakkımda" class="section level2">
+<h2><span class="header-section-number">1.1</span> Hakkımda</h2>
+<p><img src="/Users/busenursarica/Desktop/R Lec Notes/comp3/_book/comp3_files/figure-html/busenur1.jpg" style="float: right;" width="270" height="350" title="Busenur" /></p>
+<p>2012 yılında Mimar Sinan G. S. Üniversitesi istatistik bölümünde lisans öğrenimimi tamamlamamın ardından 2014 yılı itibariyle Marmara Üniversitesi istatistik bölümünde araştırma görevlisi olarak göreve başladım. Eş zamanlı olarak başladığım yüksek lisans öğrenimimi yine Mimar Sinan G. S. Üniversitesi istatistik anabilim dalında tamamlarken artık çalışma alanım bulanık mantık (<a href="https://en.wikipedia.org/wiki/Fuzzy_logic">fuzzy logic</a>) olarak şekillenmişti. Bir buçuk yılda tamamladığım yüksek lisansın ardından farklı bakış açısı kazanma fikriyle yönümü Yıldız Teknik Üniversitesi’ne çevirdim. 2015 yılında istatistik bölümünde başladığım doktora öğrenimimi 2020 yılında yine bulanık mantık ile öngörü üzerine hazırladığım tezim ile tamamladım. Doktora öğrenimim sırasında İstanbul Teknik Üniversitesi endüstri mühendisliği bölümünden de çeşitli dersler alarak alanında uzman hocaların<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a> bilgilerinden faydalanma imkanı buldum.</p>
+<p>Akademik kariyer hedefiyle başlamadığım öğrenim yaşamımda ufku açık, aydınlık ve birikimli hocalarım yolumu bulmama yardımcı olmuştur. 2018 yılında Polonya’da gerçekleşen <a href="http://www.linstat2018.put.poznan.pl/ysa.html">International Conference on Trends and Perspectives in Linear Statistical Inference (LinStat’2018)</a> kapsamında sunduğum, doktora tezimin bir kısmından oluşan çalışma ile aldığım Young Scientists Awards ikincilik ödülü de yanlış yolda olmadığımı göstermiştir.</p>
+<p>Üzerimde emeği olan herkese teşekkürlerimle!</p>
+<p><br></p>
+<p><a href="https://avesis.marmara.edu.tr/busenur.sarica"><strong>CV</strong></a>, <a href="https://scholar.google.com.tr/citations?user=OKlYJEgAAAAJ&amp;hl=tr"><strong>Google Scholar</strong></a>, <a href="https://www.linkedin.com/in/busenur-kızılaslan-795ab54a"><strong>Linkedin</strong></a></p>
+
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="1">
+<li id="fn1"><p><a href="http://akademi.itu.edu.tr/kahramanc/">Prof. Dr. Cengiz Kahraman</a><a href="index.html#fnref1" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+
+<a href="motivasyon.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["comp3.pdf", "comp3.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
