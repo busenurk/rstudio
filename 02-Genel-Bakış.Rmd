@@ -115,7 +115,7 @@ example(sum)
 
 ## Paketler
 
-R programlama dili ile kendi döngülerinizi oluşturabilir, özgün kodlarınızı yazabilirsiniz, aynı zamanda paketler yardımı ile yazılmış olan zengin hazır kod içeriğinden de faydalanabilirsiniz. Bu zengin içeriğe hazırladığınız paketler ile dahil olma imkanınız da mevcut.
+R programlama dili ile kendi döngülerinizi oluşturabilir, özgün kodlarınızı yazabilirsiniz, aynı zamanda paketler yardımı ile yazılmış olan zengin hazır kod içeriğinden de faydalanabilirsiniz (internet bağlantısı gerektirir). Bu zengin içeriğe hazırladığınız paketler ile dahil olma imkanınız da mevcut.
 
 ```
 Paket indirme konusunda problem yaşıyorsanız R'ı yönetici olarak çalıştırmayı deneyin. 
