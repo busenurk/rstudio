@@ -168,6 +168,14 @@ x
 
 <br>
 
+Vektör uzunluğu `length()` komutu ile sorgulanır.
+
+```{r}
+x<-c(1:68)
+length(x)
+```
+
+
 **Vektör aynı yapıda gözlemlerden oluşmuyorsa?**
 
 Bu durumda tüm gözlemler tek bir yapı olarak algılanır. Herhangi bir değişkenin hangi yapıda gözlem içerdiği `class()` komutu ile sorgulanabilir.
@@ -205,7 +213,7 @@ x <- 0:6
 class(x)
 ```
 
-x vektörünün `integer` yapıda olduğunu gördükten sonra `as.character` komutu ile yeni x vektörünü `numeric` olarak tanımlayabiliriz. 
+x vektörünün `integer` yapıda olduğunu gördükten sonra `as.character` komutu ile yeni x vektörünü `character` olarak tanımlayabiliriz. 
 ```{r}
 x<-as.character(x)
 x; class(x)
@@ -221,7 +229,28 @@ x <- c("a", "b", "c")
 as.numeric(x)
 ```
 
-R, eksik gözlemleri **NA (non available)** olarak tanımlar. İmkansız değerleri ise **NaN (not a number)** (örn: 0/0) olarak tanımlar.
+R, eksik gözlemleri **NA (non available)** olarak tanımlar. İmkansız değerleri ise **NaN (not a number)** olarak tanımlar.
+
+Sık kullanılan komutlardan bir diğeri `seq()`, bu fonksiyon sayesinde istediğiniz aralıkta ve artış seviyesinde vektör üretebilirsiniz.
+
+```{r}
+x<-1:20  #1'den 20'ye 1'er artan seri
+x
+```
+
+
+```{r}
+x<-seq(from=5,to=20,by=5) #5'den 20'ye 5'er artan seri
+x
+```
+
+
+Serinin bitiş noktasını belirtmeden de tanımlama yapmak mümkündür, bu durumda serinin uzunluğunun ne olduğun fonksiyonda belirtilmelidir.
+
+```{r}
+x<-seq(from=0.04,by=0.01,length=11)
+x
+```
 
 
 Gözlemleri sıralamak için `sort()` komutu kullanılır. `sort()` kodu  default olarak küçükten büyüğe sıralama yapar, sıralama yönünü değiştirme işlemi `decreasing` ile gerçekleştirilir.
@@ -231,16 +260,32 @@ y <- c(4,2,0,9,5,3,10)
 sort(y)
 ```
 
+<br>
 
 ```{r}
 sort(y, decreasing=TRUE)  # büyükten küçüğe sıralama
 ```
 
+<br>
+
+Tekrarlı oralarak işlem yapmak için kullanılan fonksiyon `rep()` şeklinde tanımlanmaktadır. 
+
+```{r}
+rep(y,times=3)
+```
+
+Vektörler için kullanışlı fonksiyonlardan bazıları aşağıdaki listede sizlerle paylaşılmıştır [@Crawley2012]. 
+
+
+<img src="/Users/busenursarica/Documents/GitHub/rstudio/images/vecfon.png" />
+
+
+
 ***
 
-## Matrisler (Matrices)
+## Matrisler (Matrices) ve Diziler (Arrays)
 
-Matrisler, boyut niteliğine sahip vektörlerdir. Matris yapısında _satır (row)_ ve _sütun (column)_ tanımlanması gündeme gelmektedir. m içeriği boş bir matris olmak üzere;
+Matrisler, boyut niteliğine sahip vektörlerdir. Matris yapısında _satır (row)_ ve _sütun (column)_ ($r*c$) olmak üzere iki boyut mevcuttur. Matris içeriği de vektörde olduğu gibi tek tip yapıdan oluşmalıdır. m içeriği boş bir matris olmak üzere;
 
 ```{r}
 m <- matrix(nrow = 2, ncol = 3)
@@ -261,6 +306,12 @@ Matris yapısında gözlemler sütun şeklinde sıralanır.
 ```{r}
 m <- matrix(1:6, nrow = 2, ncol = 3) 
 m
+```
+
+Elemanların satırdan devam ettiği matris üretmek isteniyorsa `byrow=TRUE` bilgisi eklenmelidir.
+
+```{r}
+n<-matrix(1:6,2,3,byrow = TRUE); n
 ```
 
 <br>
@@ -284,18 +335,221 @@ cbind(x, y)
 rbind(x, y)
 ```
 
+<br>
+
+- [,4] anlamı ilgili değişkenin  4. sütunu tüm satırları
+
+- [2,] anlamı ilgili değişkenin 2. satırı tüm sütunları
+
+<br>
+
+Mevcut yapıyı sorgulamak ve değiştirmek de mümkündür.
+```{r}
+x<-c(1,2,3,4,5,6,7,8,9);x
+is.vector(x)
+```
+<br>
+```{r}
+y<-as.matrix(x);y
+class(y)
+```
+<br>
+
+Matrisin transpozu `t()` fonksiyonu ile alınır.
+
+```{r}
+m1<-matrix(c(1:8),4,2);m1
+t(m1) 
+```
+
+<br>
+
+Matrislerde satır ve sütunlar için isim tanımlama işlemi satır veya sütun tanımlamasına bağlı olarak sırasıyla `rownames()` ve `colnames()` fonksiyonları ile gerçekleştirilir.
+
+```{r}
+rownames(m1)<-c("x1","x2","x3","x4")
+colnames(m1)<-c("y1","y2"); m1
+```
+<br>
+
+Matrislerde işlem kolaylığı sağlamak adına bazı fonksiyonlar tanımlanmıştır. Satır toplam veya ortalama, sütun toplam veya ortalama işlemleri için tanımlı fonksiyonlar aşağıda yer almaktadır.
+
+**rowSums():** satır toplam
+
+**colSums():** sütun toplam
+
+**rowMeans():** satır ortalama
+
+**colMeans():** sütun ortalama
+
+<br>
+
+```{r}
+rowSums(m1)
+colMeans(m1)
+```
+<br>
+
+Matrislerde çarpma işlemi `%*%` operatörü ile gerçekleştirilir. 
+
+```{r}
+c1<-matrix(c(1,2,3,4),2,2)
+c2<-matrix(c(1,3,1,2),2,2); c1; c2
+```
+```{r}
+c1*c2
+c1%*%c2
+```
+<br>
+
+Herhangi bir matrisin tersini alma işlemi `solve()` komutu ile gerçekleştirilir.
+
+<br>
+
+Diziler matrislerdeki satır ve sütune ek olarak bir boyut (h) daha içerir. Birden fazla matrisin yer aldığı $r*c*h$ boyutlu bir yapı olarak düşünülebilir. Dizi içeriği aynı tipte verilerden oluşmalıdır.
+
+```{r}
+array(1:12, dim = c(2, 2, 3))
+```
+
 ***
 
 ## Listeler ve Data Frameler (Lists and Data Frames)
 
+Listeler vektörlerin özel bir halidir. Vektörler içeriğinde aynı yapıda eleman bulundurma koşuluna sahipken, listeler için böyle bir koşul yoktur. Özetle, listeler farklı yapıda ve boyutta veri tiplerini içerebilir.
+
+Liste oluşturmak için ihtiyaç duyulacak fonksiyon `list()`dir.
+
+```{r}
+x <- list(c(1,2,3), "istatistik", TRUE, 1 + 4i);x
+
+```
+<br>
+
+Boş bir liste oluşturmak için `vector()` fonksiyonundan faydalanabilirsiniz.
+
+```{r}
+x <- vector("list", length = 3);x
+```
+
+<br>
+
+Data frameler de iki boyutlu yapılardır. Sütun içerisinde veri tipi aynı olmalıdır ancak sütunlar arası veri tipi farklılık gösterebilir. Regresyon ve farklı istatistiksel hesaplamalarda data frameler sıklıkla kullanılır. Aynı zamanda `as.data.frame()` fonksiyonu yardımıyla matrisler data framelere dönüştürülebilir. Data frame yapısında yer alan değişkenlerin boyutlarının aynı büyüklükte olması gereklidir.
+
+```{r}
+x<-data.frame(Gün=c("Pzts","Salı","Çarş","Perş", "Cuma"), Vaka=c(1000,1110,1125,1153,1196));x
+```
+<br>
+
+`data` olarak isimlendirilen data frame yapısındaki veri ile ilgili farklı seçim işlemleri aşağıdaki tabloda belirtilmiştir.
+
+<img src="/Users/busenursarica/Documents/GitHub/rstudio/images/dframe.png" style="float: center;" width="800" height="320" title="Data Frame" /> 
+
 ***
 
+## Sayısal Olmayan Değerler (Non-Numeric Values)
 
-## Nümerik Olmayan Değerler (Non-Numeric Values)
+Programlama yaparken sayısal verilerin yanında sayısal olmayan veri tipleri de kullanılmaktadır. Sayısal olmayan veri tipleri;
 
-***
+- Mantık (logical)
+- Karakter (character)
+- Faktör (factor)
 
-### Mantık İşlemleri
+olmak üzere üç başlık altında toplanmaktadır.
+
+### Mantıksal Değerler
+
+Mantıksal değerler `TRUE` veya `FALSE` olarak tanımlanabilir. Mantıksal değerler fonksiyonların içinde de sıklıkla kullanılmaktadır. Örneğin `sort` fonksiyonunda sıralamanın artan veya azalan olmasını belirleyen decreasing=FALSE, ya da matriste eleman dizilimini belirleyen byrow=TRUE gibi. `TRUE` ve `FALSE` kısaltması olarak `T` ve `F` de kullanılabilir.
+
+```{r}
+p<-c(T,F,T,T,T,F,T,F);p
+```
+
+|Operatör|Anlamı|
+|:------:|:-----|
+|==|Eşittir| 
+|!=|Eşit değildir|
+|>|Büyüktür|
+|<|Küçüktür|
+|>=|Büyük eşittir|
+|<=|Küçük eşittir|
+
+<br>
+```{r}
+1==2
+```
+<br>
+```{r}
+1>2
+```
+<br>
+```{r}
+1!=(2+5)
+```
+<br>
+```{r}
+h<-c(3,2,1,4,1,2,1,-1,0,3)
+m<-c(4,1,2,1,1,0,0,3,0,4)
+length(h)==length(m)
+```
+<br>
+```{r}
+h==m
+```
+
+<br>
+
+İki mantıksal değeri karşılaştırmak için kullanılan operatörler ve sonuçlar
+
+<img src="/Users/busenursarica/Documents/GitHub/rstudio/images/logi.png" style="float: center;" width="450" height="400" title="Data Frame" />
+
+<br>
+
+```{r}
+x<-c(T,F,F,T)
+y<-c(F,F,T,T)
+x&y
+x&&y
+```
+<br>
+
+```{r}
+x|y
+x||y
+```
+<br>
+
+Mantıksal değerler ikili yapıları gereği 1 `TRUE` ve 0 `FALSE` olarak tanımlanır.
+
+```{r}
+TRUE+TRUE
+```
+<br>
+```{r}
+T+T+F+T+T+T+F
+```
+<br>
+
+```{r}
+1&&1
+```
+
+<br>
+```{r}
+1||0
+```
+<br>
+
+Benzer mantık işlemleri karakter veriler için de uygulanabilir.
+
+```{r}
+"alpha"=="alpha"
+```
+<br>
+```{r}
+"alpha"!="beta"
+```
+
 
 ***
 

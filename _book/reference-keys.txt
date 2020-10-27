@@ -29,3 +29,6 @@ grafikler
 döngüler
 fonksiyonlar
 referans
+matrisler-matrices-ve-diziler-arrays
+sayısal-olmayan-değerler-non-numeric-values
+mantıksal-değerler
