@@ -24,7 +24,7 @@
 <meta name="author" content="Dr. Busenur Kızılaslan" />
 
 
-<meta name="date" content="2020-10-27" />
+<meta name="date" content="2020-11-03" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -396,7 +396,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <pre><code>##      [,1] [,2] [,3]
 ## [1,]    1    3    5
 ## [2,]    2    4    6</code></pre>
-<p>Elemanların satırdan devam ettiği matris üretmek isteniyorsa <code>byrow=TRUE</code> bilgisi eklenmelidir.</p>
+<p>Elemanların aynı satırdan devam ettiği matris üretmek isteniyorsa <code>byrow=TRUE</code> bilgisi eklenmelidir.</p>
 <div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb71-1"><a href="temel-nesneler.html#cb71-1"></a>n&lt;-<span class="kw">matrix</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">6</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dt">byrow =</span> <span class="ot">TRUE</span>); n</span></code></pre></div>
 <pre><code>##      [,1] [,2] [,3]
 ## [1,]    1    2    3
@@ -668,15 +668,94 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="karakterler" class="section level3">
 <h3><span class="header-section-number">5.6.2</span> Karakterler</h3>
+<p>Diğer bir yaygın kullanılan veri tipi de karakterlerdir.</p>
+<div class="sourceCode" id="cb146"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb146-1"><a href="temel-nesneler.html#cb146-1"></a>x&lt;-<span class="st">&quot;OpenAI, kâr amacı gütmeyen bir yapay zeka araştırma şirketidir.&quot;</span></span>
+<span id="cb146-2"><a href="temel-nesneler.html#cb146-2"></a>x; <span class="kw">length</span>(x)</span></code></pre></div>
+<pre><code>## [1] &quot;OpenAI, kâr amacı gütmeyen bir yapay zeka araştırma şirketidir.&quot;</code></pre>
+<pre><code>## [1] 1</code></pre>
+<p><br></p>
+<p>R, dizeyi tek bir varlık olarak ele alır. Diğer bir deyişle, x, 1 uzunluğunda bir vektördür çünkü R, tek tek sözcükler veya karakterler yerine yalnızca farklı dizelerin toplam sayısını sayar. Tek tek karakterlerin sayısını saymak için <code>nchar</code> fonksiyonunu kullanabilirsiniz.</p>
+<div class="sourceCode" id="cb149"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb149-1"><a href="temel-nesneler.html#cb149-1"></a><span class="kw">nchar</span>(x)</span></code></pre></div>
+<pre><code>## [1] 63</code></pre>
+<p><br></p>
+<p><code>cat</code> ve <code>paste</code> yardımıyla birleştirmek istediğiniz argümanları bir araya getirebilirsiniz.</p>
+<div class="sourceCode" id="cb151"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb151-1"><a href="temel-nesneler.html#cb151-1"></a>gpt3&lt;-<span class="kw">c</span>(<span class="st">&quot;içerik üretmek için derin öğrenmeyi kullanan&quot;</span>, <span class="st">&quot;Generative Pre-trained Transformer 3&quot;</span>,<span class="st">&quot;insanların yazdığı metinlere benzer&quot;</span>)</span></code></pre></div>
+<p><br></p>
+<div class="sourceCode" id="cb152"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb152-1"><a href="temel-nesneler.html#cb152-1"></a><span class="kw">cat</span>(gpt3[<span class="dv">2</span>],<span class="st">&quot;(kısaca GPT-3)&quot;</span>,<span class="st">&quot;,&quot;</span>,gpt3[<span class="dv">3</span>],gpt3[<span class="dv">1</span>],<span class="st">&quot;özbağlanımlı dil modelidir.&quot;</span>)</span></code></pre></div>
+<pre><code>## Generative Pre-trained Transformer 3 (kısaca GPT-3) , insanların yazdığı metinlere benzer içerik üretmek için derin öğrenmeyi kullanan özbağlanımlı dil modelidir.</code></pre>
+<p><br></p>
+<div class="sourceCode" id="cb154"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb154-1"><a href="temel-nesneler.html#cb154-1"></a><span class="kw">paste</span>(gpt3[<span class="dv">2</span>],<span class="st">&quot;(kısaca GPT-3)&quot;</span>,<span class="st">&quot;,&quot;</span>,gpt3[<span class="dv">3</span>],gpt3[<span class="dv">1</span>],<span class="st">&quot;özbağlanımlı dil modelidir.&quot;</span>)</span></code></pre></div>
+<pre><code>## [1] &quot;Generative Pre-trained Transformer 3 (kısaca GPT-3) , insanların yazdığı metinlere benzer içerik üretmek için derin öğrenmeyi kullanan özbağlanımlı dil modelidir.&quot;</code></pre>
+<p><br></p>
+<p>Elde etmeniz gereken boşluk içermeyen bir metinse bu bilgiyi de fonksiyon içeriğinde belirterek (<code>sep=""</code>) uygun çıktıyı elde edebilirsiniz.</p>
+<div class="sourceCode" id="cb156"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb156-1"><a href="temel-nesneler.html#cb156-1"></a><span class="kw">paste</span>(<span class="st">&quot;bir&quot;</span>,<span class="st">&quot;iki&quot;</span>,<span class="st">&quot;üç&quot;</span>,<span class="st">&quot;dört&quot;</span>, <span class="dt">sep=</span><span class="st">&quot;&quot;</span>)</span></code></pre></div>
+<pre><code>## [1] &quot;birikiüçdört&quot;</code></pre>
+<p><br>
+Benzer şekilde boşluklar farklı sembollerle de doldurulabilir.</p>
+<div class="sourceCode" id="cb158"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb158-1"><a href="temel-nesneler.html#cb158-1"></a><span class="kw">paste</span>(<span class="st">&quot;bir&quot;</span>,<span class="st">&quot;iki&quot;</span>,<span class="st">&quot;üç&quot;</span>,<span class="st">&quot;dört&quot;</span>, <span class="dt">sep=</span><span class="st">&quot;**&quot;</span>)</span></code></pre></div>
+<pre><code>## [1] &quot;bir**iki**üç**dört&quot;</code></pre>
+<div class="sourceCode" id="cb160"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb160-1"><a href="temel-nesneler.html#cb160-1"></a><span class="kw">paste</span>(<span class="st">&quot;bir&quot;</span>,<span class="st">&quot;iki&quot;</span>,<span class="st">&quot;üç&quot;</span>,<span class="st">&quot;dört&quot;</span>, <span class="dt">sep=</span><span class="st">&quot;--&quot;</span>)</span></code></pre></div>
+<pre><code>## [1] &quot;bir--iki--üç--dört&quot;</code></pre>
+<p><br></p>
+<p>Metin içerisinde belli bir kısmı almak istediğinizde <code>substr</code> komutu işlemi kolaylıkla gerçekleştirecektir.</p>
+<div class="sourceCode" id="cb162"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb162-1"><a href="temel-nesneler.html#cb162-1"></a>x&lt;-<span class="st">&quot;OpenAI, kâr amacı gütmeyen bir yapay zeka araştırma şirketidir.&quot;</span></span>
+<span id="cb162-2"><a href="temel-nesneler.html#cb162-2"></a><span class="kw">substr</span>(x,<span class="dt">start=</span><span class="dv">32</span> ,<span class="dt">stop=</span><span class="dv">41</span>)</span></code></pre></div>
+<pre><code>## [1] &quot;yapay zeka&quot;</code></pre>
 <hr />
 </div>
 <div id="faktörler-factors" class="section level3">
 <h3><span class="header-section-number">5.6.3</span> Faktörler (Factors)</h3>
+<p>Faktörler, kategorik verileri temsil etmek için kullanılır ve sıralanmamış veya sıralanmamış olabilir. Kategorik veriler, veri biliminde önemli bir rol oynamaktadır. Bir faktör, her tam sayının bir etikete sahip olduğu bir tamsayı vektörü olarak düşünülebilir.</p>
+<p>Faktör nesneleri, <code>factor()</code> işlevi ile oluşturulabilir.</p>
+<div class="sourceCode" id="cb164"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb164-1"><a href="temel-nesneler.html#cb164-1"></a>k&lt;-<span class="kw">factor</span>(<span class="kw">c</span>(<span class="st">&quot;evet&quot;</span>,<span class="st">&quot;hayır&quot;</span>,<span class="st">&quot;evet&quot;</span>,<span class="st">&quot;evet&quot;</span>,<span class="st">&quot;evet&quot;</span>,<span class="st">&quot;hayır&quot;</span>));k</span></code></pre></div>
+<pre><code>## [1] evet  hayır evet  evet  evet  hayır
+## Levels: evet hayır</code></pre>
+<p><br></p>
+<div class="sourceCode" id="cb166"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb166-1"><a href="temel-nesneler.html#cb166-1"></a><span class="kw">class</span>(k)</span></code></pre></div>
+<pre><code>## [1] &quot;factor&quot;</code></pre>
+<p><br></p>
+<p><code>table()</code> fonksiyonu ile verideki faktörlerin sıklığını gözlemek mümkündür.</p>
+<div class="sourceCode" id="cb168"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb168-1"><a href="temel-nesneler.html#cb168-1"></a><span class="kw">table</span>(k)</span></code></pre></div>
+<pre><code>## k
+##  evet hayır 
+##     4     2</code></pre>
+<p><br></p>
+<p>Faktör seviyeleri varsayılan yapıda alfabetik olarak sıralanmaktadır, seviyelerin sırasına müdahale etmek <code>levels</code> komutu ile mümkündür.</p>
+<div class="sourceCode" id="cb170"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb170-1"><a href="temel-nesneler.html#cb170-1"></a>k&lt;-<span class="kw">factor</span>(<span class="kw">c</span>(<span class="st">&quot;evet&quot;</span>,<span class="st">&quot;hayır&quot;</span>,<span class="st">&quot;evet&quot;</span>,<span class="st">&quot;evet&quot;</span>,<span class="st">&quot;evet&quot;</span>,<span class="st">&quot;hayır&quot;</span>));k  <span class="co"># alfabetik</span></span></code></pre></div>
+<pre><code>## [1] evet  hayır evet  evet  evet  hayır
+## Levels: evet hayır</code></pre>
+<div class="sourceCode" id="cb172"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb172-1"><a href="temel-nesneler.html#cb172-1"></a>k2&lt;-<span class="kw">factor</span>(<span class="kw">c</span>(<span class="st">&quot;evet&quot;</span>,<span class="st">&quot;hayır&quot;</span>,<span class="st">&quot;evet&quot;</span>,<span class="st">&quot;evet&quot;</span>,<span class="st">&quot;evet&quot;</span>,<span class="st">&quot;hayır&quot;</span>), <span class="dt">levels=</span><span class="kw">c</span>(<span class="st">&quot;hayır&quot;</span>,<span class="st">&quot;evet&quot;</span>));k2</span></code></pre></div>
+<pre><code>## [1] evet  hayır evet  evet  evet  hayır
+## Levels: hayır evet</code></pre>
+<p><br></p>
+<p>Verideki mevcut faktör seviyelerini yine <code>levels</code> komutu ile sorgulayabilirsiniz.</p>
+<div class="sourceCode" id="cb174"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb174-1"><a href="temel-nesneler.html#cb174-1"></a>aylar&lt;-<span class="kw">factor</span>(<span class="kw">c</span>(<span class="st">&quot;mart&quot;</span>,<span class="st">&quot;ağustos&quot;</span>,<span class="st">&quot;ekim&quot;</span>,<span class="st">&quot;ocak&quot;</span>, <span class="st">&quot;nisan&quot;</span>,<span class="st">&quot;eylül&quot;,&quot;</span>haziran<span class="st">&quot;,&quot;</span>temmuz<span class="st">&quot;,&quot;</span>şubat<span class="st">&quot;,&quot;</span>mayıs<span class="st">&quot;,&quot;</span>kasım<span class="st">&quot;, &quot;</span>aralık<span class="st">&quot;))</span></span>
+<span id="cb174-2"><a href="temel-nesneler.html#cb174-2"></a></span>
+<span id="cb174-3"><a href="temel-nesneler.html#cb174-3"></a><span class="st">length(aylar)</span></span></code></pre></div>
+<pre><code>## [1] 12</code></pre>
+<div class="sourceCode" id="cb176"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb176-1"><a href="temel-nesneler.html#cb176-1"></a><span class="kw">class</span>(aylar)</span></code></pre></div>
+<pre><code>## [1] &quot;factor&quot;</code></pre>
+<div class="sourceCode" id="cb178"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb178-1"><a href="temel-nesneler.html#cb178-1"></a><span class="kw">levels</span>(aylar) <span class="co">#alfabetik</span></span></code></pre></div>
+<pre><code>##  [1] &quot;ağustos&quot; &quot;aralık&quot;  &quot;ekim&quot;    &quot;eylül&quot;   &quot;haziran&quot; &quot;kasım&quot;   &quot;mart&quot;   
+##  [8] &quot;mayıs&quot;   &quot;nisan&quot;   &quot;ocak&quot;    &quot;şubat&quot;   &quot;temmuz&quot;</code></pre>
 <hr />
 </div>
 </div>
 <div id="eksik-gözlemler-missing-values" class="section level2">
 <h2><span class="header-section-number">5.7</span> Eksik Gözlemler (Missing Values)</h2>
+<p>Eksik gözlemler veri setinde NA veya NaN olarak tanımlanmaktadır.</p>
+<ul>
+<li><code>is.na()</code> NA sorgulama için kullanılır.</li>
+<li><code>is.nan()</code> NaN sorgulama için kullanılır.</li>
+<li>NA integer veya character olabilir.</li>
+<li>NaN aynı zamanda NA iken tersi doğru değildir.</li>
+</ul>
+<p>NA ve NaN içeren bir seri oluşturup mevcut olma durumunu sorgulamak istersek;</p>
+<div class="sourceCode" id="cb180"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb180-1"><a href="temel-nesneler.html#cb180-1"></a>x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="ot">NA</span>, <span class="dv">10</span>, <span class="dv">3</span>, <span class="ot">NaN</span>)</span>
+<span id="cb180-2"><a href="temel-nesneler.html#cb180-2"></a><span class="kw">is.na</span>(x)</span></code></pre></div>
+<pre><code>## [1] FALSE FALSE  TRUE FALSE FALSE  TRUE</code></pre>
+<div class="sourceCode" id="cb182"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb182-1"><a href="temel-nesneler.html#cb182-1"></a><span class="kw">is.nan</span>(x)</span></code></pre></div>
+<pre><code>## [1] FALSE FALSE FALSE FALSE FALSE  TRUE</code></pre>
 
 </div>
 </div>

@@ -308,7 +308,7 @@ m <- matrix(1:6, nrow = 2, ncol = 3)
 m
 ```
 
-Elemanların satırdan devam ettiği matris üretmek isteniyorsa `byrow=TRUE` bilgisi eklenmelidir.
+Elemanların aynı satırdan devam ettiği matris üretmek isteniyorsa `byrow=TRUE` bilgisi eklenmelidir.
 
 ```{r}
 n<-matrix(1:6,2,3,byrow = TRUE); n
@@ -550,15 +550,126 @@ Benzer mantık işlemleri karakter veriler için de uygulanabilir.
 "alpha"!="beta"
 ```
 
-
 ***
 
 ### Karakterler
+
+Diğer bir yaygın kullanılan veri tipi de karakterlerdir.
+
+```{r}
+x<-"OpenAI, kâr amacı gütmeyen bir yapay zeka araştırma şirketidir."
+x; length(x)
+```
+<br>
+
+R, dizeyi tek bir varlık olarak ele alır. Diğer bir deyişle, x, 1 uzunluğunda bir vektördür çünkü R, tek tek sözcükler veya karakterler yerine yalnızca farklı dizelerin toplam sayısını sayar. Tek tek karakterlerin sayısını saymak için `nchar` fonksiyonunu kullanabilirsiniz.
+
+```{r}
+nchar(x)
+```
+<br>
+
+`cat` ve `paste` yardımıyla birleştirmek istediğiniz argümanları bir araya getirebilirsiniz.
+
+```{r}
+gpt3<-c("içerik üretmek için derin öğrenmeyi kullanan", "Generative Pre-trained Transformer 3","insanların yazdığı metinlere benzer")
+```
+<br>
+
+```{r}
+cat(gpt3[2],"(kısaca GPT-3)",",",gpt3[3],gpt3[1],"özbağlanımlı dil modelidir.")
+```
+<br>
+
+```{r}
+paste(gpt3[2],"(kısaca GPT-3)",",",gpt3[3],gpt3[1],"özbağlanımlı dil modelidir.")
+```
+<br>
+
+Elde etmeniz gereken boşluk içermeyen bir metinse bu bilgiyi de fonksiyon içeriğinde belirterek (`sep=""`) uygun çıktıyı elde edebilirsiniz.
+
+```{r}
+paste("bir","iki","üç","dört", sep="")
+```
+<br>
+Benzer şekilde boşluklar farklı sembollerle de doldurulabilir.
+```{r}
+paste("bir","iki","üç","dört", sep="**")
+paste("bir","iki","üç","dört", sep="--")
+```
+<br>
+
+Metin içerisinde belli bir kısmı almak istediğinizde `substr` komutu işlemi kolaylıkla gerçekleştirecektir.
+
+```{r}
+x<-"OpenAI, kâr amacı gütmeyen bir yapay zeka araştırma şirketidir."
+substr(x,start=32 ,stop=41)
+```
 
 ***
 
 ### Faktörler (Factors) 
 
+Faktörler, kategorik verileri temsil etmek için kullanılır ve sıralanmamış veya sıralanmamış olabilir. Kategorik veriler, veri biliminde önemli bir rol oynamaktadır. Bir faktör, her tam sayının bir etikete sahip olduğu bir tamsayı vektörü olarak düşünülebilir.
+
+Faktör nesneleri, `factor()` işlevi ile oluşturulabilir.
+
+```{r}
+k<-factor(c("evet","hayır","evet","evet","evet","hayır"));k
+```
+<br>
+
+```{r}
+class(k)
+```
+
+
+
+<br>
+
+`table()` fonksiyonu ile verideki faktörlerin sıklığını gözlemek mümkündür.
+
+```{r}
+table(k)
+```
+
+<br>
+
+Faktör seviyeleri varsayılan yapıda alfabetik olarak sıralanmaktadır, seviyelerin sırasına müdahale etmek `levels` komutu ile mümkündür.
+
+```{r}
+k<-factor(c("evet","hayır","evet","evet","evet","hayır"));k  # alfabetik
+k2<-factor(c("evet","hayır","evet","evet","evet","hayır"), levels=c("hayır","evet"));k2
+```
+
+<br>
+
+Verideki mevcut faktör seviyelerini yine `levels` komutu ile sorgulayabilirsiniz.
+
+```{r}
+aylar<-factor(c("mart","ağustos","ekim","ocak", "nisan","eylül","haziran","temmuz","şubat","mayıs","kasım", "aralık"))
+
+length(aylar)
+class(aylar)
+levels(aylar) #alfabetik
+```
+
 ***
 
 ## Eksik Gözlemler (Missing Values)
+
+Eksik gözlemler veri setinde NA veya NaN olarak tanımlanmaktadır.
+
+- `is.na()` NA sorgulama için kullanılır.
+- `is.nan()` NaN sorgulama için kullanılır.
+- NA integer veya character olabilir.
+- NaN aynı zamanda NA iken tersi doğru değildir.
+
+NA ve NaN içeren bir seri oluşturup mevcut olma durumunu sorgulamak istersek;
+
+```{r}
+x <- c(1, 2, NA, 10, 3, NaN)
+is.na(x)
+is.nan(x)
+```
+
