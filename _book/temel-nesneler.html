@@ -24,7 +24,7 @@
 <meta name="author" content="Dr. Busenur Kızılaslan" />
 
 
-<meta name="date" content="2020-11-03" />
+<meta name="date" content="2020-11-07" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -679,7 +679,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <pre><code>## [1] 63</code></pre>
 <p><br></p>
 <p><code>cat</code> ve <code>paste</code> yardımıyla birleştirmek istediğiniz argümanları bir araya getirebilirsiniz.</p>
-<div class="sourceCode" id="cb151"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb151-1"><a href="temel-nesneler.html#cb151-1"></a>gpt3&lt;-<span class="kw">c</span>(<span class="st">&quot;içerik üretmek için derin öğrenmeyi kullanan&quot;</span>, <span class="st">&quot;Generative Pre-trained Transformer 3&quot;</span>,<span class="st">&quot;insanların yazdığı metinlere benzer&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb151"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb151-1"><a href="temel-nesneler.html#cb151-1"></a>gpt3&lt;-<span class="kw">c</span>(<span class="st">&quot;içerik üretmek için derin öğrenmeyi kullanan&quot;</span>,</span>
+<span id="cb151-2"><a href="temel-nesneler.html#cb151-2"></a>        <span class="st">&quot;Generative Pre-trained Transformer 3&quot;</span>,</span>
+<span id="cb151-3"><a href="temel-nesneler.html#cb151-3"></a>        <span class="st">&quot;insanların yazdığı metinlere benzer&quot;</span>)</span></code></pre></div>
 <p><br></p>
 <div class="sourceCode" id="cb152"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb152-1"><a href="temel-nesneler.html#cb152-1"></a><span class="kw">cat</span>(gpt3[<span class="dv">2</span>],<span class="st">&quot;(kısaca GPT-3)&quot;</span>,<span class="st">&quot;,&quot;</span>,gpt3[<span class="dv">3</span>],gpt3[<span class="dv">1</span>],<span class="st">&quot;özbağlanımlı dil modelidir.&quot;</span>)</span></code></pre></div>
 <pre><code>## Generative Pre-trained Transformer 3 (kısaca GPT-3) , insanların yazdığı metinlere benzer içerik üretmek için derin öğrenmeyi kullanan özbağlanımlı dil modelidir.</code></pre>
@@ -729,9 +731,10 @@ Benzer şekilde boşluklar farklı sembollerle de doldurulabilir.</p>
 ## Levels: hayır evet</code></pre>
 <p><br></p>
 <p>Verideki mevcut faktör seviyelerini yine <code>levels</code> komutu ile sorgulayabilirsiniz.</p>
-<div class="sourceCode" id="cb174"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb174-1"><a href="temel-nesneler.html#cb174-1"></a>aylar&lt;-<span class="kw">factor</span>(<span class="kw">c</span>(<span class="st">&quot;mart&quot;</span>,<span class="st">&quot;ağustos&quot;</span>,<span class="st">&quot;ekim&quot;</span>,<span class="st">&quot;ocak&quot;</span>, <span class="st">&quot;nisan&quot;</span>,<span class="st">&quot;eylül&quot;,&quot;</span>haziran<span class="st">&quot;,&quot;</span>temmuz<span class="st">&quot;,&quot;</span>şubat<span class="st">&quot;,&quot;</span>mayıs<span class="st">&quot;,&quot;</span>kasım<span class="st">&quot;, &quot;</span>aralık<span class="st">&quot;))</span></span>
-<span id="cb174-2"><a href="temel-nesneler.html#cb174-2"></a></span>
-<span id="cb174-3"><a href="temel-nesneler.html#cb174-3"></a><span class="st">length(aylar)</span></span></code></pre></div>
+<div class="sourceCode" id="cb174"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb174-1"><a href="temel-nesneler.html#cb174-1"></a>aylar&lt;-<span class="kw">factor</span>(<span class="kw">c</span>(<span class="st">&quot;mart&quot;</span>,<span class="st">&quot;ağustos&quot;</span>,<span class="st">&quot;ekim&quot;</span>,<span class="st">&quot;ocak&quot;</span>, <span class="st">&quot;nisan&quot;</span>,<span class="st">&quot;eylül&quot;,&quot;</span>haziran<span class="st">&quot;,&quot;</span>temmuz<span class="st">&quot;,&quot;</span>şubat<span class="st">&quot;,</span></span>
+<span id="cb174-2"><a href="temel-nesneler.html#cb174-2"></a><span class="st">                &quot;</span>mayıs<span class="st">&quot;,&quot;</span>kasım<span class="st">&quot;, &quot;</span>aralık<span class="st">&quot;))</span></span>
+<span id="cb174-3"><a href="temel-nesneler.html#cb174-3"></a></span>
+<span id="cb174-4"><a href="temel-nesneler.html#cb174-4"></a><span class="st">length(aylar)</span></span></code></pre></div>
 <pre><code>## [1] 12</code></pre>
 <div class="sourceCode" id="cb176"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb176-1"><a href="temel-nesneler.html#cb176-1"></a><span class="kw">class</span>(aylar)</span></code></pre></div>
 <pre><code>## [1] &quot;factor&quot;</code></pre>

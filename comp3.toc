@@ -1,0 +1,31 @@
+\contentsline {chapter}{\numberline {1}Ön Bilgi}{5}{chapter.1}
+\contentsline {section}{\numberline {1.1}Hakkımda}{6}{section.1.1}
+\contentsline {chapter}{\numberline {2}Motivasyon}{7}{chapter.2}
+\contentsline {chapter}{\numberline {3}Genel Bakış}{9}{chapter.3}
+\contentsline {section}{\numberline {3.1}R: Nedir?}{9}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}RStudio}{10}{subsection.3.1.1}
+\contentsline {section}{\numberline {3.2}R: Neden?}{10}{section.3.2}
+\contentsline {section}{\numberline {3.3}R: Help}{11}{section.3.3}
+\contentsline {section}{\numberline {3.4}Paketler}{12}{section.3.4}
+\contentsline {chapter}{\numberline {4}Yükleme ve Tanışma}{15}{chapter.4}
+\contentsline {section}{\numberline {4.1}Yükleme}{15}{section.4.1}
+\contentsline {section}{\numberline {4.2}Tanışma}{17}{section.4.2}
+\contentsline {chapter}{\numberline {5}Temel Nesneler}{21}{chapter.5}
+\contentsline {section}{\numberline {5.1}Aritmetik (Arithmetic)}{21}{section.5.1}
+\contentsline {section}{\numberline {5.2}Nesneleri Tanımlama (Assigning Objects)}{23}{section.5.2}
+\contentsline {section}{\numberline {5.3}Vektörler (Vectors)}{23}{section.5.3}
+\contentsline {section}{\numberline {5.4}Matrisler (Matrices) ve Diziler (Arrays)}{26}{section.5.4}
+\contentsline {section}{\numberline {5.5}Listeler ve Data Frameler (Lists and Data Frames)}{30}{section.5.5}
+\contentsline {section}{\numberline {5.6}Sayısal Olmayan Değerler (Non-Numeric Values)}{32}{section.5.6}
+\contentsline {subsection}{\numberline {5.6.1}Mantıksal Değerler}{32}{subsection.5.6.1}
+\contentsline {subsection}{\numberline {5.6.2}Karakterler}{34}{subsection.5.6.2}
+\contentsline {subsection}{\numberline {5.6.3}Faktörler (Factors)}{35}{subsection.5.6.3}
+\contentsline {section}{\numberline {5.7}Eksik Gözlemler (Missing Values)}{36}{section.5.7}
+\contentsline {chapter}{\numberline {6}Import Export İşlemleri}{37}{chapter.6}
+\contentsline {chapter}{\numberline {7}Proje}{39}{chapter.7}
+\contentsline {chapter}{\numberline {8}DPLYR}{41}{chapter.8}
+\contentsline {chapter}{\numberline {9}Apply Ailesi}{43}{chapter.9}
+\contentsline {chapter}{\numberline {10}Grafikler}{45}{chapter.10}
+\contentsline {chapter}{\numberline {11}Döngüler}{47}{chapter.11}
+\contentsline {chapter}{\numberline {12}Fonksiyonlar}{49}{chapter.12}
+\contentsline {chapter}{\numberline {13}Referans}{51}{chapter.13}

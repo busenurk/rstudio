@@ -571,8 +571,10 @@ nchar(x)
 
 `cat` ve `paste` yardımıyla birleştirmek istediğiniz argümanları bir araya getirebilirsiniz.
 
-```{r}
-gpt3<-c("içerik üretmek için derin öğrenmeyi kullanan", "Generative Pre-trained Transformer 3","insanların yazdığı metinlere benzer")
+```{r paged.print=TRUE}
+gpt3<-c("içerik üretmek için derin öğrenmeyi kullanan",
+        "Generative Pre-trained Transformer 3",
+        "insanların yazdığı metinlere benzer")
 ```
 <br>
 
@@ -647,7 +649,8 @@ k2<-factor(c("evet","hayır","evet","evet","evet","hayır"), levels=c("hayır","
 Verideki mevcut faktör seviyelerini yine `levels` komutu ile sorgulayabilirsiniz.
 
 ```{r}
-aylar<-factor(c("mart","ağustos","ekim","ocak", "nisan","eylül","haziran","temmuz","şubat","mayıs","kasım", "aralık"))
+aylar<-factor(c("mart","ağustos","ekim","ocak", "nisan","eylül","haziran","temmuz","şubat",
+                "mayıs","kasım", "aralık"))
 
 length(aylar)
 class(aylar)
