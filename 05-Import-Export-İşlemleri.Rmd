@@ -1,2 +1,105 @@
 # Import Export İşlemleri
 
+Etkin bir R oturumunun her zaman kendisiyle ilişkilendirilmiş bir çalışma dizini vardır. Veri dosyalarını kaydederken veya içe aktarırken açık bir şekilde bir dosya yolu belirtmediğiniz sürece, R varsayılan olarak bu çalışma dizinini kullanır. Çalışma dizininin konumunu kontrol etmek için `getwd()` fonksiyonu kullanılabilir.
+
+```{r}
+getwd()
+```
+
+<br>
+
+Dosya yolları her zaman çift tırnak işareti içine alınır.
+`setwd()` fonsiyonunu kullanarak varsayılan çalışma dizinini aşağıdaki gibi değiştirebilirsiniz:
+
+```{r message=FALSE, warning=FALSE}
+setwd("/Users/busenursarica/Documents")
+```
+<br>
+
+Çalışma dizininde yer alan dosyalar list.files() fonksiyonu ile listelenebilir.
+
+```{r}
+list.files()
+```
+
+## Import İşlemleri
+
+Bilgisayarınızda bulunan veri setlerini de R'a çekerek kullanabilirsiniz. `read.table()`, `read.csv()`, `read_excel()` gibi komutlar bu bakımdan işinizi görecektir. Bu noktada çektiğiniz verinin yapısı önem arz etmektedir. Konu ile ilgili  farklı yapıda örnekler aşağıda yer almaktadır.
+
+<br>
+
+Kullanacağınız veri dosya uzantısı `.csv` ise `read.csv()` fonksiyonunu veriyi R'a taşımak için kullanabilirsiniz.
+```{r}
+d<-read.csv("/Users/busenursarica/Desktop/annual.en.csv")
+head(d)
+```
+
+-------
+
+**CSV uzantısı ne anlama gelir?**
+
+Virgülle ayrılmış değerler (CSV) dosyası, bir veri listesi içeren düz bir metin dosyasıdır. Bu dosyalar genellikle farklı uygulamalar arasında veri alışverişi yapmak için kullanılır. Örneğin, veritabanları ve iletişim yöneticileri genellikle CSV dosyalarını destekler.
+
+Bu dosyalar bazen karakterle ayrılmış seğerler veya virgülle ayrılmış dosyalar olarak adlandırılabilir. Verileri ayırmak (veya sınırlandırmak) için çoğunlukla virgül karakterini kullanırlar, ancak bazen noktalı virgül gibi diğer karakterleri kullanırlar. Buradaki fikir, karmaşık verileri bir uygulamadan bir CSV dosyasına aktarabilmeniz ve ardından bu CSV dosyasındaki verileri başka bir uygulamaya aktarabilmenizdir.
+
+Bu yapıdaki veriler insan tarafından okunabilir ve not defteri gibi bir metin düzenleyici veya microsoft excel ile kolayca görüntülenebilir.
+
+-----------
+
+
+```{r}
+library(readxl)
+taiex <- read_excel("taiex.xlsx")
+head(taiex)
+
+```
+
+<br>
+
+Web sitesinde yer alan bir veri setini de R'a çekerek kullanabilirsiniz.
+
+```{r}
+w.url <- "http://courses.washington.edu/b517/Datasets/string.txt"
+dw <- read.table(w.url, header = T)
+head(dw)
+```
+
+<br>
+
+Veri çekmenin bir diğer yolu da environment paneli içerisindeki import dataset yapısının kullanılmasıdır. Bu yapı sayesinde de farklı uzantıdaki veri setleri R'a çekilebilir.
+
+<br>
+
+Mevcut veri setinizi R'a çekmek yerine R'da yer alan veri setlerini de kullanabilirsiniz.
+
+```{r}
+head(mtcars)
+```
+
+<br>
+
+Kütüphanede yer alan farklı veri setlerini de çağırarak kullanabilirsiniz.
+
+```{r message=FALSE, warning=FALSE}
+#install.package("tseries")
+library(tseries)
+data(ice.river)
+head(ice.river)
+```
+
+
+## Export İşlemleri
+
+R'da elde edilen yapıların kaydedilmesi için kullanılan fonksiyonlardan biri `write.table()`'dır. Veri okuma kısmında `read.table()`'ın farklı versiyonları bulunduğu gibi `write` komutu için de `write.csv()` gibi farklı uzantılar için özelleştirilmiş fonksiyonlar bulunmaktadır.
+
+```{r}
+dn<-data.frame(a=c(10,34,12),b=c("deneme","bir","iki"),c=pi)
+write.table(dn, file = "dn.csv", sep = ",",col.names = NA)
+```
+
+**Not:** `file` kısmına yalnızca dosya adı yazılırsa, dosya çalışma dizinine kaydolacaktır.
+
+
+
+
+

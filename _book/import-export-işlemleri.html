@@ -24,7 +24,7 @@
 <meta name="author" content="Dr. Busenur Kızılaslan" />
 
 
-<meta name="date" content="2020-10-13" />
+<meta name="date" content="2020-11-25" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -51,6 +51,8 @@
 
 
 <script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
 
 
 <style type="text/css">
@@ -154,16 +156,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.1" data-path="temel-nesneler.html"><a href="temel-nesneler.html#aritmetik-arithmetic"><i class="fa fa-check"></i><b>5.1</b> Aritmetik (Arithmetic)</a></li>
 <li class="chapter" data-level="5.2" data-path="temel-nesneler.html"><a href="temel-nesneler.html#nesneleri-tanımlama-assigning-objects"><i class="fa fa-check"></i><b>5.2</b> Nesneleri Tanımlama (Assigning Objects)</a></li>
 <li class="chapter" data-level="5.3" data-path="temel-nesneler.html"><a href="temel-nesneler.html#vektörler-vectors"><i class="fa fa-check"></i><b>5.3</b> Vektörler (Vectors)</a></li>
-<li class="chapter" data-level="5.4" data-path="temel-nesneler.html"><a href="temel-nesneler.html#matrisler-matrices"><i class="fa fa-check"></i><b>5.4</b> Matrisler (Matrices)</a></li>
+<li class="chapter" data-level="5.4" data-path="temel-nesneler.html"><a href="temel-nesneler.html#matrisler-matrices-ve-diziler-arrays"><i class="fa fa-check"></i><b>5.4</b> Matrisler (Matrices) ve Diziler (Arrays)</a></li>
 <li class="chapter" data-level="5.5" data-path="temel-nesneler.html"><a href="temel-nesneler.html#listeler-ve-data-frameler-lists-and-data-frames"><i class="fa fa-check"></i><b>5.5</b> Listeler ve Data Frameler (Lists and Data Frames)</a></li>
-<li class="chapter" data-level="5.6" data-path="temel-nesneler.html"><a href="temel-nesneler.html#nümerik-olmayan-değerler-non-numeric-values"><i class="fa fa-check"></i><b>5.6</b> Nümerik Olmayan Değerler (Non-Numeric Values)</a><ul>
-<li class="chapter" data-level="5.6.1" data-path="temel-nesneler.html"><a href="temel-nesneler.html#mantık-işlemleri"><i class="fa fa-check"></i><b>5.6.1</b> Mantık İşlemleri</a></li>
+<li class="chapter" data-level="5.6" data-path="temel-nesneler.html"><a href="temel-nesneler.html#sayısal-olmayan-değerler-non-numeric-values"><i class="fa fa-check"></i><b>5.6</b> Sayısal Olmayan Değerler (Non-Numeric Values)</a><ul>
+<li class="chapter" data-level="5.6.1" data-path="temel-nesneler.html"><a href="temel-nesneler.html#mantıksal-değerler"><i class="fa fa-check"></i><b>5.6.1</b> Mantıksal Değerler</a></li>
 <li class="chapter" data-level="5.6.2" data-path="temel-nesneler.html"><a href="temel-nesneler.html#karakterler"><i class="fa fa-check"></i><b>5.6.2</b> Karakterler</a></li>
 <li class="chapter" data-level="5.6.3" data-path="temel-nesneler.html"><a href="temel-nesneler.html#faktörler-factors"><i class="fa fa-check"></i><b>5.6.3</b> Faktörler (Factors)</a></li>
 </ul></li>
 <li class="chapter" data-level="5.7" data-path="temel-nesneler.html"><a href="temel-nesneler.html#eksik-gözlemler-missing-values"><i class="fa fa-check"></i><b>5.7</b> Eksik Gözlemler (Missing Values)</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="import-export-işlemleri.html"><a href="import-export-işlemleri.html"><i class="fa fa-check"></i><b>6</b> Import Export İşlemleri</a></li>
+<li class="chapter" data-level="6" data-path="import-export-işlemleri.html"><a href="import-export-işlemleri.html"><i class="fa fa-check"></i><b>6</b> Import Export İşlemleri</a><ul>
+<li class="chapter" data-level="6.1" data-path="import-export-işlemleri.html"><a href="import-export-işlemleri.html#import-işlemleri"><i class="fa fa-check"></i><b>6.1</b> Import İşlemleri</a></li>
+<li class="chapter" data-level="6.2" data-path="import-export-işlemleri.html"><a href="import-export-işlemleri.html#export-işlemleri"><i class="fa fa-check"></i><b>6.2</b> Export İşlemleri</a></li>
+</ul></li>
 <li class="chapter" data-level="7" data-path="proje.html"><a href="proje.html"><i class="fa fa-check"></i><b>7</b> Proje</a></li>
 <li class="chapter" data-level="8" data-path="dplyr.html"><a href="dplyr.html"><i class="fa fa-check"></i><b>8</b> DPLYR</a></li>
 <li class="chapter" data-level="9" data-path="apply-ailesi.html"><a href="apply-ailesi.html"><i class="fa fa-check"></i><b>9</b> Apply Ailesi</a></li>
@@ -193,7 +198,111 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="import-export-işlemleri" class="section level1">
 <h1><span class="header-section-number">Bölüm6</span> Import Export İşlemleri</h1>
+<p>Etkin bir R oturumunun her zaman kendisiyle ilişkilendirilmiş bir çalışma dizini vardır. Veri dosyalarını kaydederken veya içe aktarırken açık bir şekilde bir dosya yolu belirtmediğiniz sürece, R varsayılan olarak bu çalışma dizinini kullanır. Çalışma dizininin konumunu kontrol etmek için <code>getwd()</code> fonksiyonu kullanılabilir.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="import-export-işlemleri.html#cb1-1"></a><span class="kw">getwd</span>()</span></code></pre></div>
+<pre><code>## [1] &quot;/Users/busenursarica/Documents/GitHub/rstudio&quot;</code></pre>
+<p><br></p>
+<p>Dosya yolları her zaman çift tırnak işareti içine alınır.
+<code>setwd()</code> fonsiyonunu kullanarak varsayılan çalışma dizinini aşağıdaki gibi değiştirebilirsiniz:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="import-export-işlemleri.html#cb3-1"></a><span class="kw">setwd</span>(<span class="st">&quot;/Users/busenursarica/Documents&quot;</span>)</span></code></pre></div>
+<p><br></p>
+<p>Çalışma dizininde yer alan dosyalar list.files() fonksiyonu ile listelenebilir.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="import-export-işlemleri.html#cb4-1"></a><span class="kw">list.files</span>()</span></code></pre></div>
+<pre><code>##  [1] &quot;_book&quot;                          &quot;_bookdown.yml&quot;                 
+##  [3] &quot;_output.yml&quot;                    &quot;01-Motivasyon.Rmd&quot;             
+##  [5] &quot;02-Genel-Bakış.Rmd&quot;             &quot;03-Yükleme-ve-Tanışma.Rmd&quot;     
+##  [7] &quot;04-Temel-Nesneler.Rmd&quot;          &quot;05-Import-Export-İşlemleri.Rmd&quot;
+##  [9] &quot;06-references.Rmd&quot;              &quot;07-DPLYR.Rmd&quot;                  
+## [11] &quot;08-Apply-Ailesi.Rmd&quot;            &quot;09-Grafikler.Rmd&quot;              
+## [13] &quot;10-Döngüler.Rmd&quot;                &quot;11-Fonksiyonlar.Rmd&quot;           
+## [15] &quot;12-Referans.Rmd&quot;                &quot;book.bib&quot;                      
+## [17] &quot;comp3.bbl&quot;                      &quot;comp3.blg&quot;                     
+## [19] &quot;comp3.log&quot;                      &quot;comp3.pdf&quot;                     
+## [21] &quot;comp3.Rmd&quot;                      &quot;comp3.Rproj&quot;                   
+## [23] &quot;comp3.tex&quot;                      &quot;comp3.toc&quot;                     
+## [25] &quot;images&quot;                         &quot;index.Rmd&quot;                     
+## [27] &quot;LICENSE&quot;                        &quot;packages.bib&quot;                  
+## [29] &quot;preamble.log&quot;                   &quot;preamble.tex&quot;                  
+## [31] &quot;README.md&quot;                      &quot;style.css&quot;                     
+## [33] &quot;taiex.xlsx&quot;</code></pre>
+<div id="import-işlemleri" class="section level2">
+<h2><span class="header-section-number">6.1</span> Import İşlemleri</h2>
+<p>Bilgisayarınızda bulunan veri setlerini de R’a çekerek kullanabilirsiniz. <code>read.table()</code>, <code>read.csv()</code>, <code>read_excel()</code> gibi komutlar bu bakımdan işinizi görecektir. Bu noktada çektiğiniz verinin yapısı önem arz etmektedir. Konu ile ilgili farklı yapıda örnekler aşağıda yer almaktadır.</p>
+<p><br></p>
+<p>Kullanacağınız veri dosya uzantısı <code>.csv</code> ise <code>read.csv()</code> fonksiyonunu veriyi R’a taşımak için kullanabilirsiniz.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="import-export-işlemleri.html#cb6-1"></a>d&lt;-<span class="kw">read.csv</span>(<span class="st">&quot;/Users/busenursarica/Desktop/annual.en.csv&quot;</span>)</span>
+<span id="cb6-2"><a href="import-export-işlemleri.html#cb6-2"></a><span class="kw">head</span>(d)</span></code></pre></div>
+<pre><code>##   year industry                  variable value
+## 1 2011        A             Activity unit 46134
+## 2 2011        A    Rolling mean employees     0
+## 3 2011        A   Salaries and wages paid   279
+## 4 2011        A Sales, government funding  8187
+## 5 2011        A              Total income  8866
+## 6 2011        A         Total expenditure  7618</code></pre>
+<hr />
+<p><strong>CSV uzantısı ne anlama gelir?</strong></p>
+<p>Virgülle ayrılmış değerler (CSV) dosyası, bir veri listesi içeren düz bir metin dosyasıdır. Bu dosyalar genellikle farklı uygulamalar arasında veri alışverişi yapmak için kullanılır. Örneğin, veritabanları ve iletişim yöneticileri genellikle CSV dosyalarını destekler.</p>
+<p>Bu dosyalar bazen karakterle ayrılmış seğerler veya virgülle ayrılmış dosyalar olarak adlandırılabilir. Verileri ayırmak (veya sınırlandırmak) için çoğunlukla virgül karakterini kullanırlar, ancak bazen noktalı virgül gibi diğer karakterleri kullanırlar. Buradaki fikir, karmaşık verileri bir uygulamadan bir CSV dosyasına aktarabilmeniz ve ardından bu CSV dosyasındaki verileri başka bir uygulamaya aktarabilmenizdir.</p>
+<p>Bu yapıdaki veriler insan tarafından okunabilir ve not defteri gibi bir metin düzenleyici veya microsoft excel ile kolayca görüntülenebilir.</p>
+<hr />
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="import-export-işlemleri.html#cb8-1"></a><span class="kw">library</span>(readxl)</span>
+<span id="cb8-2"><a href="import-export-işlemleri.html#cb8-2"></a>taiex &lt;-<span class="st"> </span><span class="kw">read_excel</span>(<span class="st">&quot;taiex.xlsx&quot;</span>)</span>
+<span id="cb8-3"><a href="import-export-işlemleri.html#cb8-3"></a><span class="kw">head</span>(taiex)</span></code></pre></div>
+<pre><code>## # A tibble: 6 x 6
+##   `1999` `2000` `2001` `2002` `2003` `2004`
+##    &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;
+## 1  6152.  8757.  4935.  5600.  4525.  6042.
+## 2  6200.  8850.  4895.  5526.  4626.  6125.
+## 3  6404.  8922.  5136.  5639.  4690.  6144.
+## 4  6422.  8845.  5296.  5835.  4701.  6141.
+## 5  6407.  9103.  5189.  5810.  4837.  6169.
+## 6  6364.  8927.  5376.  5866.  4814.  6227.</code></pre>
+<p><br></p>
+<p>Web sitesinde yer alan bir veri setini de R’a çekerek kullanabilirsiniz.</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="import-export-işlemleri.html#cb10-1"></a>w.url &lt;-<span class="st"> &quot;http://courses.washington.edu/b517/Datasets/string.txt&quot;</span></span>
+<span id="cb10-2"><a href="import-export-işlemleri.html#cb10-2"></a>dw &lt;-<span class="st"> </span><span class="kw">read.table</span>(w.url, <span class="dt">header =</span> T)</span>
+<span id="cb10-3"><a href="import-export-işlemleri.html#cb10-3"></a><span class="kw">head</span>(dw)</span></code></pre></div>
+<pre><code>##    x       y
+## 1 10 34.7081
+## 2 12 34.5034
+## 3 14 36.5656
+## 4 16 38.3125
+## 5 18 42.5441
+## 6 20 43.7210</code></pre>
+<p><br></p>
+<p>Veri çekmenin bir diğer yolu da environment paneli içerisindeki import dataset yapısının kullanılmasıdır. Bu yapı sayesinde de farklı uzantıdaki veri setleri R’a çekilebilir.</p>
+<p><br></p>
+<p>Mevcut veri setinizi R’a çekmek yerine R’da yer alan veri setlerini de kullanabilirsiniz.</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="import-export-işlemleri.html#cb12-1"></a><span class="kw">head</span>(mtcars)</span></code></pre></div>
+<pre><code>##                    mpg cyl disp  hp drat    wt  qsec vs am gear carb
+## Mazda RX4         21.0   6  160 110 3.90 2.620 16.46  0  1    4    4
+## Mazda RX4 Wag     21.0   6  160 110 3.90 2.875 17.02  0  1    4    4
+## Datsun 710        22.8   4  108  93 3.85 2.320 18.61  1  1    4    1
+## Hornet 4 Drive    21.4   6  258 110 3.08 3.215 19.44  1  0    3    1
+## Hornet Sportabout 18.7   8  360 175 3.15 3.440 17.02  0  0    3    2
+## Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1</code></pre>
+<p><br></p>
+<p>Kütüphanede yer alan farklı veri setlerini de çağırarak kullanabilirsiniz.</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="import-export-işlemleri.html#cb14-1"></a><span class="co">#install.package(&quot;tseries&quot;)</span></span>
+<span id="cb14-2"><a href="import-export-işlemleri.html#cb14-2"></a><span class="kw">library</span>(tseries)</span>
+<span id="cb14-3"><a href="import-export-işlemleri.html#cb14-3"></a><span class="kw">data</span>(ice.river)</span>
+<span id="cb14-4"><a href="import-export-işlemleri.html#cb14-4"></a><span class="kw">head</span>(ice.river)</span></code></pre></div>
+<pre><code>##      flow.vat flow.jok prec temp
+## [1,]     16.1     30.2  8.1  0.9
+## [2,]     19.2     29.0  4.4  1.6
+## [3,]     14.5     28.4  7.0  0.1
+## [4,]     11.0     27.8  0.0  0.6
+## [5,]     13.6     27.8  0.0  2.0
+## [6,]     12.5     27.8  0.0  0.8</code></pre>
+</div>
+<div id="export-işlemleri" class="section level2">
+<h2><span class="header-section-number">6.2</span> Export İşlemleri</h2>
+<p>R’da elde edilen yapıların kaydedilmesi için kullanılan fonksiyonlardan biri <code>write.table()</code>’dır. Veri okuma kısmında <code>read.table()</code>’ın farklı versiyonları bulunduğu gibi <code>write</code> komutu için de <code>write.csv()</code> gibi farklı uzantılar için özelleştirilmiş fonksiyonlar bulunmaktadır.</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="import-export-işlemleri.html#cb16-1"></a>dn&lt;-<span class="kw">data.frame</span>(<span class="dt">a=</span><span class="kw">c</span>(<span class="dv">10</span>,<span class="dv">34</span>,<span class="dv">12</span>),<span class="dt">b=</span><span class="kw">c</span>(<span class="st">&quot;deneme&quot;</span>,<span class="st">&quot;bir&quot;</span>,<span class="st">&quot;iki&quot;</span>),<span class="dt">c=</span>pi)</span>
+<span id="cb16-2"><a href="import-export-işlemleri.html#cb16-2"></a><span class="kw">write.table</span>(dn, <span class="dt">file =</span> <span class="st">&quot;dn.csv&quot;</span>, <span class="dt">sep =</span> <span class="st">&quot;,&quot;</span>,<span class="dt">col.names =</span> <span class="ot">NA</span>)</span></code></pre></div>
+<p><strong>Not:</strong> <code>file</code> kısmına yalnızca dosya adı yazılırsa, dosya çalışma dizinine kaydolacaktır.</p>
 
+</div>
 </div>
             </section>
 
@@ -251,20 +360,6 @@ gitbook.start({
 });
 </script>
 
-<!-- dynamically load mathjax for compatibility with self-contained -->
-<script>
-  (function () {
-    var script = document.createElement("script");
-    script.type = "text/javascript";
-    var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
-    if (location.protocol !== "file:")
-      if (/^https?:/.test(src))
-        src = src.replace(/^https?:/, '');
-    script.src = src;
-    document.getElementsByTagName("head")[0].appendChild(script);
-  })();
-</script>
 </body>
 
 </html>

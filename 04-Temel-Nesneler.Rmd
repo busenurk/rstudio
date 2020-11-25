@@ -441,6 +441,13 @@ x<-data.frame(Gün=c("Pzts","Salı","Çarş","Perş", "Cuma"), Vaka=c(1000,1110,
 ```
 <br>
 
+`str` komutu yardımıyla data frame yapısının içerik detaylarına ulaşılabilir.
+
+```{r}
+str(x)
+```
+
+<br>
 `data` olarak isimlendirilen data frame yapısındaki veri ile ilgili farklı seçim işlemleri aşağıdaki tabloda belirtilmiştir.
 
 <img src="/Users/busenursarica/Documents/GitHub/rstudio/images/dframe.png" style="float: center;" width="800" height="320" title="Data Frame" /> 
@@ -568,6 +575,8 @@ R, dizeyi tek bir varlık olarak ele alır. Diğer bir deyişle, x, 1 uzunluğun
 nchar(x)
 ```
 <br>
+
+ ![cat-writing-animation](http://i.giphy.com/8PFKtXiNCWC40.gif)
 
 `cat` ve `paste` yardımıyla birleştirmek istediğiniz argümanları bir araya getirebilirsiniz.
 
