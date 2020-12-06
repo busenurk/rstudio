@@ -1,0 +1,32 @@
+# Bazı Önemli Komutlar
+
+Kodlama sırasında sıklıkla kullanılan `sort()`, `rank()` ve `order()` fonksiyonları birbirine karıştırılmaktadır. Temel hedef her bir komutta sıralama olsa da kullanım amaçları ve çıktıları farklıdır.
+
+## Sort
+
+Bir vektörü elemanlarının artan veya azalan sırasına göre sıralamak, sıklıkla ihtiyaç duyulan işlevlerden biridir. Bu amaçla kullanılan fonksiyon `sort()` olmakla birlikte `decreasing` seçimine bağlı olarak artan veya azalan şekilde sıralama yapmak mümkündür.
+
+```{r}
+x<-c(4,8,2,5,1)
+sort(x, decreasing=T)
+```
+
+## Rank
+
+Rank, sıralanan vektördeki değerin konumuna referans verir ve orijinal sıra ile aynıdır. Temelde küçükten büyüğe sıralama hedeflidir, eksi işareti ile büyükten küçüğe sıralama şekline geçilebilir.
+
+```{r}
+rank(x)   # küçükten büyüğe
+rank(-x)  # büyükten küçüğe
+```
+
+
+## Order
+
+Order, orijinal değerin konumunu belirler ve sıralar. Temelde küçükten büyüğe sıralama hedeflidir, eksi işareti ile büyükten küçüğe sıralama şekline geçilebilir. Özellikle indeksleme işlemi için kullanışlı bir fonksiyodur.
+
+```{r}
+order(x)    # küçükten büyüğe
+order(-x)   # büyükten küçüğe
+```
+

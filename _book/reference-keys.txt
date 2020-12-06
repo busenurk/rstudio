@@ -31,3 +31,7 @@ fonksiyonlar
 referans
 import-işlemleri
 export-işlemleri
+bazı-önemli-komutlar
+sort
+rank
+order
