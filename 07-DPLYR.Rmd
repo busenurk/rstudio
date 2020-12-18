@@ -1,2 +1,129 @@
 # DPLYR
 
+Data frame'ler, analizlerde sıklıkla kullandığımız ve ustalıkla yönetebilmemiz gereken veri yapılarıdır. Ders kapsamında data frameler üzerine bazı kodlamalar ve değerlendirmeler yaptık, `dplyr` paketi kapsamında ise bu uygulamaların kolaylığı için önerilen yapılardan bahsedeceğiz.
+
+`dplyr` paketi, RStudio'dan Hadley Wickham tarafından geliştirilmiştir ve onun `plyr` paketinin optimize edilmiş ve sadeleştirilmiş bir versiyonudur. `dplyr` paketi ile elde edilecek tüm sonuçlar temel R yapısı ile elde edilebilir, bu bakımdan `dplyr` paketi bir yenilik getirmemektedir, paketin katkısı bu elde etme sürecini kolaylaştırmaktır.
+
+Bu kapsamda bahsedeğimiz yapılar;
+
+- **select**
+- **filter**
+- **arrange**
+- **rename**
+- **mutate**
+- **summarise**
+- **%>% (pipe operator)**
+
+Yapılması gereken ilk adım tabi ki paketi indirmek ve kütüphaneden çekmek olmalıdır.
+
+Paket yüklendiğinde bazı uyarılar alabilirsiniz çünkü `dplyr` paketinde diğer paketlerdeki fonksiyonlarla aynı adı taşıyan fonksiyonlar vardır. Şimdilik uyarıları görmezden gelebilirsiniz.
+
+<br>
+
+**select()**
+
+Büyük veri setleri ile çalışırken `select` fonksiyonu yardımıyla istenilen değişkenleri seçebilir, veya belirli bir özelliğe göre değişken filtreleme yapabilirsiniz.
+
+```{r}
+data("airquality")
+dim(airquality)
+str(airquality)
+```
+
+153 gözlem ve 6 değişkenden oluşan bu veri setinde Month ve Day değişkenleri üzerine çalışmak istenildiğini varsayalım;
+
+```{r message=FALSE, warning=FALSE}
+library(dplyr)
+head(select(airquality, Month, Day))
+```
+```{r}
+head(select(airquality, Ozone:Temp))
+```
+<br>
+
+**filter()**
+
+Büyük veri setleri ile çalışırken `filter` fonksiyonu yardımıyla istenilen gözlemleri seçebilir, veya belirli bir özelliğe göre gözlem filtreleme yapabilirsiniz.
+
+```{r}
+head(filter(airquality, Temp>65))
+```
+<br>
+
+```{r}
+filt<-filter(airquality, Temp>65 & Ozone>25)
+tail(select(filt, Wind, Day))
+```
+<br>
+
+**arrange()**
+
+Gözlemlerin değişkene bağlı olarak sıralanması amacıyla kullanılan fonksiyon `arrange`'dir.
+
+```{r}
+str(swiss)
+ss<-arrange(swiss, Fertility)
+head(select(ss, Fertility, Education),5)
+```
+<br>
+
+
+**rename()**
+
+Data frame yapısında mevcut bir değişkenin ismini değiştirmenin kolay yolu `rename` fonksiyonunu kullanmaktır. 
+
+```{r}
+head(swiss)
+```
+<br>
+
+Yapılacak tanımlamada eşitliği sol tarafı yeni tanımlanan değişken ismini, sağ tarafı ise mevcut değişken ismini temsil edecektir.
+
+```{r}
+head(rename(swiss, fer=Fertility, ag=Agriculture))
+```
+<br>
+
+**mutate()**
+
+Değişkenlere belirli işlemler uygulayarak veri setine eklemek için kullanışlı fonksiyonlardan biri `mutate`'dir.
+
+```{r}
+head(USArrests)
+head(mutate(USArrests,rateM=Murder/UrbanPop))
+```
+<br>
+
+Yalnızca dönüştürdüğünüz veri setleri ile çalışmak istediğinizde kullanmanız gereken fonksiyon ise `transmute` olacaktır.
+
+```{r}
+head(transmute(USArrests,rateM=Murder/UrbanPop, cum=Murder/sum(Murder)))
+```
+
+<br>
+
+**group_by() ve summarise()**
+
+Veriyi gruplayarak işlem yapılması gerektiğinde `group_by` komutu işinizi görecektir. Yalnızca komutu çalıştırdığınızda gruplama için seçtiğiniz değişkende sıralama açısından değişiklik olmasını beklemeyin, sıralamanın değişmemesi gruplamanın yapılmadığı anlamına gelmez.
+```{r}
+head(mtcars)
+mt2<-group_by(mtcars,cyl)
+summarise(mt2,disp = mean(disp),hp = mean(hp))
+```
+
+<br>
+
+**%>%**
+
+Pipeline veya pipe operator olarak adlandırılan yapı kod yazımını ve anlaşılmasını kolaylaştırmak için önerilmiştir. Fazla sayıda iç içe komut yazımı verimli olmamakta, hem kodu yazan hem de inceleyen kişinin işini zorlaştırmaktadır. Yazım şekli en içten en dışa doğru olup aşağıda açıklanmaktadır;
+
+third(second(first(x)))
+
+first(x) %>% second %>% third
+
+<br>
+
+```{r}
+group_by(mtcars,cyl) %>% summarise(disp = mean(disp),hp = mean(hp))
+```
+
