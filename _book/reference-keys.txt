@@ -35,3 +35,5 @@ bazı-önemli-komutlar
 sort
 rank
 order
+mevcut-grafik-üzerine-ekleme-yapmak
+ggplot2

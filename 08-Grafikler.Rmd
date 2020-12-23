@@ -1,0 +1,96 @@
+# Grafikler
+
+R'in en temel işlevlerinden biri de veri görselleştirmedir, bu bakımdan grafik çeşitleri ve uygulama bakımından oldukça zengin bir yapıya sahiptir.
+
+```{r}
+foo <- c(1.1,2,3.5,3.9,4.2)
+bar <- c(2,2.2,-1.3,0,0.2)
+plot(foo,bar)
+```
+
+Grafik yapısının farklılaştırması amacıyla kullanılabilecek çok çeşitli grafiksel parametreler vardır. Bu parametreler, noktaların renklendirilmesi ve eksen etiketlerinin eklenmesi gibi basit görsel geliştirmeleri çağırır ve ayrıca grafikteki teknik yönleri kontrol edebilir. En sık kullanılan grafik parametrelerinden bazıları burada listelenmiştir; 
+
+**type:** R'ye koordinatların nasıl çizileceğini söyler (örneğin, bağımsız noktalar olarak veya çizgilerle veya hem noktalar hem de çizgilerle).
+
+```{r}
+plot(foo, bar, type="l")
+```
+
+**main, xlab, ylab:** Sırasıyla grafik başlığı, yatay eksen etiketi ve dikey eksen etiketini tanımlamak amacıyla kullanılır.
+
+```{r}
+plot(foo,bar,type="b",main="Grafik adı",xlab="x ekseni",
+     ylab="y ekseni")
+```
+
+
+**col:** Grafikte yer alan nokta ve çizgilerin renklerinin tanımlanması amacıyla kullanılır.
+
+```{r}
+plot(foo,bar,type="b",main="Grafik adı",xlab="",ylab="",col=2)
+```
+
+
+**pch:** Nokta karakterin seçiminde kullanılır, bireysel noktaların kullanıldığı grafiklerde noktanın hangi şekil ile temsil edileceğini gösterir.
+
+```{r}
+plot(foo,bar,type="b",main="Grafik adı", col=4,pch=8)
+```
+
+
+**cex:** Çizilen nokta karakterinin boyutunun belirlenmesi amacıyla kullanılır.
+
+```{r}
+plot(foo,bar,type="b",main="Grafik adı", col=4,pch=8, cex=2.3)
+```
+
+
+**lty:** Çizgi tipini belirler (noktalı veya çizgili gibi). 
+
+```{r}
+plot(foo,bar,type="b",main="Grafik adı", col=6,pch=15,cex=0.7, lty=3)
+```
+
+
+**lwd:** Grafikte yer alan çizginin kalınlığını belirler.
+
+```{r}
+plot(foo,bar,type="b",main="Grafik adı",
+col=6,pch=15,lty=3,cex=0.7,lwd=2)
+```
+
+
+**xlim, ylim:** Grafikteki yatay ve dikey eksen genişliğini (grafik alanını) belirler.
+
+```{r}
+plot(foo,bar,type="b",main="Grafik adı",xlab="",ylab="",
+                     col=6,pch=15,lty=3,cex=0.7,lwd=2,xlim=c(3,5),ylim=c(-0.5,0.2))
+```
+
+
+## Mevcut grafik üzerine ekleme yapmak
+
+Bazı durumlarda sıfırdan grafik üretmek yerine mevcut grafik üzerinde eklemeler yapmak kullanışlı olabilir, veya grafiğiniz üzerinde belirli noktalara vurgu yapma ihtiyacınız doğabilir, bu gibi durumlarda faydalanabileceğimiz fonksiyonlar aşağıda açıklanacaktır.
+
+**points:** nokta ekleme
+
+**lines, abline, segments:** çizgi ekleme
+
+**text:** metin ekleme
+
+**arrows:** ok ekleme
+
+**legend:**  etiket ekleme
+
+[Uygulamalar için lütfen ders videosuna geçiniz.](https://ues.marmara.edu.tr/Account/LoginBefore)
+
+
+
+
+
+
+
+
+
+
+
