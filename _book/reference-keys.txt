@@ -37,3 +37,8 @@ rank
 order
 mevcut-grafik-üzerine-ekleme-yapmak
 ggplot2
+önemli-grafik-paketleri
+lattice
+plotly
+qplot
+ggplot

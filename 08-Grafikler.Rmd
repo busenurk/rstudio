@@ -85,6 +85,101 @@ Bazı durumlarda sıfırdan grafik üretmek yerine mevcut grafik üzerinde eklem
 [Uygulamalar için lütfen ders videosuna geçiniz.](https://ues.marmara.edu.tr/Account/LoginBefore)
 
 
+## Önemli grafik paketleri
+
+### lattice
+
+Grafik elde etme üzerine ilk önerilen paketlerden biri `lattice`'dir. Bu kapsamda kullanılabilecek fonksiyonlardan birkaçı aşağıda örneklenmiştir.
+
+```{r}
+lattice::xyplot(Sepal.Width ~ Sepal.Length, data = iris)
+```
+<br>
+
+Kategorik değişken içeren verilerde, kategorilere bağlı olarak çoklu grafik elde etmek de mümkündür. Örnek uygulamada `iris`verisi için `Species` kategorik değişkendir.
+
+```{r}
+levels(iris$Species) 
+lattice::xyplot(Sepal.Width ~ Sepal.Length | Species, data = iris)
+```
+<br>
+
+Paketin temel amacı, karmaşık grafikleri tek bir fonksiyon yardımı ile çizebilmektir, bu bakımdan farklı grafik türleri aşağıda örneklenmiştir.
+
+
+```{r}
+lattice::dotplot(Species ~ Petal.Length, data = iris)
+```
+<br>
+
+```{r}
+lattice::bwplot(Species ~ Petal.Length, data = iris)
+```
+
+<br>
+
+```{r}
+library(MASS)     # Cars93 dataset icin indiriyoruz
+Cars<-dplyr::select(Cars93,Price,Type,Origin)
+head(Cars)
+lattice::bwplot(Price ~ Type | Origin, data = Cars93)
+```
+
+### ggplot2
+
+<img src="/Users/busenursarica/Documents/GitHub/rstudio/images/ggplot2.png" style="float: right;" width="80" height="100" title="R" />
+
+Grafik oluşturmak için en sık kullanılan paketlerden biri Hadley Wickham tarafından oluşturulan `ggplot2`'dir. Temeli [The Grammar of Graphics](https://amzn.to/2ef1eWp) kitabına dayanmaktadır. Etkileyici görseller elde etme imkanı sunan `ggplot2`, bu işlemi `qplot()` ve `ggplot()` fonksiyonları ile gerçekleştirmektedir.
+
+#### qplot
+
+```{r message=FALSE, warning=FALSE}
+library(ggplot2)
+attach(iris)
+qplot(Sepal.Length, Sepal.Width, color = Species, shape = Species)
+```
+<br>
+
+```{r}
+qplot(Species, Petal.Length, geom = "boxplot")
+```
+
+#### ggplot
+
+`ggplot2` paketinin temel fonksiyonu olan `ggplot()`, gelişmiş görsel raporlama imkanı sunmaktadır. Bu fonksiyonu kullanarak görselleştirme yapılacaksa anlaşılması gereken üç yapı mevcuttur, bunlar aesthetics, geoms, ve stats'dır.
+
+**aesthetics:** `aes()` fonksiyonu ile görsel seçimler yapılır, konum, renk ve poziyon gibi.
+
+**geoms** `aes()` fonksiyonu ile tanımlanan işlemlerin grafiğe aktarılmasını sağlar.Bu işlemler `geom_point()`, `geom_line()` gibi fonksiyonlar yardımı ile gerçekleştirilir.
+
+**stats** `stat_summary()`, `stat_quantile()` gibi fonksiyonlar aracılığı ile verinin özetlenmesini sağlar.
+
+```{r}
+p <- ggplot(iris) +   
+  geom_point(aes(x = Petal.Length, y = Petal.Width, shape = Species, color = Species)) +
+  xlab("Petal Length") +  # Add axis labels
+  ylab("Petal Width") +
+  ggtitle("Petal Length and Petal Width of Iris Flowers")
+
+print(p)
+```
+
+
+
+### plotly
+
+İnteraktif grafik elde etme ve html çıktı elde edebilme imkanı `plotly` paketini de oldukça popüler hale getirmiştir.
+
+```{r message=FALSE, warning=FALSE}
+library(plotly)
+head(mtcars)
+
+col1 <- colorRamp(c("red", "blue"))
+
+p<-plot_ly(mpg, x = ~cty, y = ~hwy, z = ~cyl) 
+
+add_markers(p,color = ~cyl, colors = col1)
+```
 
 
 
