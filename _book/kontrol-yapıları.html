@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>R Ders Notları</title>
+  <title>Bölüm10 Kontrol Yapıları | R Ders Notları</title>
   <meta name="description" content="R programming language lecture notes" />
   <meta name="generator" content="bookdown 0.20.6 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="R Ders Notları" />
+  <meta property="og:title" content="Bölüm10 Kontrol Yapıları | R Ders Notları" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="R Ders Notları" />
+  <meta name="twitter:title" content="Bölüm10 Kontrol Yapıları | R Ders Notları" />
   
   <meta name="twitter:description" content="R programming language lecture notes" />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-<link rel="next" href="motivasyon.html"/>
+<link rel="prev" href="grafikler.html"/>
+<link rel="next" href="fonksiyonlar.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -119,7 +119,15 @@
 <li class="chapter" data-level="9.2.3" data-path="grafikler.html"><a href="grafikler.html#plotly"><i class="fa fa-check"></i><b>9.2.3</b> plotly</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="10" data-path="döngüler.html"><a href="döngüler.html"><i class="fa fa-check"></i><b>10</b> Döngüler</a></li>
+<li class="chapter" data-level="10" data-path="kontrol-yapıları.html"><a href="kontrol-yapıları.html"><i class="fa fa-check"></i><b>10</b> Kontrol Yapıları</a><ul>
+<li class="chapter" data-level="10.1" data-path="kontrol-yapıları.html"><a href="kontrol-yapıları.html#if-else"><i class="fa fa-check"></i><b>10.1</b> if-else</a></li>
+<li class="chapter" data-level="10.2" data-path="kontrol-yapıları.html"><a href="kontrol-yapıları.html#loops"><i class="fa fa-check"></i><b>10.2</b> loops</a><ul>
+<li class="chapter" data-level="10.2.1" data-path="kontrol-yapıları.html"><a href="kontrol-yapıları.html#for"><i class="fa fa-check"></i><b>10.2.1</b> for</a></li>
+<li class="chapter" data-level="10.2.2" data-path="kontrol-yapıları.html"><a href="kontrol-yapıları.html#while"><i class="fa fa-check"></i><b>10.2.2</b> while</a></li>
+<li class="chapter" data-level="10.2.3" data-path="kontrol-yapıları.html"><a href="kontrol-yapıları.html#repeat"><i class="fa fa-check"></i><b>10.2.3</b> repeat</a></li>
+<li class="chapter" data-level="10.2.4" data-path="kontrol-yapıları.html"><a href="kontrol-yapıları.html#next-break"><i class="fa fa-check"></i><b>10.2.4</b> next, break</a></li>
+</ul></li>
+</ul></li>
 <li class="chapter" data-level="11" data-path="fonksiyonlar.html"><a href="fonksiyonlar.html"><i class="fa fa-check"></i><b>11</b> Fonksiyonlar</a></li>
 <li class="chapter" data-level="12" data-path="apply-ailesi.html"><a href="apply-ailesi.html"><i class="fa fa-check"></i><b>12</b> Apply Ailesi</a></li>
 <li class="chapter" data-level="13" data-path="referans.html"><a href="referans.html"><i class="fa fa-check"></i><b>13</b> Referans</a></li>
@@ -143,61 +151,35 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">R Ders Notları</h1>
-<p class="author"><em>Dr. Busenur Kızılaslan</em></p>
-<p class="date"><em>2020-12-30</em></p>
+<div id="kontrol-yapıları" class="section level1">
+<h1><span class="header-section-number">Bölüm10</span> Kontrol Yapıları</h1>
+<div id="if-else" class="section level2">
+<h2><span class="header-section-number">10.1</span> if-else</h2>
 </div>
-<div id="ön-bilgi" class="section level1">
-<h1><span class="header-section-number">Bölüm1</span> Ön Bilgi</h1>
-<p><img src="images/vulcan.jpg" style="float: right;" width="230" height="300" title="Sheldon"/></p>
-<p>R ders notları temelde <em>BSP2043 - Bilgisayar III</em> ve <em>BSP2044 - Bilgisayar IV</em> derslerine kaynaklık etmesi amacıyla tasarlanmış olup konu çerçevesinde kendisini geliştirmek isteyen herkesin faydalanabilmesi hedeflenmiştir.</p>
-<p>Kaynak, temel matematik ve ingilizce bilgisine sahip olan herkesin anlayıp uygulayabileceği basitlikte bir anlatıma sahiptir.</p>
-<p>Ders dili Türkçe’dir. Bu bakımdan genel anlatımda Türkçe kullanılacaktır. Literatürü rahat takip edebilmeniz, komut karmaşası yaşamamanız ve araştırma sürecinde zengin forum imkanından yararlanabilmeniz adına temel terimler orijinal haliyle kullanılacaktır.</p>
-<p>Aynı zamanda referans verilen kaynaklar da orijinal dili ile paylaşılacaktır. Bu nedenle İngilizce eksikliğinizi gidermeniz önerilir.</p>
-<p>Kaynaklar;</p>
-<ul>
-<li>Kitaplar</li>
-</ul>
-<p><a href="https://www.cs.upc.edu/~robert/teaching/estadistica/TheRBook.pdf">The R Book - Michael J. Crawley</a></p>
-<p><a href="https://r4ds.had.co.nz">R for Data Science - Hadley Wickham, Garrett Grolemund</a></p>
-<p><a href="https://rafalab.github.io/dsbook/">Introduction to Data Science - Rafael A. Irizarry</a></p>
-<p><a href="https://bookdown.org/rdpeng/rprogdatascience/">R Programming for Data Science - Roger D. Peng</a></p>
-<p><a href="https://web.itu.edu.tr/~tokerem/The_Book_of_R.pdf">The Book of R - Tilman M. Davies</a></p>
-<p><br></p>
-<ul>
-<li>Eğitimler</li>
-</ul>
-<p><a href="https://www.edx.org/course/data-science-r-basics">HarvardX - Data Science: R Basics</a></p>
-<p><a href="https://www.edx.org/course/data-science-visualization">HarvardX - Data Science: Visualization</a></p>
-<p><a href="https://www.edx.org/course/data-science-probability">HarvardX - Data Science: Probability</a></p>
-<p><br></p>
-<p>Katkı ve öneriler için: <code>busenur.sarica@marmara.edu.tr</code></p>
-<p>İyi eğlenceler!</p>
-<div id="hakkımda" class="section level2">
-<h2><span class="header-section-number">1.1</span> Hakkımda</h2>
-<p><img src="images/busenur1.JPG" style="float: right;" width="270" height="350" title="Busenur" /></p>
-<p>2012 yılında Mimar Sinan G. S. Üniversitesi istatistik bölümünde lisans öğrenimimi tamamlamamın ardından 2014 yılı itibariyle Marmara Üniversitesi istatistik bölümünde araştırma görevlisi olarak göreve başladım. Eş zamanlı olarak başladığım yüksek lisans öğrenimimi yine Mimar Sinan G. S. Üniversitesi istatistik anabilim dalında tamamlarken artık çalışma alanım bulanık mantık (<a href="https://en.wikipedia.org/wiki/Fuzzy_logic">fuzzy logic</a>) olarak şekillenmişti. Bir buçuk yılda tamamladığım yüksek lisansın ardından farklı bakış açısı kazanma fikriyle yönümü Yıldız Teknik Üniversitesi’ne çevirdim. 2015 yılında istatistik bölümünde başladığım doktora öğrenimimi 2020 yılında yine bulanık mantık ile öngörü üzerine hazırladığım tezim ile tamamladım. Doktora öğrenimim sırasında İstanbul Teknik Üniversitesi endüstri mühendisliği bölümünden de çeşitli dersler alarak alanında uzman hocaların<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a> bilgilerinden faydalanma imkanı buldum.</p>
-<p>Akademik kariyer hedefiyle başlamadığım öğrenim yaşamımda ufku açık, aydınlık ve birikimli hocalarım yolumu bulmama yardımcı olmuştur. 2018 yılında Polonya’da gerçekleşen <a href="http://www.linstat2018.put.poznan.pl/ysa.html">International Conference on Trends and Perspectives in Linear Statistical Inference (LinStat’2018)</a> kapsamında sunduğum, doktora tezimin bir kısmından oluşan çalışma ile aldığım Young Scientists Awards ikincilik ödülü de yanlış yolda olmadığımı göstermiştir.</p>
-<p>Üzerimde emeği olan herkese teşekkürlerimle!</p>
-<p><br></p>
-<p><a href="https://avesis.marmara.edu.tr/busenur.sarica"><strong>CV</strong></a>, <a href="https://scholar.google.com.tr/citations?user=OKlYJEgAAAAJ&amp;hl=tr"><strong>Google Scholar</strong></a>, <a href="https://www.linkedin.com/in/busenur-kızılaslan-795ab54a"><strong>Linkedin</strong></a></p>
+<div id="loops" class="section level2">
+<h2><span class="header-section-number">10.2</span> loops</h2>
+<div id="for" class="section level3">
+<h3><span class="header-section-number">10.2.1</span> for</h3>
+</div>
+<div id="while" class="section level3">
+<h3><span class="header-section-number">10.2.2</span> while</h3>
+</div>
+<div id="repeat" class="section level3">
+<h3><span class="header-section-number">10.2.3</span> repeat</h3>
+</div>
+<div id="next-break" class="section level3">
+<h3><span class="header-section-number">10.2.4</span> next, break</h3>
 
 </div>
 </div>
-<div class="footnotes">
-<hr />
-<ol start="1">
-<li id="fn1"><p><a href="http://akademi.itu.edu.tr/kahramanc/">Prof. Dr. Cengiz Kahraman</a><a href="index.html#fnref1" class="footnote-back">↩︎</a></p></li>
-</ol>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-
-<a href="motivasyon.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="grafikler.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="fonksiyonlar.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

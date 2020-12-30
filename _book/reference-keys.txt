@@ -42,3 +42,10 @@ lattice
 plotly
 qplot
 ggplot
+kontrol-yapıları
+if-else
+loops
+for
+while
+repeat
+next-break

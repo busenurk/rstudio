@@ -1,0 +1,13 @@
+# Kontrol Yapıları
+
+## if-else
+
+## loops
+
+### for
+
+### while
+
+### repeat
+
+### next, break
