@@ -24,7 +24,7 @@
 <meta name="author" content="Dr. Busenur Kızılaslan" />
 
 
-<meta name="date" content="2020-11-07" />
+<meta name="date" content="2021-01-04" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -53,6 +53,13 @@
 <script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 <link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.5.2/htmlwidgets.js"></script>
+<script src="libs/plotly-binding-4.9.2.1/plotly.js"></script>
+<script src="libs/typedarray-0.1/typedarray.min.js"></script>
+<link href="libs/crosstalk-1.1.0.1/css/crosstalk.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.1.0.1/js/crosstalk.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css-1.52.2/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main-1.52.2/plotly-latest.min.js"></script>
 
 
 <style type="text/css">
@@ -165,13 +172,35 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="5.7" data-path="temel-nesneler.html"><a href="temel-nesneler.html#eksik-gözlemler-missing-values"><i class="fa fa-check"></i><b>5.7</b> Eksik Gözlemler (Missing Values)</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="import-export-işlemleri.html"><a href="import-export-işlemleri.html"><i class="fa fa-check"></i><b>6</b> Import Export İşlemleri</a></li>
-<li class="chapter" data-level="7" data-path="proje.html"><a href="proje.html"><i class="fa fa-check"></i><b>7</b> Proje</a></li>
+<li class="chapter" data-level="6" data-path="import-export-işlemleri.html"><a href="import-export-işlemleri.html"><i class="fa fa-check"></i><b>6</b> Import Export İşlemleri</a><ul>
+<li class="chapter" data-level="6.1" data-path="import-export-işlemleri.html"><a href="import-export-işlemleri.html#import-işlemleri"><i class="fa fa-check"></i><b>6.1</b> Import İşlemleri</a></li>
+<li class="chapter" data-level="6.2" data-path="import-export-işlemleri.html"><a href="import-export-işlemleri.html#export-işlemleri"><i class="fa fa-check"></i><b>6.2</b> Export İşlemleri</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="bazı-önemli-komutlar.html"><a href="bazı-önemli-komutlar.html"><i class="fa fa-check"></i><b>7</b> Bazı Önemli Komutlar</a><ul>
+<li class="chapter" data-level="7.1" data-path="bazı-önemli-komutlar.html"><a href="bazı-önemli-komutlar.html#sort"><i class="fa fa-check"></i><b>7.1</b> Sort</a></li>
+<li class="chapter" data-level="7.2" data-path="bazı-önemli-komutlar.html"><a href="bazı-önemli-komutlar.html#rank"><i class="fa fa-check"></i><b>7.2</b> Rank</a></li>
+<li class="chapter" data-level="7.3" data-path="bazı-önemli-komutlar.html"><a href="bazı-önemli-komutlar.html#order"><i class="fa fa-check"></i><b>7.3</b> Order</a></li>
+</ul></li>
 <li class="chapter" data-level="8" data-path="dplyr.html"><a href="dplyr.html"><i class="fa fa-check"></i><b>8</b> DPLYR</a></li>
-<li class="chapter" data-level="9" data-path="apply-ailesi.html"><a href="apply-ailesi.html"><i class="fa fa-check"></i><b>9</b> Apply Ailesi</a></li>
-<li class="chapter" data-level="10" data-path="grafikler.html"><a href="grafikler.html"><i class="fa fa-check"></i><b>10</b> Grafikler</a></li>
-<li class="chapter" data-level="11" data-path="döngüler.html"><a href="döngüler.html"><i class="fa fa-check"></i><b>11</b> Döngüler</a></li>
-<li class="chapter" data-level="12" data-path="fonksiyonlar.html"><a href="fonksiyonlar.html"><i class="fa fa-check"></i><b>12</b> Fonksiyonlar</a></li>
+<li class="chapter" data-level="9" data-path="grafikler.html"><a href="grafikler.html"><i class="fa fa-check"></i><b>9</b> Grafikler</a><ul>
+<li class="chapter" data-level="9.1" data-path="grafikler.html"><a href="grafikler.html#mevcut-grafik-üzerine-ekleme-yapmak"><i class="fa fa-check"></i><b>9.1</b> Mevcut grafik üzerine ekleme yapmak</a></li>
+<li class="chapter" data-level="9.2" data-path="grafikler.html"><a href="grafikler.html#önemli-grafik-paketleri"><i class="fa fa-check"></i><b>9.2</b> Önemli grafik paketleri</a><ul>
+<li class="chapter" data-level="9.2.1" data-path="grafikler.html"><a href="grafikler.html#lattice"><i class="fa fa-check"></i><b>9.2.1</b> lattice</a></li>
+<li class="chapter" data-level="9.2.2" data-path="grafikler.html"><a href="grafikler.html#ggplot2"><i class="fa fa-check"></i><b>9.2.2</b> ggplot2</a></li>
+<li class="chapter" data-level="9.2.3" data-path="grafikler.html"><a href="grafikler.html#plotly"><i class="fa fa-check"></i><b>9.2.3</b> plotly</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="kontrol-yapıları.html"><a href="kontrol-yapıları.html"><i class="fa fa-check"></i><b>10</b> Kontrol Yapıları</a><ul>
+<li class="chapter" data-level="10.1" data-path="kontrol-yapıları.html"><a href="kontrol-yapıları.html#if-else"><i class="fa fa-check"></i><b>10.1</b> if-else</a></li>
+<li class="chapter" data-level="10.2" data-path="kontrol-yapıları.html"><a href="kontrol-yapıları.html#loops"><i class="fa fa-check"></i><b>10.2</b> loops</a><ul>
+<li class="chapter" data-level="10.2.1" data-path="kontrol-yapıları.html"><a href="kontrol-yapıları.html#for"><i class="fa fa-check"></i><b>10.2.1</b> for</a></li>
+<li class="chapter" data-level="10.2.2" data-path="kontrol-yapıları.html"><a href="kontrol-yapıları.html#while"><i class="fa fa-check"></i><b>10.2.2</b> while</a></li>
+<li class="chapter" data-level="10.2.3" data-path="kontrol-yapıları.html"><a href="kontrol-yapıları.html#repeat"><i class="fa fa-check"></i><b>10.2.3</b> repeat</a></li>
+<li class="chapter" data-level="10.2.4" data-path="kontrol-yapıları.html"><a href="kontrol-yapıları.html#next-break"><i class="fa fa-check"></i><b>10.2.4</b> next, break</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="fonksiyonlar.html"><a href="fonksiyonlar.html"><i class="fa fa-check"></i><b>11</b> Fonksiyonlar</a></li>
+<li class="chapter" data-level="12" data-path="apply-ailesi.html"><a href="apply-ailesi.html"><i class="fa fa-check"></i><b>12</b> Apply Ailesi</a></li>
 <li class="chapter" data-level="13" data-path="referans.html"><a href="referans.html"><i class="fa fa-check"></i><b>13</b> Referans</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -366,6 +395,20 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>
