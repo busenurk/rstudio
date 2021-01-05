@@ -24,7 +24,7 @@
 <meta name="author" content="Dr. Busenur Kızılaslan" />
 
 
-<meta name="date" content="2021-01-04" />
+<meta name="date" content="2021-01-05" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -53,13 +53,6 @@
 <script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 <link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
-<script src="libs/htmlwidgets-1.5.2/htmlwidgets.js"></script>
-<script src="libs/plotly-binding-4.9.2.1/plotly.js"></script>
-<script src="libs/typedarray-0.1/typedarray.min.js"></script>
-<link href="libs/crosstalk-1.1.0.1/css/crosstalk.css" rel="stylesheet" />
-<script src="libs/crosstalk-1.1.0.1/js/crosstalk.min.js"></script>
-<link href="libs/plotly-htmlwidgets-css-1.52.2/plotly-htmlwidgets.css" rel="stylesheet" />
-<script src="libs/plotly-main-1.52.2/plotly-latest.min.js"></script>
 
 
 <style type="text/css">
@@ -226,20 +219,146 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1><span class="header-section-number">Bölüm10</span> Kontrol Yapıları</h1>
 <div id="if-else" class="section level2">
 <h2><span class="header-section-number">10.1</span> if-else</h2>
+<p><strong>if</strong> acıkırsan, yemek ye</p>
+<p><strong>if</strong> alarm çalarsa, uyan</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="kontrol-yapıları.html#cb1-1"></a>x=<span class="dv">11</span></span>
+<span id="cb1-2"><a href="kontrol-yapıları.html#cb1-2"></a><span class="cf">if</span>(x<span class="op">&gt;</span><span class="dv">10</span>){</span>
+<span id="cb1-3"><a href="kontrol-yapıları.html#cb1-3"></a>  <span class="kw">print</span>(<span class="st">&quot;x, 10 dan buyuktur&quot;</span>)</span>
+<span id="cb1-4"><a href="kontrol-yapıları.html#cb1-4"></a>}</span></code></pre></div>
+<pre><code>## [1] &quot;x, 10 dan buyuktur&quot;</code></pre>
+<p><br></p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="kontrol-yapıları.html#cb3-1"></a>puan=<span class="dv">49</span></span>
+<span id="cb3-2"><a href="kontrol-yapıları.html#cb3-2"></a><span class="cf">if</span>(puan<span class="op">&lt;</span><span class="dv">50</span>){<span class="kw">print</span>(<span class="st">&quot;daha fazla calis!&quot;</span>)}</span></code></pre></div>
+<pre><code>## [1] &quot;daha fazla calis!&quot;</code></pre>
+<p><br></p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="kontrol-yapıları.html#cb5-1"></a>z=<span class="dv">10</span></span>
+<span id="cb5-2"><a href="kontrol-yapıları.html#cb5-2"></a><span class="cf">if</span>(z<span class="op">==</span><span class="dv">10</span>){t&lt;-z<span class="op">+</span><span class="dv">3</span></span>
+<span id="cb5-3"><a href="kontrol-yapıları.html#cb5-3"></a><span class="kw">print</span>(t)}</span></code></pre></div>
+<pre><code>## [1] 13</code></pre>
+<p><br></p>
+<hr />
+<p><strong>if</strong> trafik lambası yeşil yanarsa harekete geç <strong>else</strong> dur</p>
+<p><strong>if</strong> kahve bardağın dolu ise iç <strong>else</strong> bardağı doldur.</p>
+<p><br></p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="kontrol-yapıları.html#cb7-1"></a>x&lt;-<span class="dv">15</span></span>
+<span id="cb7-2"><a href="kontrol-yapıları.html#cb7-2"></a><span class="cf">if</span>(x<span class="op">&lt;</span><span class="dv">10</span>){<span class="kw">print</span>(<span class="st">&quot;x 10 dan kucuktur&quot;</span>)</span>
+<span id="cb7-3"><a href="kontrol-yapıları.html#cb7-3"></a>}<span class="cf">else</span> {<span class="kw">print</span>(<span class="st">&quot;x 10 a esit veya buyuktur&quot;</span>)}</span></code></pre></div>
+<pre><code>## [1] &quot;x 10 a esit veya buyuktur&quot;</code></pre>
+<p><br></p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="kontrol-yapıları.html#cb9-1"></a>puan=<span class="dv">90</span></span>
+<span id="cb9-2"><a href="kontrol-yapıları.html#cb9-2"></a>  <span class="cf">if</span>(puan<span class="op">&lt;</span><span class="dv">70</span>){<span class="kw">print</span>(<span class="st">&quot;daha fazla calis&quot;</span>)</span>
+<span id="cb9-3"><a href="kontrol-yapıları.html#cb9-3"></a>    }<span class="cf">else</span>{<span class="kw">print</span>(<span class="st">&quot;iyi gidiyorsun&quot;</span>)}</span></code></pre></div>
+<pre><code>## [1] &quot;iyi gidiyorsun&quot;</code></pre>
+<p><br></p>
+<hr />
+<p><strong>if</strong> hava cok sıcak ise; tshirt giy <strong>else if</strong> sıcak ve yagmurlu ise; tshirt ve ceket giy,
+<strong>else if</strong> soguk ise; kazak giy <strong>else</strong> evde kal</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="kontrol-yapıları.html#cb11-1"></a>puan=<span class="dv">82</span></span>
+<span id="cb11-2"><a href="kontrol-yapıları.html#cb11-2"></a>  <span class="cf">if</span>(puan<span class="op">&lt;</span><span class="dv">50</span>){<span class="kw">print</span>(<span class="st">&quot;daha fazla calis!&quot;</span>)</span>
+<span id="cb11-3"><a href="kontrol-yapıları.html#cb11-3"></a>  } <span class="cf">else</span> <span class="cf">if</span>(puan<span class="op">&gt;=</span><span class="dv">50</span> <span class="op">&amp;</span><span class="st"> </span>puan<span class="op">&lt;</span><span class="dv">80</span>){<span class="kw">print</span>(<span class="st">&quot;iyi gidiyorsun&quot;</span>)</span>
+<span id="cb11-4"><a href="kontrol-yapıları.html#cb11-4"></a>      }<span class="cf">else</span>{<span class="kw">print</span>(<span class="st">&quot;tebrikler!&quot;</span>)}</span></code></pre></div>
+<pre><code>## [1] &quot;tebrikler!&quot;</code></pre>
+<p><br></p>
+<hr />
+<p>Alternatif olarak <code>ifelse()</code> fonksiyonundan da faydalanılabilir.</p>
+<p><br></p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="kontrol-yapıları.html#cb13-1"></a>puan=<span class="dv">90</span></span>
+<span id="cb13-2"><a href="kontrol-yapıları.html#cb13-2"></a><span class="kw">ifelse</span>(puan<span class="op">&lt;</span><span class="dv">70</span>, <span class="st">&quot;daha fazla calis&quot;</span>,<span class="st">&quot;iyi gidiyorsun&quot;</span>)</span></code></pre></div>
+<pre><code>## [1] &quot;iyi gidiyorsun&quot;</code></pre>
+<p><br></p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="kontrol-yapıları.html#cb15-1"></a>h=<span class="dv">8</span></span>
+<span id="cb15-2"><a href="kontrol-yapıları.html#cb15-2"></a><span class="kw">ifelse</span>(h<span class="op">!=</span><span class="dv">3</span>,<span class="kw">sqrt</span>(h),h<span class="op">^</span><span class="dv">2</span>)</span></code></pre></div>
+<pre><code>## [1] 2.828427</code></pre>
 </div>
 <div id="loops" class="section level2">
 <h2><span class="header-section-number">10.2</span> loops</h2>
+<p>Döngü (loop) başlığı altında veri analizinde sıklıkla ihtiyaç duyacağınız <code>for</code>, <code>while</code>, <code>repeat</code> gibi yapılar incelenecek ve önemli noktalar vurgulanacaktır.</p>
 <div id="for" class="section level3">
 <h3><span class="header-section-number">10.2.1</span> for</h3>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="kontrol-yapıları.html#cb17-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="dv">5</span>) {</span>
+<span id="cb17-2"><a href="kontrol-yapıları.html#cb17-2"></a><span class="kw">print</span>(i)}</span></code></pre></div>
+<pre><code>## [1] 1
+## [1] 2
+## [1] 3
+## [1] 4
+## [1] 5</code></pre>
+<p><br></p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="kontrol-yapıları.html#cb19-1"></a>x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>, <span class="st">&quot;c&quot;</span>, <span class="st">&quot;d&quot;</span>) </span>
+<span id="cb19-2"><a href="kontrol-yapıları.html#cb19-2"></a></span>
+<span id="cb19-3"><a href="kontrol-yapıları.html#cb19-3"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="dv">4</span>) {</span>
+<span id="cb19-4"><a href="kontrol-yapıları.html#cb19-4"></a><span class="kw">print</span>(x[i])}</span></code></pre></div>
+<pre><code>## [1] &quot;a&quot;
+## [1] &quot;b&quot;
+## [1] &quot;c&quot;
+## [1] &quot;d&quot;</code></pre>
+<p><br></p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="kontrol-yapıları.html#cb21-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="kw">seq_along</span>(x)) {</span>
+<span id="cb21-2"><a href="kontrol-yapıları.html#cb21-2"></a><span class="kw">print</span>(x[i])}</span></code></pre></div>
+<pre><code>## [1] &quot;a&quot;
+## [1] &quot;b&quot;
+## [1] &quot;c&quot;
+## [1] &quot;d&quot;</code></pre>
+<p><br></p>
+<p><strong>for</strong> döngüsü iç içe (<strong>nested</strong>) yapıda da olabilir. Bu yapı genellikle çok boyutlu ve hiyerarşik (matris, list gibi) veri yapıları için kullanılır. 2-3 seviyeden fazla iç içe döngü kullanmak hem kodun yazımında hem de anlaşılmasında zorluk yaratmaktadır. Bu bakımdan fazla sayıda <strong>nested loop</strong> yazmak yerine fonksiyonlardan faydalanmak daha akılcı olacaktır.</p>
+<p><br></p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="kontrol-yapıları.html#cb23-1"></a>x &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">6</span>, <span class="dv">2</span>, <span class="dv">3</span>)</span>
+<span id="cb23-2"><a href="kontrol-yapıları.html#cb23-2"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="kw">seq_len</span>(<span class="kw">nrow</span>(x))) {</span>
+<span id="cb23-3"><a href="kontrol-yapıları.html#cb23-3"></a><span class="cf">for</span>(j <span class="cf">in</span> <span class="kw">seq_len</span>(<span class="kw">ncol</span>(x))) {</span>
+<span id="cb23-4"><a href="kontrol-yapıları.html#cb23-4"></a>                <span class="kw">print</span>(x[i, j])</span>
+<span id="cb23-5"><a href="kontrol-yapıları.html#cb23-5"></a>} }</span></code></pre></div>
+<pre><code>## [1] 1
+## [1] 3
+## [1] 5
+## [1] 2
+## [1] 4
+## [1] 6</code></pre>
 </div>
 <div id="while" class="section level3">
 <h3><span class="header-section-number">10.2.2</span> while</h3>
+<p><strong>while</strong> döngüleri bir koşulu test ederek başlar. Doğruysa, döngü çalışmaya başlar. Döngü yürütüldüğünde, koşul tekrar test edilir ve koşul yanlış olana kadar bu işlem devam eder, ardından döngü sonlanır. <strong>while</strong> döngüleri dikkatli yazılmazsa sonsuz bir döngüye dönüşebilir.</p>
+<p><br></p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="kontrol-yapıları.html#cb25-1"></a>count &lt;-<span class="st"> </span><span class="dv">0</span></span>
+<span id="cb25-2"><a href="kontrol-yapıları.html#cb25-2"></a><span class="cf">while</span>(count <span class="op">&lt;</span><span class="st"> </span><span class="dv">6</span>) {</span>
+<span id="cb25-3"><a href="kontrol-yapıları.html#cb25-3"></a>         <span class="kw">print</span>(count)</span>
+<span id="cb25-4"><a href="kontrol-yapıları.html#cb25-4"></a> count &lt;-<span class="st"> </span>count <span class="op">+</span><span class="st"> </span><span class="dv">1</span>}</span></code></pre></div>
+<pre><code>## [1] 0
+## [1] 1
+## [1] 2
+## [1] 3
+## [1] 4
+## [1] 5</code></pre>
+<p><br></p>
 </div>
 <div id="repeat" class="section level3">
 <h3><span class="header-section-number">10.2.3</span> repeat</h3>
+<p><strong>repeat</strong>, başından itibaren sonsuz bir döngü başlatır. Veri analizi uygulamalarında sıklıkla kullanılmasa da ihtiyaç duyulduğu durumlar mevcuttur. Bir <strong>repeat</strong> döngüsünden çıkmanın tek yolu, <strong>break</strong> çağrısı yapmaktır.</p>
+<p>İlgilenilen problemde çözüme yeterince yaklaşana kadar durmak istemeyeceğiniz yinelemeli bir algoritma mevcut olabilir. Bu tür bir durumda, çözüme “yeterince yaklaşmak” için kaç tane yineleme gerekeceğini genellikle önceden bilemezsiniz, <strong>repeat</strong>’in uygun kullanımı böyle bir problemde mümkün olabilir.</p>
 </div>
 <div id="next-break" class="section level3">
 <h3><span class="header-section-number">10.2.4</span> next, break</h3>
+<p><strong>next</strong>, bir döngünün yinelemesini atlamak için kullanılır.</p>
+<p><br></p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="kontrol-yapıları.html#cb27-1"></a>i2&lt;-<span class="kw">c</span>()</span>
+<span id="cb27-2"><a href="kontrol-yapıları.html#cb27-2"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="dv">10</span>) { <span class="cf">if</span>(i <span class="op">&lt;=</span><span class="st"> </span><span class="dv">5</span>) {</span>
+<span id="cb27-3"><a href="kontrol-yapıları.html#cb27-3"></a>                <span class="co">## ilk 5 iterasyonu atla</span></span>
+<span id="cb27-4"><a href="kontrol-yapıları.html#cb27-4"></a><span class="cf">next</span>}</span>
+<span id="cb27-5"><a href="kontrol-yapıları.html#cb27-5"></a>       i2[i]&lt;-i<span class="op">*</span><span class="dv">3</span> </span>
+<span id="cb27-6"><a href="kontrol-yapıları.html#cb27-6"></a>}</span>
+<span id="cb27-7"><a href="kontrol-yapıları.html#cb27-7"></a>  <span class="kw">print</span>(i2)</span></code></pre></div>
+<pre><code>##  [1] NA NA NA NA NA 18 21 24 27 30</code></pre>
+<p><br></p>
+<p><strong>break</strong>, bir döngünün sonlandırılması için kullanılır.</p>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="kontrol-yapıları.html#cb29-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="dv">10</span>) { </span>
+<span id="cb29-2"><a href="kontrol-yapıları.html#cb29-2"></a>  <span class="kw">print</span>(i)</span>
+<span id="cb29-3"><a href="kontrol-yapıları.html#cb29-3"></a><span class="cf">if</span>(i <span class="op">&gt;</span><span class="st"> </span><span class="dv">5</span>) {</span>
+<span id="cb29-4"><a href="kontrol-yapıları.html#cb29-4"></a>  <span class="cf">break</span></span>
+<span id="cb29-5"><a href="kontrol-yapıları.html#cb29-5"></a>} }</span></code></pre></div>
+<pre><code>## [1] 1
+## [1] 2
+## [1] 3
+## [1] 4
+## [1] 5
+## [1] 6</code></pre>
 
 </div>
 </div>
@@ -300,20 +419,6 @@ gitbook.start({
 });
 </script>
 
-<!-- dynamically load mathjax for compatibility with self-contained -->
-<script>
-  (function () {
-    var script = document.createElement("script");
-    script.type = "text/javascript";
-    var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
-    if (location.protocol !== "file:")
-      if (/^https?:/.test(src))
-        src = src.replace(/^https?:/, '');
-    script.src = src;
-    document.getElementsByTagName("head")[0].appendChild(script);
-  })();
-</script>
 </body>
 
 </html>

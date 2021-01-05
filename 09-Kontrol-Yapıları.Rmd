@@ -1,13 +1,186 @@
 # Kontrol Yapıları
 
-## if-else
+## if-else 
+
+**if** acıkırsan, yemek ye
+
+**if** alarm çalarsa, uyan
+
+```{r}
+x=11
+if(x>10){
+  print("x, 10 dan buyuktur")
+}
+```
+
+<br>
+
+```{r}
+puan=49
+if(puan<50){print("daha fazla calis!")}
+```
+
+<br>
+
+```{r}
+z=10
+if(z==10){t<-z+3
+print(t)}
+```
+
+<br>
+
+---------
+
+**if** trafik lambası yeşil yanarsa harekete geç **else** dur
+
+**if** kahve bardağın dolu ise iç **else** bardağı doldur.
+
+<br>
+
+```{r}
+x<-15
+if(x<10){print("x 10 dan kucuktur")
+}else {print("x 10 a esit veya buyuktur")}
+```
+
+<br>
+
+```{r}
+puan=90
+  if(puan<70){print("daha fazla calis")
+    }else{print("iyi gidiyorsun")}
+```
+
+<br>
+
+---------
+
+**if** hava cok sıcak ise; tshirt giy **else if** sıcak ve yagmurlu ise; tshirt ve ceket giy,
+**else if** soguk ise; kazak giy **else** evde kal
+
+```{r}
+puan=82
+  if(puan<50){print("daha fazla calis!")
+  } else if(puan>=50 & puan<80){print("iyi gidiyorsun")
+      }else{print("tebrikler!")}
+```
+
+<br>
+
+--------
+
+Alternatif olarak `ifelse()` fonksiyonundan da faydalanılabilir.
+
+<br>
+
+```{r}
+puan=90
+ifelse(puan<70, "daha fazla calis","iyi gidiyorsun")
+```
+
+<br>
+
+```{r}
+h=8
+ifelse(h!=3,sqrt(h),h^2)
+```
+
 
 ## loops
 
+Döngü (loop) başlığı altında veri analizinde sıklıkla ihtiyaç duyacağınız `for`, `while`, `repeat` gibi yapılar incelenecek ve önemli noktalar vurgulanacaktır.
+
 ### for
+
+```{r}
+for(i in 1:5) {
+print(i)}
+```
+
+<br>
+
+```{r}
+x <- c("a", "b", "c", "d") 
+
+for(i in 1:4) {
+print(x[i])}
+```
+
+<br>
+
+```{r}
+for(i in seq_along(x)) {
+print(x[i])}
+```
+
+<br>
+
+**for** döngüsü iç içe (**nested**) yapıda da olabilir. Bu yapı genellikle çok boyutlu ve hiyerarşik (matris, list gibi) veri yapıları için kullanılır. 2-3 seviyeden fazla iç içe döngü kullanmak hem kodun yazımında hem de anlaşılmasında zorluk yaratmaktadır. Bu bakımdan fazla sayıda **nested loop** yazmak yerine fonksiyonlardan faydalanmak daha akılcı olacaktır.
+
+<br>
+```{r}
+x <- matrix(1:6, 2, 3)
+for(i in seq_len(nrow(x))) {
+for(j in seq_len(ncol(x))) {
+                print(x[i, j])
+} }
+
+```
+
 
 ### while
 
+**while** döngüleri bir koşulu test ederek başlar. Doğruysa, döngü çalışmaya başlar. Döngü yürütüldüğünde, koşul tekrar test edilir ve koşul yanlış olana kadar bu işlem devam eder, ardından döngü sonlanır. **while** döngüleri dikkatli yazılmazsa sonsuz bir döngüye dönüşebilir.
+
+<br>
+
+```{r}
+count <- 0
+while(count < 6) {
+         print(count)
+ count <- count + 1}
+```
+<br>
+
+
 ### repeat
 
+**repeat**, başından itibaren sonsuz bir döngü başlatır. Veri analizi uygulamalarında sıklıkla kullanılmasa da ihtiyaç duyulduğu durumlar mevcuttur. Bir **repeat** döngüsünden çıkmanın tek yolu, **break** çağrısı yapmaktır.
+
+İlgilenilen problemde çözüme yeterince yaklaşana kadar durmak istemeyeceğiniz yinelemeli bir algoritma mevcut olabilir. Bu tür bir durumda, çözüme "yeterince yaklaşmak" için kaç tane yineleme gerekeceğini genellikle önceden bilemezsiniz, **repeat**'in uygun kullanımı böyle bir problemde mümkün olabilir.
+
+
 ### next, break
+
+**next**, bir döngünün yinelemesini atlamak için kullanılır.
+
+<br>
+
+```{r}
+i2<-c()
+for(i in 1:10) { if(i <= 5) {
+                ## ilk 5 iterasyonu atla
+next}
+       i2[i]<-i*3 
+}
+  print(i2)
+```
+
+<br>
+
+**break**, bir döngünün sonlandırılması için kullanılır.
+
+```{r}
+for(i in 1:10) { 
+  print(i)
+if(i > 5) {
+  break
+} }
+```
+
+
+
+
+
+
