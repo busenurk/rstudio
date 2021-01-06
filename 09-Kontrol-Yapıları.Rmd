@@ -2,9 +2,9 @@
 
 ## if-else 
 
-**if** acıkırsan, yemek ye
+**if** acıkırsan, yemek ye.
 
-**if** alarm çalarsa, uyan
+**if** alarm çalarsa, uyan.
 
 ```{r}
 x=11
@@ -32,7 +32,7 @@ print(t)}
 
 ---------
 
-**if** trafik lambası yeşil yanarsa harekete geç **else** dur
+**if** trafik lambası yeşil yanarsa harekete geç **else** dur.
 
 **if** kahve bardağın dolu ise iç **else** bardağı doldur.
 
@@ -57,7 +57,7 @@ puan=90
 ---------
 
 **if** hava cok sıcak ise; tshirt giy **else if** sıcak ve yagmurlu ise; tshirt ve ceket giy,
-**else if** soguk ise; kazak giy **else** evde kal
+**else if** soguk ise; kazak giy **else** evde kal.
 
 ```{r}
 puan=82
