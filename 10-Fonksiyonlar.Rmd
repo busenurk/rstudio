@@ -1,1 +1,70 @@
 # Fonksiyonlar
+
+Fonksiyon yapısı, kod satırlarını defalarca kopyalayarak yapacağınız işlemi birkaç satırda çözmenizi  sağlayacak faydalı bir işlevdir. R'da yer alan birçok fonksiyonu kullanmakla birlikte kendi fonksiyonunuzu yazmanız da mümkündür. Çeşitli hesaplamalarda birden çok defa kullanılması gereken işlemleri fonksiyon olarak tanımlamak kullanım kolaylığı sağlayacaktır. Döngülerde olduğu gibi fonksiyonlar da iç içe yazılabilir. 
+
+Bu amaçla kullanılacak yapı `function()` olacaktır.
+
+```{r}
+f1<-function(){
+  cat("Herkese merhaba!")
+}
+
+f1()
+```
+
+<br>
+
+```{r}
+f2<-function(n){
+  for(i in 1:n){
+     cat("Herkese merhaba!\n")
+  }
+}
+
+f2(3)
+```
+
+<br>
+
+```{r}
+f3<-function(a,b){
+  a^2+b
+}
+
+f3(2,3)
+```
+
+<br>
+
+```{r}
+f4<-function(num){
+  merhaba<-"Herkese merhaba!"
+  for(i in 1:num){
+    cat(merhaba,"\n")
+  }
+  nchar(merhaba)*num
+}
+
+f4(2)
+```
+
+<br>
+
+```{r}
+f5<-function(a){
+  a^2
+}
+
+f6<-function(b){
+  f5(b)+2*b
+}
+
+f6(3)
+```
+
+<br>
+
+Uygulamaların devamı için lütfen ders videosuna geçiniz.
+
+
+
