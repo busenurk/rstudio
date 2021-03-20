@@ -49,3 +49,8 @@ apply-ailesi
 referans
 section
 if-else-yapısı
+uygulamalar
+ders2
+ders3
+ders4
+ders5
