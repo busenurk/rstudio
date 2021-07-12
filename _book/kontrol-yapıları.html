@@ -24,7 +24,7 @@
 <meta name="author" content="Dr. Busenur Kızılaslan" />
 
 
-<meta name="date" content="2021-01-06" />
+<meta name="date" content="2021-07-12" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,6 +33,7 @@
   
 <link rel="prev" href="grafikler.html"/>
 <link rel="next" href="fonksiyonlar.html"/>
+<script src="libs/header-attrs-2.7.1/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -50,24 +51,28 @@
 
 
 
-<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
-<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.5.2/htmlwidgets.js"></script>
+<script src="libs/plotly-binding-4.9.2.1/plotly.js"></script>
+<script src="libs/typedarray-0.1/typedarray.min.js"></script>
+<link href="libs/crosstalk-1.1.0.1/css/crosstalk.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.1.0.1/js/crosstalk.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css-1.52.2/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main-1.52.2/plotly-latest.min.js"></script>
 
 
 <style type="text/css">
-code.sourceCode > span { display: inline-block; line-height: 1.25; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-code.sourceCode > span:empty { height: 1.2em; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -87,7 +92,7 @@ pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-le
 div.sourceCode
   {   }
 @media screen {
-code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -136,56 +141,68 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="./">R Ders Notları</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Ön Bilgi</a><ul>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Ön Bilgi</a>
+<ul>
 <li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#hakkımda"><i class="fa fa-check"></i><b>1.1</b> Hakkımda</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="motivasyon.html"><a href="motivasyon.html"><i class="fa fa-check"></i><b>2</b> Motivasyon</a></li>
-<li class="chapter" data-level="3" data-path="genel-bakış.html"><a href="genel-bakış.html"><i class="fa fa-check"></i><b>3</b> Genel Bakış</a><ul>
-<li class="chapter" data-level="3.1" data-path="genel-bakış.html"><a href="genel-bakış.html#r-nedir"><i class="fa fa-check"></i><b>3.1</b> R: Nedir?</a><ul>
+<li class="chapter" data-level="3" data-path="genel-bakış.html"><a href="genel-bakış.html"><i class="fa fa-check"></i><b>3</b> Genel Bakış</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="genel-bakış.html"><a href="genel-bakış.html#r-nedir"><i class="fa fa-check"></i><b>3.1</b> R: Nedir?</a>
+<ul>
 <li class="chapter" data-level="3.1.1" data-path="genel-bakış.html"><a href="genel-bakış.html#rstudio"><i class="fa fa-check"></i><b>3.1.1</b> RStudio</a></li>
 </ul></li>
 <li class="chapter" data-level="3.2" data-path="genel-bakış.html"><a href="genel-bakış.html#r-neden"><i class="fa fa-check"></i><b>3.2</b> R: Neden?</a></li>
 <li class="chapter" data-level="3.3" data-path="genel-bakış.html"><a href="genel-bakış.html#r-help"><i class="fa fa-check"></i><b>3.3</b> R: Help</a></li>
 <li class="chapter" data-level="3.4" data-path="genel-bakış.html"><a href="genel-bakış.html#paketler"><i class="fa fa-check"></i><b>3.4</b> Paketler</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="yükleme-ve-tanışma.html"><a href="yükleme-ve-tanışma.html"><i class="fa fa-check"></i><b>4</b> Yükleme ve Tanışma</a><ul>
+<li class="chapter" data-level="4" data-path="yükleme-ve-tanışma.html"><a href="yükleme-ve-tanışma.html"><i class="fa fa-check"></i><b>4</b> Yükleme ve Tanışma</a>
+<ul>
 <li class="chapter" data-level="4.1" data-path="yükleme-ve-tanışma.html"><a href="yükleme-ve-tanışma.html#yükleme"><i class="fa fa-check"></i><b>4.1</b> Yükleme</a></li>
 <li class="chapter" data-level="4.2" data-path="yükleme-ve-tanışma.html"><a href="yükleme-ve-tanışma.html#tanışma"><i class="fa fa-check"></i><b>4.2</b> Tanışma</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="temel-nesneler.html"><a href="temel-nesneler.html"><i class="fa fa-check"></i><b>5</b> Temel Nesneler</a><ul>
+<li class="chapter" data-level="5" data-path="temel-nesneler.html"><a href="temel-nesneler.html"><i class="fa fa-check"></i><b>5</b> Temel Nesneler</a>
+<ul>
 <li class="chapter" data-level="5.1" data-path="temel-nesneler.html"><a href="temel-nesneler.html#aritmetik-arithmetic"><i class="fa fa-check"></i><b>5.1</b> Aritmetik (Arithmetic)</a></li>
 <li class="chapter" data-level="5.2" data-path="temel-nesneler.html"><a href="temel-nesneler.html#nesneleri-tanımlama-assigning-objects"><i class="fa fa-check"></i><b>5.2</b> Nesneleri Tanımlama (Assigning Objects)</a></li>
 <li class="chapter" data-level="5.3" data-path="temel-nesneler.html"><a href="temel-nesneler.html#vektörler-vectors"><i class="fa fa-check"></i><b>5.3</b> Vektörler (Vectors)</a></li>
 <li class="chapter" data-level="5.4" data-path="temel-nesneler.html"><a href="temel-nesneler.html#matrisler-matrices-ve-diziler-arrays"><i class="fa fa-check"></i><b>5.4</b> Matrisler (Matrices) ve Diziler (Arrays)</a></li>
 <li class="chapter" data-level="5.5" data-path="temel-nesneler.html"><a href="temel-nesneler.html#listeler-ve-data-frameler-lists-and-data-frames"><i class="fa fa-check"></i><b>5.5</b> Listeler ve Data Frameler (Lists and Data Frames)</a></li>
-<li class="chapter" data-level="5.6" data-path="temel-nesneler.html"><a href="temel-nesneler.html#sayısal-olmayan-değerler-non-numeric-values"><i class="fa fa-check"></i><b>5.6</b> Sayısal Olmayan Değerler (Non-Numeric Values)</a><ul>
+<li class="chapter" data-level="5.6" data-path="temel-nesneler.html"><a href="temel-nesneler.html#sayısal-olmayan-değerler-non-numeric-values"><i class="fa fa-check"></i><b>5.6</b> Sayısal Olmayan Değerler (Non-Numeric Values)</a>
+<ul>
 <li class="chapter" data-level="5.6.1" data-path="temel-nesneler.html"><a href="temel-nesneler.html#mantıksal-değerler"><i class="fa fa-check"></i><b>5.6.1</b> Mantıksal Değerler</a></li>
 <li class="chapter" data-level="5.6.2" data-path="temel-nesneler.html"><a href="temel-nesneler.html#karakterler"><i class="fa fa-check"></i><b>5.6.2</b> Karakterler</a></li>
 <li class="chapter" data-level="5.6.3" data-path="temel-nesneler.html"><a href="temel-nesneler.html#faktörler-factors"><i class="fa fa-check"></i><b>5.6.3</b> Faktörler (Factors)</a></li>
 </ul></li>
 <li class="chapter" data-level="5.7" data-path="temel-nesneler.html"><a href="temel-nesneler.html#eksik-gözlemler-missing-values"><i class="fa fa-check"></i><b>5.7</b> Eksik Gözlemler (Missing Values)</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="import-export-işlemleri.html"><a href="import-export-işlemleri.html"><i class="fa fa-check"></i><b>6</b> Import Export İşlemleri</a><ul>
+<li class="chapter" data-level="6" data-path="import-export-işlemleri.html"><a href="import-export-işlemleri.html"><i class="fa fa-check"></i><b>6</b> Import Export İşlemleri</a>
+<ul>
 <li class="chapter" data-level="6.1" data-path="import-export-işlemleri.html"><a href="import-export-işlemleri.html#import-işlemleri"><i class="fa fa-check"></i><b>6.1</b> Import İşlemleri</a></li>
 <li class="chapter" data-level="6.2" data-path="import-export-işlemleri.html"><a href="import-export-işlemleri.html#export-işlemleri"><i class="fa fa-check"></i><b>6.2</b> Export İşlemleri</a></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="bazı-önemli-komutlar.html"><a href="bazı-önemli-komutlar.html"><i class="fa fa-check"></i><b>7</b> Bazı Önemli Komutlar</a><ul>
+<li class="chapter" data-level="7" data-path="bazı-önemli-komutlar.html"><a href="bazı-önemli-komutlar.html"><i class="fa fa-check"></i><b>7</b> Bazı Önemli Komutlar</a>
+<ul>
 <li class="chapter" data-level="7.1" data-path="bazı-önemli-komutlar.html"><a href="bazı-önemli-komutlar.html#sort"><i class="fa fa-check"></i><b>7.1</b> Sort</a></li>
 <li class="chapter" data-level="7.2" data-path="bazı-önemli-komutlar.html"><a href="bazı-önemli-komutlar.html#rank"><i class="fa fa-check"></i><b>7.2</b> Rank</a></li>
 <li class="chapter" data-level="7.3" data-path="bazı-önemli-komutlar.html"><a href="bazı-önemli-komutlar.html#order"><i class="fa fa-check"></i><b>7.3</b> Order</a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="dplyr.html"><a href="dplyr.html"><i class="fa fa-check"></i><b>8</b> DPLYR</a></li>
-<li class="chapter" data-level="9" data-path="grafikler.html"><a href="grafikler.html"><i class="fa fa-check"></i><b>9</b> Grafikler</a><ul>
+<li class="chapter" data-level="9" data-path="grafikler.html"><a href="grafikler.html"><i class="fa fa-check"></i><b>9</b> Grafikler</a>
+<ul>
 <li class="chapter" data-level="9.1" data-path="grafikler.html"><a href="grafikler.html#mevcut-grafik-üzerine-ekleme-yapmak"><i class="fa fa-check"></i><b>9.1</b> Mevcut grafik üzerine ekleme yapmak</a></li>
-<li class="chapter" data-level="9.2" data-path="grafikler.html"><a href="grafikler.html#önemli-grafik-paketleri"><i class="fa fa-check"></i><b>9.2</b> Önemli grafik paketleri</a><ul>
+<li class="chapter" data-level="9.2" data-path="grafikler.html"><a href="grafikler.html#önemli-grafik-paketleri"><i class="fa fa-check"></i><b>9.2</b> Önemli grafik paketleri</a>
+<ul>
 <li class="chapter" data-level="9.2.1" data-path="grafikler.html"><a href="grafikler.html#lattice"><i class="fa fa-check"></i><b>9.2.1</b> lattice</a></li>
 <li class="chapter" data-level="9.2.2" data-path="grafikler.html"><a href="grafikler.html#ggplot2"><i class="fa fa-check"></i><b>9.2.2</b> ggplot2</a></li>
 <li class="chapter" data-level="9.2.3" data-path="grafikler.html"><a href="grafikler.html#plotly"><i class="fa fa-check"></i><b>9.2.3</b> plotly</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="10" data-path="kontrol-yapıları.html"><a href="kontrol-yapıları.html"><i class="fa fa-check"></i><b>10</b> Kontrol Yapıları</a><ul>
+<li class="chapter" data-level="10" data-path="kontrol-yapıları.html"><a href="kontrol-yapıları.html"><i class="fa fa-check"></i><b>10</b> Kontrol Yapıları</a>
+<ul>
 <li class="chapter" data-level="10.1" data-path="kontrol-yapıları.html"><a href="kontrol-yapıları.html#if-else"><i class="fa fa-check"></i><b>10.1</b> if-else</a></li>
-<li class="chapter" data-level="10.2" data-path="kontrol-yapıları.html"><a href="kontrol-yapıları.html#loops"><i class="fa fa-check"></i><b>10.2</b> loops</a><ul>
+<li class="chapter" data-level="10.2" data-path="kontrol-yapıları.html"><a href="kontrol-yapıları.html#loops"><i class="fa fa-check"></i><b>10.2</b> loops</a>
+<ul>
 <li class="chapter" data-level="10.2.1" data-path="kontrol-yapıları.html"><a href="kontrol-yapıları.html#for"><i class="fa fa-check"></i><b>10.2.1</b> for</a></li>
 <li class="chapter" data-level="10.2.2" data-path="kontrol-yapıları.html"><a href="kontrol-yapıları.html#while"><i class="fa fa-check"></i><b>10.2.2</b> while</a></li>
 <li class="chapter" data-level="10.2.3" data-path="kontrol-yapıları.html"><a href="kontrol-yapıları.html#repeat"><i class="fa fa-check"></i><b>10.2.3</b> repeat</a></li>
@@ -193,7 +210,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="11" data-path="fonksiyonlar.html"><a href="fonksiyonlar.html"><i class="fa fa-check"></i><b>11</b> Fonksiyonlar</a></li>
-<li class="chapter" data-level="12" data-path="apply-ailesi.html"><a href="apply-ailesi.html"><i class="fa fa-check"></i><b>12</b> Apply Ailesi</a></li>
+<li class="chapter" data-level="12" data-path="uygulamalar.html"><a href="uygulamalar.html"><i class="fa fa-check"></i><b>12</b> Uygulamalar</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="uygulamalar.html"><a href="uygulamalar.html#cs_1-nyc-flights"><i class="fa fa-check"></i><b>12.1</b> CS_1 (NYC Flights)</a></li>
+<li class="chapter" data-level="12.2" data-path="uygulamalar.html"><a href="uygulamalar.html#cs_2-sean-lahman-baseball-database"><i class="fa fa-check"></i><b>12.2</b> CS_2 (Sean ‘Lahman’ Baseball Database)</a></li>
+<li class="chapter" data-level="12.3" data-path="uygulamalar.html"><a href="uygulamalar.html#cs_3-diamonds"><i class="fa fa-check"></i><b>12.3</b> CS_3 (Diamonds)</a></li>
+</ul></li>
 <li class="chapter" data-level="13" data-path="referans.html"><a href="referans.html"><i class="fa fa-check"></i><b>13</b> Referans</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -215,85 +237,85 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="kontrol-yapıları" class="section level1">
+<div id="kontrol-yapıları" class="section level1" number="10">
 <h1><span class="header-section-number">Bölüm10</span> Kontrol Yapıları</h1>
-<div id="if-else" class="section level2">
+<div id="if-else" class="section level2" number="10.1">
 <h2><span class="header-section-number">10.1</span> if-else</h2>
 <p><strong>if</strong> acıkırsan, yemek ye.</p>
 <p><strong>if</strong> alarm çalarsa, uyan.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="kontrol-yapıları.html#cb1-1"></a>x=<span class="dv">11</span></span>
-<span id="cb1-2"><a href="kontrol-yapıları.html#cb1-2"></a><span class="cf">if</span>(x<span class="op">&gt;</span><span class="dv">10</span>){</span>
-<span id="cb1-3"><a href="kontrol-yapıları.html#cb1-3"></a>  <span class="kw">print</span>(<span class="st">&quot;x, 10 dan buyuktur&quot;</span>)</span>
-<span id="cb1-4"><a href="kontrol-yapıları.html#cb1-4"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb279"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb279-1"><a href="kontrol-yapıları.html#cb279-1" aria-hidden="true" tabindex="-1"></a>x<span class="ot">=</span><span class="dv">11</span></span>
+<span id="cb279-2"><a href="kontrol-yapıları.html#cb279-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(x<span class="sc">&gt;</span><span class="dv">10</span>){</span>
+<span id="cb279-3"><a href="kontrol-yapıları.html#cb279-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">&quot;x, 10 dan buyuktur&quot;</span>)</span>
+<span id="cb279-4"><a href="kontrol-yapıları.html#cb279-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 <pre><code>## [1] &quot;x, 10 dan buyuktur&quot;</code></pre>
 <p><br></p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="kontrol-yapıları.html#cb3-1"></a>puan=<span class="dv">49</span></span>
-<span id="cb3-2"><a href="kontrol-yapıları.html#cb3-2"></a><span class="cf">if</span>(puan<span class="op">&lt;</span><span class="dv">50</span>){<span class="kw">print</span>(<span class="st">&quot;daha fazla calis!&quot;</span>)}</span></code></pre></div>
+<div class="sourceCode" id="cb281"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb281-1"><a href="kontrol-yapıları.html#cb281-1" aria-hidden="true" tabindex="-1"></a>puan<span class="ot">=</span><span class="dv">49</span></span>
+<span id="cb281-2"><a href="kontrol-yapıları.html#cb281-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(puan<span class="sc">&lt;</span><span class="dv">50</span>){<span class="fu">print</span>(<span class="st">&quot;daha fazla calis!&quot;</span>)}</span></code></pre></div>
 <pre><code>## [1] &quot;daha fazla calis!&quot;</code></pre>
 <p><br></p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="kontrol-yapıları.html#cb5-1"></a>z=<span class="dv">10</span></span>
-<span id="cb5-2"><a href="kontrol-yapıları.html#cb5-2"></a><span class="cf">if</span>(z<span class="op">==</span><span class="dv">10</span>){t&lt;-z<span class="op">+</span><span class="dv">3</span></span>
-<span id="cb5-3"><a href="kontrol-yapıları.html#cb5-3"></a><span class="kw">print</span>(t)}</span></code></pre></div>
+<div class="sourceCode" id="cb283"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb283-1"><a href="kontrol-yapıları.html#cb283-1" aria-hidden="true" tabindex="-1"></a>z<span class="ot">=</span><span class="dv">10</span></span>
+<span id="cb283-2"><a href="kontrol-yapıları.html#cb283-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(z<span class="sc">==</span><span class="dv">10</span>){t<span class="ot">&lt;-</span>z<span class="sc">+</span><span class="dv">3</span></span>
+<span id="cb283-3"><a href="kontrol-yapıları.html#cb283-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(t)}</span></code></pre></div>
 <pre><code>## [1] 13</code></pre>
 <p><br></p>
 <hr />
 <p><strong>if</strong> trafik lambası yeşil yanarsa harekete geç <strong>else</strong> dur.</p>
 <p><strong>if</strong> kahve bardağın dolu ise iç <strong>else</strong> bardağı doldur.</p>
 <p><br></p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="kontrol-yapıları.html#cb7-1"></a>x&lt;-<span class="dv">15</span></span>
-<span id="cb7-2"><a href="kontrol-yapıları.html#cb7-2"></a><span class="cf">if</span>(x<span class="op">&lt;</span><span class="dv">10</span>){<span class="kw">print</span>(<span class="st">&quot;x 10 dan kucuktur&quot;</span>)</span>
-<span id="cb7-3"><a href="kontrol-yapıları.html#cb7-3"></a>}<span class="cf">else</span> {<span class="kw">print</span>(<span class="st">&quot;x 10 a esit veya buyuktur&quot;</span>)}</span></code></pre></div>
+<div class="sourceCode" id="cb285"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb285-1"><a href="kontrol-yapıları.html#cb285-1" aria-hidden="true" tabindex="-1"></a>x<span class="ot">&lt;-</span><span class="dv">15</span></span>
+<span id="cb285-2"><a href="kontrol-yapıları.html#cb285-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(x<span class="sc">&lt;</span><span class="dv">10</span>){<span class="fu">print</span>(<span class="st">&quot;x 10 dan kucuktur&quot;</span>)</span>
+<span id="cb285-3"><a href="kontrol-yapıları.html#cb285-3" aria-hidden="true" tabindex="-1"></a>}<span class="cf">else</span> {<span class="fu">print</span>(<span class="st">&quot;x 10 a esit veya buyuktur&quot;</span>)}</span></code></pre></div>
 <pre><code>## [1] &quot;x 10 a esit veya buyuktur&quot;</code></pre>
 <p><br></p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="kontrol-yapıları.html#cb9-1"></a>puan=<span class="dv">90</span></span>
-<span id="cb9-2"><a href="kontrol-yapıları.html#cb9-2"></a>  <span class="cf">if</span>(puan<span class="op">&lt;</span><span class="dv">70</span>){<span class="kw">print</span>(<span class="st">&quot;daha fazla calis&quot;</span>)</span>
-<span id="cb9-3"><a href="kontrol-yapıları.html#cb9-3"></a>    }<span class="cf">else</span>{<span class="kw">print</span>(<span class="st">&quot;iyi gidiyorsun&quot;</span>)}</span></code></pre></div>
+<div class="sourceCode" id="cb287"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb287-1"><a href="kontrol-yapıları.html#cb287-1" aria-hidden="true" tabindex="-1"></a>puan<span class="ot">=</span><span class="dv">90</span></span>
+<span id="cb287-2"><a href="kontrol-yapıları.html#cb287-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(puan<span class="sc">&lt;</span><span class="dv">70</span>){<span class="fu">print</span>(<span class="st">&quot;daha fazla calis&quot;</span>)</span>
+<span id="cb287-3"><a href="kontrol-yapıları.html#cb287-3" aria-hidden="true" tabindex="-1"></a>    }<span class="cf">else</span>{<span class="fu">print</span>(<span class="st">&quot;iyi gidiyorsun&quot;</span>)}</span></code></pre></div>
 <pre><code>## [1] &quot;iyi gidiyorsun&quot;</code></pre>
 <p><br></p>
 <hr />
 <p><strong>if</strong> hava cok sıcak ise; tshirt giy <strong>else if</strong> sıcak ve yagmurlu ise; tshirt ve ceket giy,
 <strong>else if</strong> soguk ise; kazak giy <strong>else</strong> evde kal.</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="kontrol-yapıları.html#cb11-1"></a>puan=<span class="dv">82</span></span>
-<span id="cb11-2"><a href="kontrol-yapıları.html#cb11-2"></a>  <span class="cf">if</span>(puan<span class="op">&lt;</span><span class="dv">50</span>){<span class="kw">print</span>(<span class="st">&quot;daha fazla calis!&quot;</span>)</span>
-<span id="cb11-3"><a href="kontrol-yapıları.html#cb11-3"></a>  } <span class="cf">else</span> <span class="cf">if</span>(puan<span class="op">&gt;=</span><span class="dv">50</span> <span class="op">&amp;</span><span class="st"> </span>puan<span class="op">&lt;</span><span class="dv">80</span>){<span class="kw">print</span>(<span class="st">&quot;iyi gidiyorsun&quot;</span>)</span>
-<span id="cb11-4"><a href="kontrol-yapıları.html#cb11-4"></a>      }<span class="cf">else</span>{<span class="kw">print</span>(<span class="st">&quot;tebrikler!&quot;</span>)}</span></code></pre></div>
+<div class="sourceCode" id="cb289"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb289-1"><a href="kontrol-yapıları.html#cb289-1" aria-hidden="true" tabindex="-1"></a>puan<span class="ot">=</span><span class="dv">82</span></span>
+<span id="cb289-2"><a href="kontrol-yapıları.html#cb289-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(puan<span class="sc">&lt;</span><span class="dv">50</span>){<span class="fu">print</span>(<span class="st">&quot;daha fazla calis!&quot;</span>)</span>
+<span id="cb289-3"><a href="kontrol-yapıları.html#cb289-3" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> <span class="cf">if</span>(puan<span class="sc">&gt;=</span><span class="dv">50</span> <span class="sc">&amp;</span> puan<span class="sc">&lt;</span><span class="dv">80</span>){<span class="fu">print</span>(<span class="st">&quot;iyi gidiyorsun&quot;</span>)</span>
+<span id="cb289-4"><a href="kontrol-yapıları.html#cb289-4" aria-hidden="true" tabindex="-1"></a>      }<span class="cf">else</span>{<span class="fu">print</span>(<span class="st">&quot;tebrikler!&quot;</span>)}</span></code></pre></div>
 <pre><code>## [1] &quot;tebrikler!&quot;</code></pre>
 <p><br></p>
 <hr />
 <p>Alternatif olarak <code>ifelse()</code> fonksiyonundan da faydalanılabilir.</p>
 <p><br></p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="kontrol-yapıları.html#cb13-1"></a>puan=<span class="dv">90</span></span>
-<span id="cb13-2"><a href="kontrol-yapıları.html#cb13-2"></a><span class="kw">ifelse</span>(puan<span class="op">&lt;</span><span class="dv">70</span>, <span class="st">&quot;daha fazla calis&quot;</span>,<span class="st">&quot;iyi gidiyorsun&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb291"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb291-1"><a href="kontrol-yapıları.html#cb291-1" aria-hidden="true" tabindex="-1"></a>puan<span class="ot">=</span><span class="dv">90</span></span>
+<span id="cb291-2"><a href="kontrol-yapıları.html#cb291-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ifelse</span>(puan<span class="sc">&lt;</span><span class="dv">70</span>, <span class="st">&quot;daha fazla calis&quot;</span>,<span class="st">&quot;iyi gidiyorsun&quot;</span>)</span></code></pre></div>
 <pre><code>## [1] &quot;iyi gidiyorsun&quot;</code></pre>
 <p><br></p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="kontrol-yapıları.html#cb15-1"></a>h=<span class="dv">8</span></span>
-<span id="cb15-2"><a href="kontrol-yapıları.html#cb15-2"></a><span class="kw">ifelse</span>(h<span class="op">!=</span><span class="dv">3</span>,<span class="kw">sqrt</span>(h),h<span class="op">^</span><span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb293"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb293-1"><a href="kontrol-yapıları.html#cb293-1" aria-hidden="true" tabindex="-1"></a>h<span class="ot">=</span><span class="dv">8</span></span>
+<span id="cb293-2"><a href="kontrol-yapıları.html#cb293-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ifelse</span>(h<span class="sc">!=</span><span class="dv">3</span>,<span class="fu">sqrt</span>(h),h<span class="sc">^</span><span class="dv">2</span>)</span></code></pre></div>
 <pre><code>## [1] 2.828427</code></pre>
 </div>
-<div id="loops" class="section level2">
+<div id="loops" class="section level2" number="10.2">
 <h2><span class="header-section-number">10.2</span> loops</h2>
 <p>Döngü (loop) başlığı altında veri analizinde sıklıkla ihtiyaç duyacağınız <code>for</code>, <code>while</code>, <code>repeat</code> gibi yapılar incelenecek ve önemli noktalar vurgulanacaktır.</p>
-<div id="for" class="section level3">
+<div id="for" class="section level3" number="10.2.1">
 <h3><span class="header-section-number">10.2.1</span> for</h3>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="kontrol-yapıları.html#cb17-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="dv">5</span>) {</span>
-<span id="cb17-2"><a href="kontrol-yapıları.html#cb17-2"></a><span class="kw">print</span>(i)}</span></code></pre></div>
+<div class="sourceCode" id="cb295"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb295-1"><a href="kontrol-yapıları.html#cb295-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>) {</span>
+<span id="cb295-2"><a href="kontrol-yapıları.html#cb295-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(i)}</span></code></pre></div>
 <pre><code>## [1] 1
 ## [1] 2
 ## [1] 3
 ## [1] 4
 ## [1] 5</code></pre>
 <p><br></p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="kontrol-yapıları.html#cb19-1"></a>x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>, <span class="st">&quot;c&quot;</span>, <span class="st">&quot;d&quot;</span>) </span>
-<span id="cb19-2"><a href="kontrol-yapıları.html#cb19-2"></a></span>
-<span id="cb19-3"><a href="kontrol-yapıları.html#cb19-3"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="dv">4</span>) {</span>
-<span id="cb19-4"><a href="kontrol-yapıları.html#cb19-4"></a><span class="kw">print</span>(x[i])}</span></code></pre></div>
+<div class="sourceCode" id="cb297"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb297-1"><a href="kontrol-yapıları.html#cb297-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>, <span class="st">&quot;c&quot;</span>, <span class="st">&quot;d&quot;</span>) </span>
+<span id="cb297-2"><a href="kontrol-yapıları.html#cb297-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb297-3"><a href="kontrol-yapıları.html#cb297-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>) {</span>
+<span id="cb297-4"><a href="kontrol-yapıları.html#cb297-4" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(x[i])}</span></code></pre></div>
 <pre><code>## [1] &quot;a&quot;
 ## [1] &quot;b&quot;
 ## [1] &quot;c&quot;
 ## [1] &quot;d&quot;</code></pre>
 <p><br></p>
-<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="kontrol-yapıları.html#cb21-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="kw">seq_along</span>(x)) {</span>
-<span id="cb21-2"><a href="kontrol-yapıları.html#cb21-2"></a><span class="kw">print</span>(x[i])}</span></code></pre></div>
+<div class="sourceCode" id="cb299"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb299-1"><a href="kontrol-yapıları.html#cb299-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="fu">seq_along</span>(x)) {</span>
+<span id="cb299-2"><a href="kontrol-yapıları.html#cb299-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(x[i])}</span></code></pre></div>
 <pre><code>## [1] &quot;a&quot;
 ## [1] &quot;b&quot;
 ## [1] &quot;c&quot;
@@ -301,11 +323,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><br></p>
 <p><strong>for</strong> döngüsü iç içe (<strong>nested</strong>) yapıda da olabilir. Bu yapı genellikle çok boyutlu ve hiyerarşik (matris, list gibi) veri yapıları için kullanılır. 2-3 seviyeden fazla iç içe döngü kullanmak hem kodun yazımında hem de anlaşılmasında zorluk yaratmaktadır. Bu bakımdan fazla sayıda <strong>nested loop</strong> yazmak yerine fonksiyonlardan faydalanmak daha akılcı olacaktır.</p>
 <p><br></p>
-<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="kontrol-yapıları.html#cb23-1"></a>x &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">6</span>, <span class="dv">2</span>, <span class="dv">3</span>)</span>
-<span id="cb23-2"><a href="kontrol-yapıları.html#cb23-2"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="kw">seq_len</span>(<span class="kw">nrow</span>(x))) {</span>
-<span id="cb23-3"><a href="kontrol-yapıları.html#cb23-3"></a><span class="cf">for</span>(j <span class="cf">in</span> <span class="kw">seq_len</span>(<span class="kw">ncol</span>(x))) {</span>
-<span id="cb23-4"><a href="kontrol-yapıları.html#cb23-4"></a>                <span class="kw">print</span>(x[i, j])</span>
-<span id="cb23-5"><a href="kontrol-yapıları.html#cb23-5"></a>} }</span></code></pre></div>
+<div class="sourceCode" id="cb301"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb301-1"><a href="kontrol-yapıları.html#cb301-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>, <span class="dv">2</span>, <span class="dv">3</span>)</span>
+<span id="cb301-2"><a href="kontrol-yapıları.html#cb301-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="fu">seq_len</span>(<span class="fu">nrow</span>(x))) {</span>
+<span id="cb301-3"><a href="kontrol-yapıları.html#cb301-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(j <span class="cf">in</span> <span class="fu">seq_len</span>(<span class="fu">ncol</span>(x))) {</span>
+<span id="cb301-4"><a href="kontrol-yapıları.html#cb301-4" aria-hidden="true" tabindex="-1"></a>                <span class="fu">print</span>(x[i, j])</span>
+<span id="cb301-5"><a href="kontrol-yapıları.html#cb301-5" aria-hidden="true" tabindex="-1"></a>} }</span></code></pre></div>
 <pre><code>## [1] 1
 ## [1] 3
 ## [1] 5
@@ -313,14 +335,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## [1] 4
 ## [1] 6</code></pre>
 </div>
-<div id="while" class="section level3">
+<div id="while" class="section level3" number="10.2.2">
 <h3><span class="header-section-number">10.2.2</span> while</h3>
 <p><strong>while</strong> döngüleri bir koşulu test ederek başlar. Doğruysa, döngü çalışmaya başlar. Döngü yürütüldüğünde, koşul tekrar test edilir ve koşul yanlış olana kadar bu işlem devam eder, ardından döngü sonlanır. <strong>while</strong> döngüleri dikkatli yazılmazsa sonsuz bir döngüye dönüşebilir.</p>
 <p><br></p>
-<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="kontrol-yapıları.html#cb25-1"></a>count &lt;-<span class="st"> </span><span class="dv">0</span></span>
-<span id="cb25-2"><a href="kontrol-yapıları.html#cb25-2"></a><span class="cf">while</span>(count <span class="op">&lt;</span><span class="st"> </span><span class="dv">6</span>) {</span>
-<span id="cb25-3"><a href="kontrol-yapıları.html#cb25-3"></a>         <span class="kw">print</span>(count)</span>
-<span id="cb25-4"><a href="kontrol-yapıları.html#cb25-4"></a> count &lt;-<span class="st"> </span>count <span class="op">+</span><span class="st"> </span><span class="dv">1</span>}</span></code></pre></div>
+<div class="sourceCode" id="cb303"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb303-1"><a href="kontrol-yapıları.html#cb303-1" aria-hidden="true" tabindex="-1"></a>count <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb303-2"><a href="kontrol-yapıları.html#cb303-2" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span>(count <span class="sc">&lt;</span> <span class="dv">6</span>) {</span>
+<span id="cb303-3"><a href="kontrol-yapıları.html#cb303-3" aria-hidden="true" tabindex="-1"></a>         <span class="fu">print</span>(count)</span>
+<span id="cb303-4"><a href="kontrol-yapıları.html#cb303-4" aria-hidden="true" tabindex="-1"></a> count <span class="ot">&lt;-</span> count <span class="sc">+</span> <span class="dv">1</span>}</span></code></pre></div>
 <pre><code>## [1] 0
 ## [1] 1
 ## [1] 2
@@ -329,30 +351,30 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## [1] 5</code></pre>
 <p><br></p>
 </div>
-<div id="repeat" class="section level3">
+<div id="repeat" class="section level3" number="10.2.3">
 <h3><span class="header-section-number">10.2.3</span> repeat</h3>
 <p><strong>repeat</strong>, başından itibaren sonsuz bir döngü başlatır. Veri analizi uygulamalarında sıklıkla kullanılmasa da ihtiyaç duyulduğu durumlar mevcuttur. Bir <strong>repeat</strong> döngüsünden çıkmanın tek yolu, <strong>break</strong> çağrısı yapmaktır.</p>
 <p>İlgilenilen problemde çözüme yeterince yaklaşana kadar durmak istemeyeceğiniz yinelemeli bir algoritma mevcut olabilir. Bu tür bir durumda, çözüme “yeterince yaklaşmak” için kaç tane yineleme gerekeceğini genellikle önceden bilemezsiniz, <strong>repeat</strong>’in uygun kullanımı böyle bir problemde mümkün olabilir.</p>
 </div>
-<div id="next-break" class="section level3">
+<div id="next-break" class="section level3" number="10.2.4">
 <h3><span class="header-section-number">10.2.4</span> next, break</h3>
 <p><strong>next</strong>, bir döngünün yinelemesini atlamak için kullanılır.</p>
 <p><br></p>
-<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="kontrol-yapıları.html#cb27-1"></a>i2&lt;-<span class="kw">c</span>()</span>
-<span id="cb27-2"><a href="kontrol-yapıları.html#cb27-2"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="dv">10</span>) { <span class="cf">if</span>(i <span class="op">&lt;=</span><span class="st"> </span><span class="dv">5</span>) {</span>
-<span id="cb27-3"><a href="kontrol-yapıları.html#cb27-3"></a>                <span class="co">## ilk 5 iterasyonu atla</span></span>
-<span id="cb27-4"><a href="kontrol-yapıları.html#cb27-4"></a><span class="cf">next</span>}</span>
-<span id="cb27-5"><a href="kontrol-yapıları.html#cb27-5"></a>       i2[i]&lt;-i<span class="op">*</span><span class="dv">3</span> </span>
-<span id="cb27-6"><a href="kontrol-yapıları.html#cb27-6"></a>}</span>
-<span id="cb27-7"><a href="kontrol-yapıları.html#cb27-7"></a>  <span class="kw">print</span>(i2)</span></code></pre></div>
+<div class="sourceCode" id="cb305"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb305-1"><a href="kontrol-yapıları.html#cb305-1" aria-hidden="true" tabindex="-1"></a>i2<span class="ot">&lt;-</span><span class="fu">c</span>()</span>
+<span id="cb305-2"><a href="kontrol-yapıları.html#cb305-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>) { <span class="cf">if</span>(i <span class="sc">&lt;=</span> <span class="dv">5</span>) {</span>
+<span id="cb305-3"><a href="kontrol-yapıları.html#cb305-3" aria-hidden="true" tabindex="-1"></a>                <span class="do">## ilk 5 iterasyonu atla</span></span>
+<span id="cb305-4"><a href="kontrol-yapıları.html#cb305-4" aria-hidden="true" tabindex="-1"></a><span class="cf">next</span>}</span>
+<span id="cb305-5"><a href="kontrol-yapıları.html#cb305-5" aria-hidden="true" tabindex="-1"></a>       i2[i]<span class="ot">&lt;-</span>i<span class="sc">*</span><span class="dv">3</span> </span>
+<span id="cb305-6"><a href="kontrol-yapıları.html#cb305-6" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb305-7"><a href="kontrol-yapıları.html#cb305-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(i2)</span></code></pre></div>
 <pre><code>##  [1] NA NA NA NA NA 18 21 24 27 30</code></pre>
 <p><br></p>
 <p><strong>break</strong>, bir döngünün sonlandırılması için kullanılır.</p>
-<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="kontrol-yapıları.html#cb29-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="dv">10</span>) { </span>
-<span id="cb29-2"><a href="kontrol-yapıları.html#cb29-2"></a>  <span class="kw">print</span>(i)</span>
-<span id="cb29-3"><a href="kontrol-yapıları.html#cb29-3"></a><span class="cf">if</span>(i <span class="op">&gt;</span><span class="st"> </span><span class="dv">5</span>) {</span>
-<span id="cb29-4"><a href="kontrol-yapıları.html#cb29-4"></a>  <span class="cf">break</span></span>
-<span id="cb29-5"><a href="kontrol-yapıları.html#cb29-5"></a>} }</span></code></pre></div>
+<div class="sourceCode" id="cb307"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb307-1"><a href="kontrol-yapıları.html#cb307-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>) { </span>
+<span id="cb307-2"><a href="kontrol-yapıları.html#cb307-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(i)</span>
+<span id="cb307-3"><a href="kontrol-yapıları.html#cb307-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(i <span class="sc">&gt;</span> <span class="dv">5</span>) {</span>
+<span id="cb307-4"><a href="kontrol-yapıları.html#cb307-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">break</span></span>
+<span id="cb307-5"><a href="kontrol-yapıları.html#cb307-5" aria-hidden="true" tabindex="-1"></a>} }</span></code></pre></div>
 <pre><code>## [1] 1
 ## [1] 2
 ## [1] 3
@@ -419,6 +441,20 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>

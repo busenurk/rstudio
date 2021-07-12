@@ -24,7 +24,7 @@
 <meta name="author" content="Dr. Busenur Kızılaslan" />
 
 
-<meta name="date" content="2021-01-04" />
+<meta name="date" content="2021-07-12" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,6 +33,7 @@
   
 <link rel="prev" href="temel-nesneler.html"/>
 <link rel="next" href="bazı-önemli-komutlar.html"/>
+<script src="libs/header-attrs-2.7.1/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -50,9 +51,6 @@
 
 
 
-<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
-<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
 <script src="libs/htmlwidgets-1.5.2/htmlwidgets.js"></script>
 <script src="libs/plotly-binding-4.9.2.1/plotly.js"></script>
 <script src="libs/typedarray-0.1/typedarray.min.js"></script>
@@ -63,18 +61,18 @@
 
 
 <style type="text/css">
-code.sourceCode > span { display: inline-block; line-height: 1.25; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-code.sourceCode > span:empty { height: 1.2em; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -94,7 +92,7 @@ pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-le
 div.sourceCode
   {   }
 @media screen {
-code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -143,56 +141,68 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="./">R Ders Notları</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Ön Bilgi</a><ul>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Ön Bilgi</a>
+<ul>
 <li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#hakkımda"><i class="fa fa-check"></i><b>1.1</b> Hakkımda</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="motivasyon.html"><a href="motivasyon.html"><i class="fa fa-check"></i><b>2</b> Motivasyon</a></li>
-<li class="chapter" data-level="3" data-path="genel-bakış.html"><a href="genel-bakış.html"><i class="fa fa-check"></i><b>3</b> Genel Bakış</a><ul>
-<li class="chapter" data-level="3.1" data-path="genel-bakış.html"><a href="genel-bakış.html#r-nedir"><i class="fa fa-check"></i><b>3.1</b> R: Nedir?</a><ul>
+<li class="chapter" data-level="3" data-path="genel-bakış.html"><a href="genel-bakış.html"><i class="fa fa-check"></i><b>3</b> Genel Bakış</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="genel-bakış.html"><a href="genel-bakış.html#r-nedir"><i class="fa fa-check"></i><b>3.1</b> R: Nedir?</a>
+<ul>
 <li class="chapter" data-level="3.1.1" data-path="genel-bakış.html"><a href="genel-bakış.html#rstudio"><i class="fa fa-check"></i><b>3.1.1</b> RStudio</a></li>
 </ul></li>
 <li class="chapter" data-level="3.2" data-path="genel-bakış.html"><a href="genel-bakış.html#r-neden"><i class="fa fa-check"></i><b>3.2</b> R: Neden?</a></li>
 <li class="chapter" data-level="3.3" data-path="genel-bakış.html"><a href="genel-bakış.html#r-help"><i class="fa fa-check"></i><b>3.3</b> R: Help</a></li>
 <li class="chapter" data-level="3.4" data-path="genel-bakış.html"><a href="genel-bakış.html#paketler"><i class="fa fa-check"></i><b>3.4</b> Paketler</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="yükleme-ve-tanışma.html"><a href="yükleme-ve-tanışma.html"><i class="fa fa-check"></i><b>4</b> Yükleme ve Tanışma</a><ul>
+<li class="chapter" data-level="4" data-path="yükleme-ve-tanışma.html"><a href="yükleme-ve-tanışma.html"><i class="fa fa-check"></i><b>4</b> Yükleme ve Tanışma</a>
+<ul>
 <li class="chapter" data-level="4.1" data-path="yükleme-ve-tanışma.html"><a href="yükleme-ve-tanışma.html#yükleme"><i class="fa fa-check"></i><b>4.1</b> Yükleme</a></li>
 <li class="chapter" data-level="4.2" data-path="yükleme-ve-tanışma.html"><a href="yükleme-ve-tanışma.html#tanışma"><i class="fa fa-check"></i><b>4.2</b> Tanışma</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="temel-nesneler.html"><a href="temel-nesneler.html"><i class="fa fa-check"></i><b>5</b> Temel Nesneler</a><ul>
+<li class="chapter" data-level="5" data-path="temel-nesneler.html"><a href="temel-nesneler.html"><i class="fa fa-check"></i><b>5</b> Temel Nesneler</a>
+<ul>
 <li class="chapter" data-level="5.1" data-path="temel-nesneler.html"><a href="temel-nesneler.html#aritmetik-arithmetic"><i class="fa fa-check"></i><b>5.1</b> Aritmetik (Arithmetic)</a></li>
 <li class="chapter" data-level="5.2" data-path="temel-nesneler.html"><a href="temel-nesneler.html#nesneleri-tanımlama-assigning-objects"><i class="fa fa-check"></i><b>5.2</b> Nesneleri Tanımlama (Assigning Objects)</a></li>
 <li class="chapter" data-level="5.3" data-path="temel-nesneler.html"><a href="temel-nesneler.html#vektörler-vectors"><i class="fa fa-check"></i><b>5.3</b> Vektörler (Vectors)</a></li>
 <li class="chapter" data-level="5.4" data-path="temel-nesneler.html"><a href="temel-nesneler.html#matrisler-matrices-ve-diziler-arrays"><i class="fa fa-check"></i><b>5.4</b> Matrisler (Matrices) ve Diziler (Arrays)</a></li>
 <li class="chapter" data-level="5.5" data-path="temel-nesneler.html"><a href="temel-nesneler.html#listeler-ve-data-frameler-lists-and-data-frames"><i class="fa fa-check"></i><b>5.5</b> Listeler ve Data Frameler (Lists and Data Frames)</a></li>
-<li class="chapter" data-level="5.6" data-path="temel-nesneler.html"><a href="temel-nesneler.html#sayısal-olmayan-değerler-non-numeric-values"><i class="fa fa-check"></i><b>5.6</b> Sayısal Olmayan Değerler (Non-Numeric Values)</a><ul>
+<li class="chapter" data-level="5.6" data-path="temel-nesneler.html"><a href="temel-nesneler.html#sayısal-olmayan-değerler-non-numeric-values"><i class="fa fa-check"></i><b>5.6</b> Sayısal Olmayan Değerler (Non-Numeric Values)</a>
+<ul>
 <li class="chapter" data-level="5.6.1" data-path="temel-nesneler.html"><a href="temel-nesneler.html#mantıksal-değerler"><i class="fa fa-check"></i><b>5.6.1</b> Mantıksal Değerler</a></li>
 <li class="chapter" data-level="5.6.2" data-path="temel-nesneler.html"><a href="temel-nesneler.html#karakterler"><i class="fa fa-check"></i><b>5.6.2</b> Karakterler</a></li>
 <li class="chapter" data-level="5.6.3" data-path="temel-nesneler.html"><a href="temel-nesneler.html#faktörler-factors"><i class="fa fa-check"></i><b>5.6.3</b> Faktörler (Factors)</a></li>
 </ul></li>
 <li class="chapter" data-level="5.7" data-path="temel-nesneler.html"><a href="temel-nesneler.html#eksik-gözlemler-missing-values"><i class="fa fa-check"></i><b>5.7</b> Eksik Gözlemler (Missing Values)</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="import-export-işlemleri.html"><a href="import-export-işlemleri.html"><i class="fa fa-check"></i><b>6</b> Import Export İşlemleri</a><ul>
+<li class="chapter" data-level="6" data-path="import-export-işlemleri.html"><a href="import-export-işlemleri.html"><i class="fa fa-check"></i><b>6</b> Import Export İşlemleri</a>
+<ul>
 <li class="chapter" data-level="6.1" data-path="import-export-işlemleri.html"><a href="import-export-işlemleri.html#import-işlemleri"><i class="fa fa-check"></i><b>6.1</b> Import İşlemleri</a></li>
 <li class="chapter" data-level="6.2" data-path="import-export-işlemleri.html"><a href="import-export-işlemleri.html#export-işlemleri"><i class="fa fa-check"></i><b>6.2</b> Export İşlemleri</a></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="bazı-önemli-komutlar.html"><a href="bazı-önemli-komutlar.html"><i class="fa fa-check"></i><b>7</b> Bazı Önemli Komutlar</a><ul>
+<li class="chapter" data-level="7" data-path="bazı-önemli-komutlar.html"><a href="bazı-önemli-komutlar.html"><i class="fa fa-check"></i><b>7</b> Bazı Önemli Komutlar</a>
+<ul>
 <li class="chapter" data-level="7.1" data-path="bazı-önemli-komutlar.html"><a href="bazı-önemli-komutlar.html#sort"><i class="fa fa-check"></i><b>7.1</b> Sort</a></li>
 <li class="chapter" data-level="7.2" data-path="bazı-önemli-komutlar.html"><a href="bazı-önemli-komutlar.html#rank"><i class="fa fa-check"></i><b>7.2</b> Rank</a></li>
 <li class="chapter" data-level="7.3" data-path="bazı-önemli-komutlar.html"><a href="bazı-önemli-komutlar.html#order"><i class="fa fa-check"></i><b>7.3</b> Order</a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="dplyr.html"><a href="dplyr.html"><i class="fa fa-check"></i><b>8</b> DPLYR</a></li>
-<li class="chapter" data-level="9" data-path="grafikler.html"><a href="grafikler.html"><i class="fa fa-check"></i><b>9</b> Grafikler</a><ul>
+<li class="chapter" data-level="9" data-path="grafikler.html"><a href="grafikler.html"><i class="fa fa-check"></i><b>9</b> Grafikler</a>
+<ul>
 <li class="chapter" data-level="9.1" data-path="grafikler.html"><a href="grafikler.html#mevcut-grafik-üzerine-ekleme-yapmak"><i class="fa fa-check"></i><b>9.1</b> Mevcut grafik üzerine ekleme yapmak</a></li>
-<li class="chapter" data-level="9.2" data-path="grafikler.html"><a href="grafikler.html#önemli-grafik-paketleri"><i class="fa fa-check"></i><b>9.2</b> Önemli grafik paketleri</a><ul>
+<li class="chapter" data-level="9.2" data-path="grafikler.html"><a href="grafikler.html#önemli-grafik-paketleri"><i class="fa fa-check"></i><b>9.2</b> Önemli grafik paketleri</a>
+<ul>
 <li class="chapter" data-level="9.2.1" data-path="grafikler.html"><a href="grafikler.html#lattice"><i class="fa fa-check"></i><b>9.2.1</b> lattice</a></li>
 <li class="chapter" data-level="9.2.2" data-path="grafikler.html"><a href="grafikler.html#ggplot2"><i class="fa fa-check"></i><b>9.2.2</b> ggplot2</a></li>
 <li class="chapter" data-level="9.2.3" data-path="grafikler.html"><a href="grafikler.html#plotly"><i class="fa fa-check"></i><b>9.2.3</b> plotly</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="10" data-path="kontrol-yapıları.html"><a href="kontrol-yapıları.html"><i class="fa fa-check"></i><b>10</b> Kontrol Yapıları</a><ul>
+<li class="chapter" data-level="10" data-path="kontrol-yapıları.html"><a href="kontrol-yapıları.html"><i class="fa fa-check"></i><b>10</b> Kontrol Yapıları</a>
+<ul>
 <li class="chapter" data-level="10.1" data-path="kontrol-yapıları.html"><a href="kontrol-yapıları.html#if-else"><i class="fa fa-check"></i><b>10.1</b> if-else</a></li>
-<li class="chapter" data-level="10.2" data-path="kontrol-yapıları.html"><a href="kontrol-yapıları.html#loops"><i class="fa fa-check"></i><b>10.2</b> loops</a><ul>
+<li class="chapter" data-level="10.2" data-path="kontrol-yapıları.html"><a href="kontrol-yapıları.html#loops"><i class="fa fa-check"></i><b>10.2</b> loops</a>
+<ul>
 <li class="chapter" data-level="10.2.1" data-path="kontrol-yapıları.html"><a href="kontrol-yapıları.html#for"><i class="fa fa-check"></i><b>10.2.1</b> for</a></li>
 <li class="chapter" data-level="10.2.2" data-path="kontrol-yapıları.html"><a href="kontrol-yapıları.html#while"><i class="fa fa-check"></i><b>10.2.2</b> while</a></li>
 <li class="chapter" data-level="10.2.3" data-path="kontrol-yapıları.html"><a href="kontrol-yapıları.html#repeat"><i class="fa fa-check"></i><b>10.2.3</b> repeat</a></li>
@@ -200,7 +210,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="11" data-path="fonksiyonlar.html"><a href="fonksiyonlar.html"><i class="fa fa-check"></i><b>11</b> Fonksiyonlar</a></li>
-<li class="chapter" data-level="12" data-path="apply-ailesi.html"><a href="apply-ailesi.html"><i class="fa fa-check"></i><b>12</b> Apply Ailesi</a></li>
+<li class="chapter" data-level="12" data-path="uygulamalar.html"><a href="uygulamalar.html"><i class="fa fa-check"></i><b>12</b> Uygulamalar</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="uygulamalar.html"><a href="uygulamalar.html#cs_1-nyc-flights"><i class="fa fa-check"></i><b>12.1</b> CS_1 (NYC Flights)</a></li>
+<li class="chapter" data-level="12.2" data-path="uygulamalar.html"><a href="uygulamalar.html#cs_2-sean-lahman-baseball-database"><i class="fa fa-check"></i><b>12.2</b> CS_2 (Sean ‘Lahman’ Baseball Database)</a></li>
+<li class="chapter" data-level="12.3" data-path="uygulamalar.html"><a href="uygulamalar.html#cs_3-diamonds"><i class="fa fa-check"></i><b>12.3</b> CS_3 (Diamonds)</a></li>
+</ul></li>
 <li class="chapter" data-level="13" data-path="referans.html"><a href="referans.html"><i class="fa fa-check"></i><b>13</b> Referans</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -222,18 +237,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="import-export-işlemleri" class="section level1">
+<div id="import-export-işlemleri" class="section level1" number="6">
 <h1><span class="header-section-number">Bölüm6</span> Import Export İşlemleri</h1>
 <p>Etkin bir R oturumunun her zaman kendisiyle ilişkilendirilmiş bir çalışma dizini vardır. Veri dosyalarını kaydederken veya içe aktarırken açık bir şekilde bir dosya yolu belirtmediğiniz sürece, R varsayılan olarak bu çalışma dizinini kullanır. Çalışma dizininin konumunu kontrol etmek için <code>getwd()</code> fonksiyonu kullanılabilir.</p>
-<div class="sourceCode" id="cb195"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb195-1"><a href="import-export-işlemleri.html#cb195-1"></a><span class="kw">getwd</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb195"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb195-1"><a href="import-export-işlemleri.html#cb195-1" aria-hidden="true" tabindex="-1"></a><span class="fu">getwd</span>()</span></code></pre></div>
 <pre><code>## [1] &quot;/Users/busenursarica/Documents/GitHub/rstudio&quot;</code></pre>
 <p><br></p>
 <p>Dosya yolları her zaman çift tırnak işareti içine alınır.
 <code>setwd()</code> fonsiyonunu kullanarak varsayılan çalışma dizinini aşağıdaki gibi değiştirebilirsiniz:</p>
-<div class="sourceCode" id="cb197"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb197-1"><a href="import-export-işlemleri.html#cb197-1"></a><span class="kw">setwd</span>(<span class="st">&quot;/Users/busenursarica/Documents&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb197"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb197-1"><a href="import-export-işlemleri.html#cb197-1" aria-hidden="true" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">&quot;/Users/busenursarica/Documents&quot;</span>)</span></code></pre></div>
 <p><br></p>
 <p>Çalışma dizininde yer alan dosyalar list.files() fonksiyonu ile listelenebilir.</p>
-<div class="sourceCode" id="cb198"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb198-1"><a href="import-export-işlemleri.html#cb198-1"></a><span class="kw">list.files</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb198"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb198-1"><a href="import-export-işlemleri.html#cb198-1" aria-hidden="true" tabindex="-1"></a><span class="fu">list.files</span>()</span></code></pre></div>
 <pre><code>##  [1] &quot;_book&quot;                           &quot;_bookdown_files&quot;                
 ##  [3] &quot;_bookdown.yml&quot;                   &quot;_output.yml&quot;                    
 ##  [5] &quot;01-Motivasyon.Rmd&quot;               &quot;02-Genel-Bakış.Rmd&quot;             
@@ -241,40 +256,34 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ##  [9] &quot;05-Import-Export-İşlemleri.Rmd&quot;  &quot;06-Bazı-Önemli-Fonksiyonlar.Rmd&quot;
 ## [11] &quot;07-DPLYR.Rmd&quot;                    &quot;08-Grafikler.Rmd&quot;               
 ## [13] &quot;09-Kontrol-Yapıları.Rmd&quot;         &quot;10-Fonksiyonlar.Rmd&quot;            
-## [15] &quot;11-Apply-Ailesi.Rmd&quot;             &quot;12-Referans.Rmd&quot;                
-## [17] &quot;book.bib&quot;                        &quot;comp3_files&quot;                    
-## [19] &quot;comp3.bbl&quot;                       &quot;comp3.blg&quot;                      
-## [21] &quot;comp3.log&quot;                       &quot;comp3.pdf&quot;                      
-## [23] &quot;comp3.Rmd&quot;                       &quot;comp3.Rproj&quot;                    
-## [25] &quot;comp3.tex&quot;                       &quot;comp3.toc&quot;                      
-## [27] &quot;dn.csv&quot;                          &quot;images&quot;                         
-## [29] &quot;index.Rmd&quot;                       &quot;LICENSE&quot;                        
-## [31] &quot;packages.bib&quot;                    &quot;preamble.log&quot;                   
-## [33] &quot;preamble.tex&quot;                    &quot;README.md&quot;                      
-## [35] &quot;style.css&quot;                       &quot;taiex.xlsx&quot;</code></pre>
-<div id="import-işlemleri" class="section level2">
+## [15] &quot;11-Uygulamalar.Rmd&quot;              &quot;12-Referans.Rmd&quot;                
+## [17] &quot;annual.en.numbers&quot;               &quot;book.bib&quot;                       
+## [19] &quot;comp3_files&quot;                     &quot;comp3.bbl&quot;                      
+## [21] &quot;comp3.blg&quot;                       &quot;comp3.log&quot;                      
+## [23] &quot;comp3.pdf&quot;                       &quot;comp3.Rmd&quot;                      
+## [25] &quot;comp3.Rproj&quot;                     &quot;comp3.synctex.gz&quot;               
+## [27] &quot;comp3.tex&quot;                       &quot;comp3.toc&quot;                      
+## [29] &quot;dn.csv&quot;                          &quot;images&quot;                         
+## [31] &quot;index.Rmd&quot;                       &quot;LICENSE&quot;                        
+## [33] &quot;packages.bib&quot;                    &quot;preamble.log&quot;                   
+## [35] &quot;preamble.tex&quot;                    &quot;README.md&quot;                      
+## [37] &quot;style.css&quot;                       &quot;taiex.xlsx&quot;</code></pre>
+<div id="import-işlemleri" class="section level2" number="6.1">
 <h2><span class="header-section-number">6.1</span> Import İşlemleri</h2>
 <p>Bilgisayarınızda bulunan veri setlerini de R’a çekerek kullanabilirsiniz. <code>read.table()</code>, <code>read.csv()</code>, <code>read_excel()</code> gibi komutlar bu bakımdan işinizi görecektir. Bu noktada çektiğiniz verinin yapısı önem arz etmektedir. Konu ile ilgili farklı yapıda örnekler aşağıda yer almaktadır.</p>
 <p><br></p>
 <p>Kullanacağınız veri dosya uzantısı <code>.csv</code> ise <code>read.csv()</code> fonksiyonunu veriyi R’a taşımak için kullanabilirsiniz.</p>
-<div class="sourceCode" id="cb200"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb200-1"><a href="import-export-işlemleri.html#cb200-1"></a>d&lt;-<span class="kw">read.csv</span>(<span class="st">&quot;/Users/busenursarica/Desktop/annual.en.csv&quot;</span>)</span>
-<span id="cb200-2"><a href="import-export-işlemleri.html#cb200-2"></a><span class="kw">head</span>(d)</span></code></pre></div>
-<pre><code>##   year industry                  variable value
-## 1 2011        A             Activity unit 46134
-## 2 2011        A    Rolling mean employees     0
-## 3 2011        A   Salaries and wages paid   279
-## 4 2011        A Sales, government funding  8187
-## 5 2011        A              Total income  8866
-## 6 2011        A         Total expenditure  7618</code></pre>
+<div class="sourceCode" id="cb200"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb200-1"><a href="import-export-işlemleri.html#cb200-1" aria-hidden="true" tabindex="-1"></a><span class="co"># d&lt;-read.csv(&quot;/Users/busenursarica/Desktop/annual.en.csv&quot;)</span></span>
+<span id="cb200-2"><a href="import-export-işlemleri.html#cb200-2" aria-hidden="true" tabindex="-1"></a><span class="co"># head(d)</span></span></code></pre></div>
 <hr />
 <p><strong>CSV uzantısı ne anlama gelir?</strong></p>
 <p>Virgülle ayrılmış değerler (CSV) dosyası, bir veri listesi içeren düz bir metin dosyasıdır. Bu dosyalar genellikle farklı uygulamalar arasında veri alışverişi yapmak için kullanılır. Örneğin, veritabanları ve iletişim yöneticileri genellikle CSV dosyalarını destekler.</p>
 <p>Bu dosyalar bazen karakterle ayrılmış seğerler veya virgülle ayrılmış dosyalar olarak adlandırılabilir. Verileri ayırmak (veya sınırlandırmak) için çoğunlukla virgül karakterini kullanırlar, ancak bazen noktalı virgül gibi diğer karakterleri kullanırlar. Buradaki fikir, karmaşık verileri bir uygulamadan bir CSV dosyasına aktarabilmeniz ve ardından bu CSV dosyasındaki verileri başka bir uygulamaya aktarabilmenizdir.</p>
 <p>Bu yapıdaki veriler insan tarafından okunabilir ve not defteri gibi bir metin düzenleyici veya microsoft excel ile kolayca görüntülenebilir.</p>
 <hr />
-<div class="sourceCode" id="cb202"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb202-1"><a href="import-export-işlemleri.html#cb202-1"></a><span class="kw">library</span>(readxl)</span>
-<span id="cb202-2"><a href="import-export-işlemleri.html#cb202-2"></a>taiex &lt;-<span class="st"> </span><span class="kw">read_excel</span>(<span class="st">&quot;taiex.xlsx&quot;</span>)</span>
-<span id="cb202-3"><a href="import-export-işlemleri.html#cb202-3"></a><span class="kw">head</span>(taiex)</span></code></pre></div>
+<div class="sourceCode" id="cb201"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb201-1"><a href="import-export-işlemleri.html#cb201-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
+<span id="cb201-2"><a href="import-export-işlemleri.html#cb201-2" aria-hidden="true" tabindex="-1"></a>taiex <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">&quot;taiex.xlsx&quot;</span>)</span>
+<span id="cb201-3"><a href="import-export-işlemleri.html#cb201-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(taiex)</span></code></pre></div>
 <pre><code>## # A tibble: 6 x 6
 ##   `1999` `2000` `2001` `2002` `2003` `2004`
 ##    &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;
@@ -286,9 +295,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 6  6364.  8927.  5376.  5866.  4814.  6227.</code></pre>
 <p><br></p>
 <p>Web sitesinde yer alan bir veri setini de R’a çekerek kullanabilirsiniz.</p>
-<div class="sourceCode" id="cb204"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb204-1"><a href="import-export-işlemleri.html#cb204-1"></a>w.url &lt;-<span class="st"> &quot;http://courses.washington.edu/b517/Datasets/string.txt&quot;</span></span>
-<span id="cb204-2"><a href="import-export-işlemleri.html#cb204-2"></a>dw &lt;-<span class="st"> </span><span class="kw">read.table</span>(w.url, <span class="dt">header =</span> T)</span>
-<span id="cb204-3"><a href="import-export-işlemleri.html#cb204-3"></a><span class="kw">head</span>(dw)</span></code></pre></div>
+<div class="sourceCode" id="cb203"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb203-1"><a href="import-export-işlemleri.html#cb203-1" aria-hidden="true" tabindex="-1"></a>w.url <span class="ot">&lt;-</span> <span class="st">&quot;http://courses.washington.edu/b517/Datasets/string.txt&quot;</span></span>
+<span id="cb203-2"><a href="import-export-işlemleri.html#cb203-2" aria-hidden="true" tabindex="-1"></a>dw <span class="ot">&lt;-</span> <span class="fu">read.table</span>(w.url, <span class="at">header =</span> T)</span>
+<span id="cb203-3"><a href="import-export-işlemleri.html#cb203-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(dw)</span></code></pre></div>
 <pre><code>##    x       y
 ## 1 10 34.7081
 ## 2 12 34.5034
@@ -300,7 +309,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Veri çekmenin bir diğer yolu da environment paneli içerisindeki import dataset yapısının kullanılmasıdır. Bu yapı sayesinde de farklı uzantıdaki veri setleri R’a çekilebilir.</p>
 <p><br></p>
 <p>Mevcut veri setinizi R’a çekmek yerine R’da yer alan veri setlerini de kullanabilirsiniz.</p>
-<div class="sourceCode" id="cb206"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb206-1"><a href="import-export-işlemleri.html#cb206-1"></a><span class="kw">head</span>(mtcars)</span></code></pre></div>
+<div class="sourceCode" id="cb205"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb205-1"><a href="import-export-işlemleri.html#cb205-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(mtcars)</span></code></pre></div>
 <pre><code>##                    mpg cyl disp  hp drat    wt  qsec vs am gear carb
 ## Mazda RX4         21.0   6  160 110 3.90 2.620 16.46  0  1    4    4
 ## Mazda RX4 Wag     21.0   6  160 110 3.90 2.875 17.02  0  1    4    4
@@ -310,10 +319,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1</code></pre>
 <p><br></p>
 <p>Kütüphanede yer alan farklı veri setlerini de çağırarak kullanabilirsiniz.</p>
-<div class="sourceCode" id="cb208"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb208-1"><a href="import-export-işlemleri.html#cb208-1"></a><span class="co">#install.package(&quot;tseries&quot;)</span></span>
-<span id="cb208-2"><a href="import-export-işlemleri.html#cb208-2"></a><span class="kw">library</span>(tseries)</span>
-<span id="cb208-3"><a href="import-export-işlemleri.html#cb208-3"></a><span class="kw">data</span>(ice.river)</span>
-<span id="cb208-4"><a href="import-export-işlemleri.html#cb208-4"></a><span class="kw">head</span>(ice.river)</span></code></pre></div>
+<div class="sourceCode" id="cb207"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb207-1"><a href="import-export-işlemleri.html#cb207-1" aria-hidden="true" tabindex="-1"></a><span class="co">#install.package(&quot;tseries&quot;)</span></span>
+<span id="cb207-2"><a href="import-export-işlemleri.html#cb207-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tseries)</span>
+<span id="cb207-3"><a href="import-export-işlemleri.html#cb207-3" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(ice.river)</span>
+<span id="cb207-4"><a href="import-export-işlemleri.html#cb207-4" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(ice.river)</span></code></pre></div>
 <pre><code>##      flow.vat flow.jok prec temp
 ## [1,]     16.1     30.2  8.1  0.9
 ## [2,]     19.2     29.0  4.4  1.6
@@ -322,11 +331,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## [5,]     13.6     27.8  0.0  2.0
 ## [6,]     12.5     27.8  0.0  0.8</code></pre>
 </div>
-<div id="export-işlemleri" class="section level2">
+<div id="export-işlemleri" class="section level2" number="6.2">
 <h2><span class="header-section-number">6.2</span> Export İşlemleri</h2>
 <p>R’da elde edilen yapıların kaydedilmesi için kullanılan fonksiyonlardan biri <code>write.table()</code>’dır. Veri okuma kısmında <code>read.table()</code>’ın farklı versiyonları bulunduğu gibi <code>write</code> komutu için de <code>write.csv()</code> gibi farklı uzantılar için özelleştirilmiş fonksiyonlar bulunmaktadır.</p>
-<div class="sourceCode" id="cb210"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb210-1"><a href="import-export-işlemleri.html#cb210-1"></a>dn&lt;-<span class="kw">data.frame</span>(<span class="dt">a=</span><span class="kw">c</span>(<span class="dv">10</span>,<span class="dv">34</span>,<span class="dv">12</span>),<span class="dt">b=</span><span class="kw">c</span>(<span class="st">&quot;deneme&quot;</span>,<span class="st">&quot;bir&quot;</span>,<span class="st">&quot;iki&quot;</span>),<span class="dt">c=</span>pi)</span>
-<span id="cb210-2"><a href="import-export-işlemleri.html#cb210-2"></a><span class="kw">write.table</span>(dn, <span class="dt">file =</span> <span class="st">&quot;dn.csv&quot;</span>, <span class="dt">sep =</span> <span class="st">&quot;,&quot;</span>,<span class="dt">col.names =</span> <span class="ot">NA</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb209"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb209-1"><a href="import-export-işlemleri.html#cb209-1" aria-hidden="true" tabindex="-1"></a>dn<span class="ot">&lt;-</span><span class="fu">data.frame</span>(<span class="at">a=</span><span class="fu">c</span>(<span class="dv">10</span>,<span class="dv">34</span>,<span class="dv">12</span>),<span class="at">b=</span><span class="fu">c</span>(<span class="st">&quot;deneme&quot;</span>,<span class="st">&quot;bir&quot;</span>,<span class="st">&quot;iki&quot;</span>),<span class="at">c=</span>pi)</span>
+<span id="cb209-2"><a href="import-export-işlemleri.html#cb209-2" aria-hidden="true" tabindex="-1"></a><span class="fu">write.table</span>(dn, <span class="at">file =</span> <span class="st">&quot;dn.csv&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;,&quot;</span>,<span class="at">col.names =</span> <span class="cn">NA</span>)</span></code></pre></div>
 <p><strong>Not:</strong> <code>file</code> kısmına yalnızca dosya adı yazılırsa, dosya çalışma dizinine kaydolacaktır.</p>
 
 </div>

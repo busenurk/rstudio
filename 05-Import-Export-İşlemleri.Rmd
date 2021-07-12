@@ -30,8 +30,8 @@ Bilgisayarınızda bulunan veri setlerini de R'a çekerek kullanabilirsiniz. `re
 
 Kullanacağınız veri dosya uzantısı `.csv` ise `read.csv()` fonksiyonunu veriyi R'a taşımak için kullanabilirsiniz.
 ```{r}
-d<-read.csv("/Users/busenursarica/Desktop/annual.en.csv")
-head(d)
+# d<-read.csv("/Users/busenursarica/Desktop/annual.en.csv")
+# head(d)
 ```
 
 -------

@@ -51,6 +51,13 @@
 
 
 
+<script src="libs/htmlwidgets-1.5.2/htmlwidgets.js"></script>
+<script src="libs/plotly-binding-4.9.2.1/plotly.js"></script>
+<script src="libs/typedarray-0.1/typedarray.min.js"></script>
+<link href="libs/crosstalk-1.1.0.1/css/crosstalk.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.1.0.1/js/crosstalk.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css-1.52.2/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main-1.52.2/plotly-latest.min.js"></script>
 
 
 <style type="text/css">
@@ -234,31 +241,31 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1><span class="header-section-number">Bölüm12</span> Uygulamalar</h1>
 <div id="cs_1-nyc-flights" class="section level2" number="12.1">
 <h2><span class="header-section-number">12.1</span> CS_1 (NYC Flights)</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="uygulamalar.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(corrr)</span>
-<span id="cb1-2"><a href="uygulamalar.html#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb1-3"><a href="uygulamalar.html#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(nycflights13)</span></code></pre></div>
+<div class="sourceCode" id="cb320"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb320-1"><a href="uygulamalar.html#cb320-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(corrr)</span>
+<span id="cb320-2"><a href="uygulamalar.html#cb320-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb320-3"><a href="uygulamalar.html#cb320-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(nycflights13)</span></code></pre></div>
 <p>2013 yılında NYC’den kalkan uçuşlar ile ilgili veri setlerini içeren <strong>nycflights13</strong> paketi ile çalışacağız. Veri seti <code>airlines, airports, flights, planes</code> ve <code>weather</code> verilerini içermektedir. (Veri setlerinin detayı için <strong>nycflights13</strong> paketini inceleyiniz.)</p>
 <p>Bu çalışmada, farklı veri setlerindeki bilgileri birlikte kullanabilmeniz, dönüştürmeniz, görselleştirmeniz ve çıkarımda bulunmanız hedeflenmektedir.</p>
 <p>Her bir veri setini <code>View()</code> komutu ile ayrı bir tablo olarak açıp detaylı inceleyiniz, süreci kavrayabilmeniz için veri setine hakim olmanız gerekmektedir.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="uygulamalar.html#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">View</span>(planes)  <span class="co">#ornegin</span></span></code></pre></div>
+<div class="sourceCode" id="cb321"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb321-1"><a href="uygulamalar.html#cb321-1" aria-hidden="true" tabindex="-1"></a><span class="fu">View</span>(planes)  <span class="co">#ornegin</span></span></code></pre></div>
 <p>Veri setlerini dikkatle incelediğinizde farklı veri setlerinin ortak değişkenler içerdiğini göreceksiniz, bu sizin veri setlerini birbirine bağlayarak daha fazla veri üzerinden çalışmanızı sağlayacaktır.</p>
 <p>Ortak değişkenler ve veri setleri için örnek olarak;</p>
 <p>planes ve flights veri setlerinde tailnum değişkeni</p>
 <p>flights ve weather veri setlerinde origin, year, month, day, hour değişkenleri</p>
 <p>flights ve airlines veri setlerinde carrier değişkeni</p>
 <p><strong>Soru1.</strong> Havada kalış süresi (air_time) en fazla olan uçak için üretim yılı (year), üretici (manufacturer) ve model (model) bilgisi nedir? <strong>(Kodunuzda hata alıyorsanız year değişkenini verinizde kontrol ediniz!)</strong></p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="uygulamalar.html#cb3-1" aria-hidden="true" tabindex="-1"></a>data1<span class="ot">&lt;-</span> <span class="fu">left_join</span>(flights,planes,<span class="at">by=</span><span class="st">&quot;tailnum&quot;</span>) </span>
-<span id="cb3-2"><a href="uygulamalar.html#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-3"><a href="uygulamalar.html#cb3-3" aria-hidden="true" tabindex="-1"></a>data1 <span class="sc">%&gt;%</span> <span class="fu">filter</span>(air_time<span class="sc">==</span><span class="fu">max</span>(air_time,<span class="at">na.rm =</span> T)) <span class="sc">%&gt;%</span></span>
-<span id="cb3-4"><a href="uygulamalar.html#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(year.y, manufacturer,model)</span></code></pre></div>
+<div class="sourceCode" id="cb322"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb322-1"><a href="uygulamalar.html#cb322-1" aria-hidden="true" tabindex="-1"></a>data1<span class="ot">&lt;-</span> <span class="fu">left_join</span>(flights,planes,<span class="at">by=</span><span class="st">&quot;tailnum&quot;</span>) </span>
+<span id="cb322-2"><a href="uygulamalar.html#cb322-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb322-3"><a href="uygulamalar.html#cb322-3" aria-hidden="true" tabindex="-1"></a>data1 <span class="sc">%&gt;%</span> <span class="fu">filter</span>(air_time<span class="sc">==</span><span class="fu">max</span>(air_time,<span class="at">na.rm =</span> T)) <span class="sc">%&gt;%</span></span>
+<span id="cb322-4"><a href="uygulamalar.html#cb322-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(year.y, manufacturer,model)</span></code></pre></div>
 <pre><code>## # A tibble: 1 x 3
 ##   year.y manufacturer model    
 ##    &lt;int&gt; &lt;chr&gt;        &lt;chr&gt;    
 ## 1   2002 BOEING       767-424ER</code></pre>
 <p><strong>Soru2.</strong> Havada kalış süresi (air_time), sıcaklık (temp), rüzgar hızı (wind_speed) ve nem (humid) arasında ne tür bir ilişki vardır? İnceleyip yorumlayınız.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="uygulamalar.html#cb5-1" aria-hidden="true" tabindex="-1"></a>data2<span class="ot">&lt;-</span> <span class="fu">left_join</span>(weather,flights,<span class="at">by=</span><span class="fu">c</span>(<span class="st">&quot;origin&quot;</span>,<span class="st">&quot;year&quot;</span>,<span class="st">&quot;month&quot;</span>,<span class="st">&quot;day&quot;</span>,<span class="st">&quot;hour&quot;</span>))</span>
-<span id="cb5-2"><a href="uygulamalar.html#cb5-2" aria-hidden="true" tabindex="-1"></a>data2 <span class="sc">%&gt;%</span> <span class="fu">select</span>(air_time,temp,wind_speed,humid) <span class="sc">%&gt;%</span> </span>
-<span id="cb5-3"><a href="uygulamalar.html#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">correlate</span>() </span></code></pre></div>
+<div class="sourceCode" id="cb324"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb324-1"><a href="uygulamalar.html#cb324-1" aria-hidden="true" tabindex="-1"></a>data2<span class="ot">&lt;-</span> <span class="fu">left_join</span>(weather,flights,<span class="at">by=</span><span class="fu">c</span>(<span class="st">&quot;origin&quot;</span>,<span class="st">&quot;year&quot;</span>,<span class="st">&quot;month&quot;</span>,<span class="st">&quot;day&quot;</span>,<span class="st">&quot;hour&quot;</span>))</span>
+<span id="cb324-2"><a href="uygulamalar.html#cb324-2" aria-hidden="true" tabindex="-1"></a>data2 <span class="sc">%&gt;%</span> <span class="fu">select</span>(air_time,temp,wind_speed,humid) <span class="sc">%&gt;%</span> </span>
+<span id="cb324-3"><a href="uygulamalar.html#cb324-3" aria-hidden="true" tabindex="-1"></a><span class="fu">correlate</span>() </span></code></pre></div>
 <pre><code>## # A tibble: 4 x 5
 ##   term       air_time    temp wind_speed   humid
 ##   &lt;chr&gt;         &lt;dbl&gt;   &lt;dbl&gt;      &lt;dbl&gt;   &lt;dbl&gt;
@@ -267,8 +274,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 3 wind_speed   0.0263 -0.140     NA      -0.187 
 ## 4 humid        0.0405  0.0374    -0.187  NA</code></pre>
 <p><strong>Soru3.</strong> Her bir hava yolu şirketi (name) için ortalama ve ortanca gecikme süresilerini (dep_delay) inceleyip yorumlayınız.</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="uygulamalar.html#cb7-1" aria-hidden="true" tabindex="-1"></a>data3<span class="ot">&lt;-</span> <span class="fu">right_join</span>(airlines,flights,<span class="at">by=</span><span class="st">&quot;carrier&quot;</span>)</span>
-<span id="cb7-2"><a href="uygulamalar.html#cb7-2" aria-hidden="true" tabindex="-1"></a>data3 <span class="sc">%&gt;%</span> <span class="fu">filter</span>(dep_delay<span class="sc">&gt;</span><span class="dv">0</span>) <span class="sc">%&gt;%</span> <span class="fu">na.omit</span>() <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(name) <span class="sc">%&gt;%</span> <span class="fu">summarise</span>(<span class="at">mean=</span><span class="fu">mean</span>(dep_delay),<span class="at">median=</span><span class="fu">median</span>(dep_delay))</span></code></pre></div>
+<div class="sourceCode" id="cb326"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb326-1"><a href="uygulamalar.html#cb326-1" aria-hidden="true" tabindex="-1"></a>data3<span class="ot">&lt;-</span> <span class="fu">right_join</span>(airlines,flights,<span class="at">by=</span><span class="st">&quot;carrier&quot;</span>)</span>
+<span id="cb326-2"><a href="uygulamalar.html#cb326-2" aria-hidden="true" tabindex="-1"></a>data3 <span class="sc">%&gt;%</span> <span class="fu">filter</span>(dep_delay<span class="sc">&gt;</span><span class="dv">0</span>) <span class="sc">%&gt;%</span> <span class="fu">na.omit</span>() <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(name) <span class="sc">%&gt;%</span> <span class="fu">summarise</span>(<span class="at">mean=</span><span class="fu">mean</span>(dep_delay),<span class="at">median=</span><span class="fu">median</span>(dep_delay))</span></code></pre></div>
 <pre><code>## # A tibble: 16 x 3
 ##    name                         mean median
 ##  * &lt;chr&gt;                       &lt;dbl&gt;  &lt;dbl&gt;
@@ -289,7 +296,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 15 US Airways Inc.              32.9   16  
 ## 16 Virgin America               34.2   10</code></pre>
 <p><strong>Soru4.</strong> flights veri setinde yer alan gecikme süresi (dep_delay) değişkeni için 2013 yılı ortalama gecikme süresi kaçtır? (erken varışları dikkate almayınız.)</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="uygulamalar.html#cb9-1" aria-hidden="true" tabindex="-1"></a>flights <span class="sc">%&gt;%</span> <span class="fu">filter</span>(dep_delay<span class="sc">&gt;</span><span class="dv">0</span>) <span class="sc">%&gt;%</span> <span class="fu">summarise</span>(<span class="at">mean=</span><span class="fu">mean</span>(dep_delay))</span></code></pre></div>
+<div class="sourceCode" id="cb328"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb328-1"><a href="uygulamalar.html#cb328-1" aria-hidden="true" tabindex="-1"></a>flights <span class="sc">%&gt;%</span> <span class="fu">filter</span>(dep_delay<span class="sc">&gt;</span><span class="dv">0</span>) <span class="sc">%&gt;%</span> <span class="fu">summarise</span>(<span class="at">mean=</span><span class="fu">mean</span>(dep_delay))</span></code></pre></div>
 <pre><code>## # A tibble: 1 x 1
 ##    mean
 ##   &lt;dbl&gt;
@@ -297,17 +304,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="cs_2-sean-lahman-baseball-database" class="section level2" number="12.2">
 <h2><span class="header-section-number">12.2</span> CS_2 (Sean ‘Lahman’ Baseball Database)</h2>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="uygulamalar.html#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(Lahman)</span>
-<span id="cb11-2"><a href="uygulamalar.html#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div>
+<div class="sourceCode" id="cb330"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb330-1"><a href="uygulamalar.html#cb330-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(Lahman)</span>
+<span id="cb330-2"><a href="uygulamalar.html#cb330-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div>
 <p>Case Study_2 için <strong>Lahman</strong> paketi içerisinde yer alan <code>People</code>, <code>AwardsPlayers</code> ve <code>Salaries</code> veri setleri üzerinde çalışacaksınız. Veri setlerini inceleyiniz ve aşağıda yer alan sorular paralelinde hazırlanmış olan test sorularını yanıtlayınız.</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="uygulamalar.html#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">View</span>(People)</span></code></pre></div>
+<div class="sourceCode" id="cb331"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb331-1"><a href="uygulamalar.html#cb331-1" aria-hidden="true" tabindex="-1"></a><span class="fu">View</span>(People)</span></code></pre></div>
 <p>Bu çalışmada ortak değişkenleri sizin tespit etmeniz gerekmektedir.</p>
 <p><strong>Soru1.</strong> AwardsPlayers veri setini incelediğinizde en çok ödül alan oyuncu kimdir? (People veri seti nameFirst ve nameLast değişkenleri ile yanıtlayınız.)</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="uygulamalar.html#cb13-1" aria-hidden="true" tabindex="-1"></a>t<span class="ot">&lt;-</span><span class="fu">table</span>(AwardsPlayers<span class="sc">$</span>playerID) <span class="sc">%&gt;%</span> <span class="fu">as.data.frame</span>()</span>
-<span id="cb13-2"><a href="uygulamalar.html#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(t)<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="st">&quot;playerID&quot;</span>,<span class="st">&quot;num.of.aw&quot;</span>)</span>
-<span id="cb13-3"><a href="uygulamalar.html#cb13-3" aria-hidden="true" tabindex="-1"></a>data1<span class="ot">&lt;-</span>People <span class="sc">%&gt;%</span> <span class="fu">left_join</span>(t,<span class="at">by=</span><span class="st">&quot;playerID&quot;</span>)    <span class="co"># hepsine na.omit() uygulamak?</span></span>
-<span id="cb13-4"><a href="uygulamalar.html#cb13-4" aria-hidden="true" tabindex="-1"></a>data1 <span class="sc">%&gt;%</span> <span class="fu">filter</span>(num.of.aw<span class="sc">==</span><span class="fu">max</span>(num.of.aw,<span class="at">na.rm=</span>T)) <span class="sc">%&gt;%</span>   </span>
-<span id="cb13-5"><a href="uygulamalar.html#cb13-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(nameFirst,nameLast)</span></code></pre></div>
+<div class="sourceCode" id="cb332"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb332-1"><a href="uygulamalar.html#cb332-1" aria-hidden="true" tabindex="-1"></a>t<span class="ot">&lt;-</span><span class="fu">table</span>(AwardsPlayers<span class="sc">$</span>playerID) <span class="sc">%&gt;%</span> <span class="fu">as.data.frame</span>()</span>
+<span id="cb332-2"><a href="uygulamalar.html#cb332-2" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(t)<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="st">&quot;playerID&quot;</span>,<span class="st">&quot;num.of.aw&quot;</span>)</span>
+<span id="cb332-3"><a href="uygulamalar.html#cb332-3" aria-hidden="true" tabindex="-1"></a>data1<span class="ot">&lt;-</span>People <span class="sc">%&gt;%</span> <span class="fu">left_join</span>(t,<span class="at">by=</span><span class="st">&quot;playerID&quot;</span>)    <span class="co"># hepsine na.omit() uygulamak?</span></span>
+<span id="cb332-4"><a href="uygulamalar.html#cb332-4" aria-hidden="true" tabindex="-1"></a>data1 <span class="sc">%&gt;%</span> <span class="fu">filter</span>(num.of.aw<span class="sc">==</span><span class="fu">max</span>(num.of.aw,<span class="at">na.rm=</span>T)) <span class="sc">%&gt;%</span>   </span>
+<span id="cb332-5"><a href="uygulamalar.html#cb332-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(nameFirst,nameLast)</span></code></pre></div>
 <pre><code>##   nameFirst nameLast
 ## 1     Barry    Bonds</code></pre>
 <p><strong>Soru2.</strong> People veri setinde yer alan weight ve height değişkenlerini kullanarak body mass index (BMI) hesaplayınız. BMI formülü ve değerlendirme tablosu aşağıda yer almaktadır.</p>
@@ -349,22 +356,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </table>
 <p><br></p>
 <p>Oyunculardan kaç tanesi normal weight kategorisine girmektedir?</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="uygulamalar.html#cb15-1" aria-hidden="true" tabindex="-1"></a>People <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">BMI=</span>weight<span class="sc">/</span>(height<span class="sc">^</span><span class="dv">2</span>)<span class="sc">*</span><span class="dv">703</span>) <span class="sc">%&gt;%</span> <span class="fu">filter</span>(BMI<span class="sc">&gt;=</span><span class="dv">25</span> <span class="sc">&amp;</span> BMI<span class="sc">&lt;</span><span class="fl">29.9</span>) <span class="sc">%&gt;%</span> <span class="fu">nrow</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb334"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb334-1"><a href="uygulamalar.html#cb334-1" aria-hidden="true" tabindex="-1"></a>People <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">BMI=</span>weight<span class="sc">/</span>(height<span class="sc">^</span><span class="dv">2</span>)<span class="sc">*</span><span class="dv">703</span>) <span class="sc">%&gt;%</span> <span class="fu">filter</span>(BMI<span class="sc">&gt;=</span><span class="dv">25</span> <span class="sc">&amp;</span> BMI<span class="sc">&lt;</span><span class="fl">29.9</span>) <span class="sc">%&gt;%</span> <span class="fu">nrow</span>()</span></code></pre></div>
 <pre><code>## [1] 9119</code></pre>
 <p><strong>Soru3.</strong> Salaries ve AwardsPlayers veri setlerini inceleyiniz, en fazla ödül alan oyuncunun en yüksek maaşa sahip olduğu söylenebilir mi?</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="uygulamalar.html#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co">#soru 1 de odul sayilari hesaplandi (t)</span></span>
-<span id="cb17-2"><a href="uygulamalar.html#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-3"><a href="uygulamalar.html#cb17-3" aria-hidden="true" tabindex="-1"></a>data2<span class="ot">&lt;-</span>Salaries <span class="sc">%&gt;%</span> <span class="fu">left_join</span>(t,<span class="at">by=</span><span class="st">&quot;playerID&quot;</span>) </span>
-<span id="cb17-4"><a href="uygulamalar.html#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="fu">which.max</span>(data2<span class="sc">$</span>salary)<span class="sc">==</span><span class="fu">which.max</span>(data2<span class="sc">$</span>num.of.aw)</span></code></pre></div>
+<div class="sourceCode" id="cb336"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb336-1"><a href="uygulamalar.html#cb336-1" aria-hidden="true" tabindex="-1"></a><span class="co">#soru 1 de odul sayilari hesaplandi (t)</span></span>
+<span id="cb336-2"><a href="uygulamalar.html#cb336-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb336-3"><a href="uygulamalar.html#cb336-3" aria-hidden="true" tabindex="-1"></a>data2<span class="ot">&lt;-</span>Salaries <span class="sc">%&gt;%</span> <span class="fu">left_join</span>(t,<span class="at">by=</span><span class="st">&quot;playerID&quot;</span>) </span>
+<span id="cb336-4"><a href="uygulamalar.html#cb336-4" aria-hidden="true" tabindex="-1"></a><span class="fu">which.max</span>(data2<span class="sc">$</span>salary)<span class="sc">==</span><span class="fu">which.max</span>(data2<span class="sc">$</span>num.of.aw)</span></code></pre></div>
 <pre><code>## [1] FALSE</code></pre>
-<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="uygulamalar.html#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">slice</span>(data2,<span class="fu">which.max</span>(data2<span class="sc">$</span>salary))     <span class="co">#max salary</span></span></code></pre></div>
+<div class="sourceCode" id="cb338"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb338-1"><a href="uygulamalar.html#cb338-1" aria-hidden="true" tabindex="-1"></a><span class="fu">slice</span>(data2,<span class="fu">which.max</span>(data2<span class="sc">$</span>salary))     <span class="co">#max salary</span></span></code></pre></div>
 <pre><code>##   yearID teamID lgID  playerID   salary num.of.aw
 ## 1   2009    NYA   AL rodrial01 33000000        31</code></pre>
-<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="uygulamalar.html#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">slice</span>(data2,<span class="fu">which.max</span>(data2<span class="sc">$</span>num.of.aw))  <span class="co">#max num of awards</span></span></code></pre></div>
+<div class="sourceCode" id="cb340"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb340-1"><a href="uygulamalar.html#cb340-1" aria-hidden="true" tabindex="-1"></a><span class="fu">slice</span>(data2,<span class="fu">which.max</span>(data2<span class="sc">$</span>num.of.aw))  <span class="co">#max num of awards</span></span></code></pre></div>
 <pre><code>##   yearID teamID lgID  playerID salary num.of.aw
 ## 1   1986    PIT   NL bondsba01  60000        47</code></pre>
 <p><strong>Soru4.</strong> En çok alınan ödül hangisidir?</p>
-<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="uygulamalar.html#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(AwardsPlayers<span class="sc">$</span>awardID) <span class="sc">%&gt;%</span> <span class="fu">as.data.frame</span>() <span class="sc">%&gt;%</span> <span class="fu">arrange</span>(<span class="fu">desc</span>(Freq))</span></code></pre></div>
+<div class="sourceCode" id="cb342"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb342-1"><a href="uygulamalar.html#cb342-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(AwardsPlayers<span class="sc">$</span>awardID) <span class="sc">%&gt;%</span> <span class="fu">as.data.frame</span>() <span class="sc">%&gt;%</span> <span class="fu">arrange</span>(<span class="fu">desc</span>(Freq))</span></code></pre></div>
 <pre><code>##                                   Var1 Freq
 ## 1           Baseball Magazine All-Star 1520
 ## 2                         TSN All-Star 1391
@@ -398,10 +405,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="cs_3-diamonds" class="section level2" number="12.3">
 <h2><span class="header-section-number">12.3</span> CS_3 (Diamonds)</h2>
-<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="uygulamalar.html#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb25-2"><a href="uygulamalar.html#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div>
+<div class="sourceCode" id="cb344"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb344-1"><a href="uygulamalar.html#cb344-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb344-2"><a href="uygulamalar.html#cb344-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div>
 <p><strong>Soru1.</strong> diamonds veri setinde yer alan x, y ve z değişkenleri kullanılarak yeni bir t değişkeni oluşturuluyor. t değişkeni <span class="math inline">\(t=x^{2}-\sqrt{y}+z^{-2}\)</span> şeklinde tanımlanacak olursa, en düşük t değerine karşılık gelen depth değeri nedir?</p>
-<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="uygulamalar.html#cb26-1" aria-hidden="true" tabindex="-1"></a>diamonds <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">t=</span>x<span class="sc">^</span><span class="dv">2</span><span class="sc">-</span><span class="fu">sqrt</span>(y)<span class="sc">+</span>(<span class="dv">1</span><span class="sc">/</span>z)) <span class="sc">%&gt;%</span> <span class="fu">filter</span>(t<span class="sc">==</span><span class="fu">min</span>(t)) <span class="sc">%&gt;%</span> <span class="fu">select</span>(depth)</span></code></pre></div>
+<div class="sourceCode" id="cb345"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb345-1"><a href="uygulamalar.html#cb345-1" aria-hidden="true" tabindex="-1"></a>diamonds <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">t=</span>x<span class="sc">^</span><span class="dv">2</span><span class="sc">-</span><span class="fu">sqrt</span>(y)<span class="sc">+</span>(<span class="dv">1</span><span class="sc">/</span>z)) <span class="sc">%&gt;%</span> <span class="fu">filter</span>(t<span class="sc">==</span><span class="fu">min</span>(t)) <span class="sc">%&gt;%</span> <span class="fu">select</span>(depth)</span></code></pre></div>
 <pre><code>## # A tibble: 1 x 1
 ##   depth
 ##   &lt;dbl&gt;
@@ -438,26 +445,26 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </tbody>
 </table>
 <p>İndirimli fiyatlar üzerinden alışveriş yapan bir müşteri ‘E color’ ve ‘SI1 clarity’ ürün için en az kaç $ ödeyecektir?</p>
-<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="uygulamalar.html#cb28-1" aria-hidden="true" tabindex="-1"></a>diamonds <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">discount =</span> <span class="fu">case_when</span>(</span>
-<span id="cb28-2"><a href="uygulamalar.html#cb28-2" aria-hidden="true" tabindex="-1"></a>  cut<span class="sc">==</span><span class="st">&quot;Fair&quot;</span> <span class="sc">~</span> price<span class="sc">*</span><span class="fl">0.01</span>,</span>
-<span id="cb28-3"><a href="uygulamalar.html#cb28-3" aria-hidden="true" tabindex="-1"></a>  cut<span class="sc">==</span><span class="st">&quot;Good&quot;</span> <span class="sc">~</span> price<span class="sc">*</span><span class="fl">0.02</span>,</span>
-<span id="cb28-4"><a href="uygulamalar.html#cb28-4" aria-hidden="true" tabindex="-1"></a>  cut<span class="sc">==</span><span class="st">&quot;Very Good&quot;</span> <span class="sc">~</span> price<span class="sc">*</span><span class="fl">0.025</span>,</span>
-<span id="cb28-5"><a href="uygulamalar.html#cb28-5" aria-hidden="true" tabindex="-1"></a>  cut<span class="sc">==</span><span class="st">&quot;Premium&quot;</span> <span class="sc">~</span> price<span class="sc">*</span><span class="fl">0.03</span>,</span>
-<span id="cb28-6"><a href="uygulamalar.html#cb28-6" aria-hidden="true" tabindex="-1"></a>  cut<span class="sc">==</span><span class="st">&quot;Ideal&quot;</span> <span class="sc">~</span> price<span class="sc">*</span><span class="fl">0.03</span>,</span>
-<span id="cb28-7"><a href="uygulamalar.html#cb28-7" aria-hidden="true" tabindex="-1"></a>),<span class="at">new.price=</span>price<span class="sc">-</span>discount) <span class="sc">%&gt;%</span> <span class="fu">filter</span>(color<span class="sc">==</span><span class="st">&quot;E&quot;</span> <span class="sc">&amp;</span> clarity<span class="sc">==</span><span class="st">&quot;SI2&quot;</span> <span class="sc">&amp;</span> new.price<span class="sc">==</span><span class="fu">min</span>(new.price)) </span></code></pre></div>
+<div class="sourceCode" id="cb347"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb347-1"><a href="uygulamalar.html#cb347-1" aria-hidden="true" tabindex="-1"></a>diamonds <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">discount =</span> <span class="fu">case_when</span>(</span>
+<span id="cb347-2"><a href="uygulamalar.html#cb347-2" aria-hidden="true" tabindex="-1"></a>  cut<span class="sc">==</span><span class="st">&quot;Fair&quot;</span> <span class="sc">~</span> price<span class="sc">*</span><span class="fl">0.01</span>,</span>
+<span id="cb347-3"><a href="uygulamalar.html#cb347-3" aria-hidden="true" tabindex="-1"></a>  cut<span class="sc">==</span><span class="st">&quot;Good&quot;</span> <span class="sc">~</span> price<span class="sc">*</span><span class="fl">0.02</span>,</span>
+<span id="cb347-4"><a href="uygulamalar.html#cb347-4" aria-hidden="true" tabindex="-1"></a>  cut<span class="sc">==</span><span class="st">&quot;Very Good&quot;</span> <span class="sc">~</span> price<span class="sc">*</span><span class="fl">0.025</span>,</span>
+<span id="cb347-5"><a href="uygulamalar.html#cb347-5" aria-hidden="true" tabindex="-1"></a>  cut<span class="sc">==</span><span class="st">&quot;Premium&quot;</span> <span class="sc">~</span> price<span class="sc">*</span><span class="fl">0.03</span>,</span>
+<span id="cb347-6"><a href="uygulamalar.html#cb347-6" aria-hidden="true" tabindex="-1"></a>  cut<span class="sc">==</span><span class="st">&quot;Ideal&quot;</span> <span class="sc">~</span> price<span class="sc">*</span><span class="fl">0.03</span>,</span>
+<span id="cb347-7"><a href="uygulamalar.html#cb347-7" aria-hidden="true" tabindex="-1"></a>),<span class="at">new.price=</span>price<span class="sc">-</span>discount) <span class="sc">%&gt;%</span> <span class="fu">filter</span>(color<span class="sc">==</span><span class="st">&quot;E&quot;</span> <span class="sc">&amp;</span> clarity<span class="sc">==</span><span class="st">&quot;SI2&quot;</span> <span class="sc">&amp;</span> new.price<span class="sc">==</span><span class="fu">min</span>(new.price)) </span></code></pre></div>
 <pre><code>## # A tibble: 1 x 12
 ##   carat cut   color clarity depth table price     x     y     z discount
 ##   &lt;dbl&gt; &lt;ord&gt; &lt;ord&gt; &lt;ord&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;    &lt;dbl&gt;
 ## 1  0.23 Ideal E     SI2      61.5    55   326  3.95  3.98  2.43     9.78
 ## # … with 1 more variable: new.price &lt;dbl&gt;</code></pre>
 <p>Alternatif,</p>
-<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="uygulamalar.html#cb30-1" aria-hidden="true" tabindex="-1"></a>diamonds <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">discount=</span> <span class="fu">case_when</span>(</span>
-<span id="cb30-2"><a href="uygulamalar.html#cb30-2" aria-hidden="true" tabindex="-1"></a>  cut<span class="sc">==</span><span class="st">&quot;Fair&quot;</span> <span class="sc">~</span> price<span class="sc">*</span><span class="fl">0.1</span>,</span>
-<span id="cb30-3"><a href="uygulamalar.html#cb30-3" aria-hidden="true" tabindex="-1"></a>  cut<span class="sc">==</span><span class="st">&quot;Good&quot;</span> <span class="sc">~</span> price<span class="sc">*</span><span class="fl">0.12</span>,</span>
-<span id="cb30-4"><a href="uygulamalar.html#cb30-4" aria-hidden="true" tabindex="-1"></a>  cut<span class="sc">==</span><span class="st">&quot;Very Good&quot;</span> <span class="sc">~</span> price<span class="sc">*</span><span class="fl">0.15</span>,</span>
-<span id="cb30-5"><a href="uygulamalar.html#cb30-5" aria-hidden="true" tabindex="-1"></a>  cut<span class="sc">==</span><span class="st">&quot;Premium&quot;</span> <span class="sc">~</span> price<span class="sc">*</span><span class="fl">0.18</span>,</span>
-<span id="cb30-6"><a href="uygulamalar.html#cb30-6" aria-hidden="true" tabindex="-1"></a>  cut<span class="sc">==</span><span class="st">&quot;Ideal&quot;</span> <span class="sc">~</span> price<span class="sc">*</span><span class="fl">0.18</span>,</span>
-<span id="cb30-7"><a href="uygulamalar.html#cb30-7" aria-hidden="true" tabindex="-1"></a>),<span class="at">new.price=</span>price<span class="sc">-</span>discount) <span class="sc">%&gt;%</span> <span class="fu">filter</span>(color<span class="sc">==</span><span class="st">&quot;E&quot;</span><span class="sc">&amp;</span> clarity<span class="sc">==</span><span class="st">&quot;SI1&quot;</span>) <span class="sc">%&gt;%</span> <span class="fu">arrange</span>(new.price)</span></code></pre></div>
+<div class="sourceCode" id="cb349"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb349-1"><a href="uygulamalar.html#cb349-1" aria-hidden="true" tabindex="-1"></a>diamonds <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">discount=</span> <span class="fu">case_when</span>(</span>
+<span id="cb349-2"><a href="uygulamalar.html#cb349-2" aria-hidden="true" tabindex="-1"></a>  cut<span class="sc">==</span><span class="st">&quot;Fair&quot;</span> <span class="sc">~</span> price<span class="sc">*</span><span class="fl">0.1</span>,</span>
+<span id="cb349-3"><a href="uygulamalar.html#cb349-3" aria-hidden="true" tabindex="-1"></a>  cut<span class="sc">==</span><span class="st">&quot;Good&quot;</span> <span class="sc">~</span> price<span class="sc">*</span><span class="fl">0.12</span>,</span>
+<span id="cb349-4"><a href="uygulamalar.html#cb349-4" aria-hidden="true" tabindex="-1"></a>  cut<span class="sc">==</span><span class="st">&quot;Very Good&quot;</span> <span class="sc">~</span> price<span class="sc">*</span><span class="fl">0.15</span>,</span>
+<span id="cb349-5"><a href="uygulamalar.html#cb349-5" aria-hidden="true" tabindex="-1"></a>  cut<span class="sc">==</span><span class="st">&quot;Premium&quot;</span> <span class="sc">~</span> price<span class="sc">*</span><span class="fl">0.18</span>,</span>
+<span id="cb349-6"><a href="uygulamalar.html#cb349-6" aria-hidden="true" tabindex="-1"></a>  cut<span class="sc">==</span><span class="st">&quot;Ideal&quot;</span> <span class="sc">~</span> price<span class="sc">*</span><span class="fl">0.18</span>,</span>
+<span id="cb349-7"><a href="uygulamalar.html#cb349-7" aria-hidden="true" tabindex="-1"></a>),<span class="at">new.price=</span>price<span class="sc">-</span>discount) <span class="sc">%&gt;%</span> <span class="fu">filter</span>(color<span class="sc">==</span><span class="st">&quot;E&quot;</span><span class="sc">&amp;</span> clarity<span class="sc">==</span><span class="st">&quot;SI1&quot;</span>) <span class="sc">%&gt;%</span> <span class="fu">arrange</span>(new.price)</span></code></pre></div>
 <pre><code>## # A tibble: 2,426 x 12
 ##    carat cut   color clarity depth table price     x     y     z discount
 ##    &lt;dbl&gt; &lt;ord&gt; &lt;ord&gt; &lt;ord&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;    &lt;dbl&gt;
@@ -473,13 +480,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 10  0.3  Ideal E     SI1      61.6    54   499  4.32  4.35  2.67     89.8
 ## # … with 2,416 more rows, and 1 more variable: new.price &lt;dbl&gt;</code></pre>
 <p><strong>Soru3.</strong> diamonds verisi clarity değişkeni kaç farklı level içermektedir? (Kaç farklı clarity tipi vardır?)</p>
-<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="uygulamalar.html#cb32-1" aria-hidden="true" tabindex="-1"></a>cl<span class="ot">&lt;-</span>diamonds<span class="sc">$</span>clarity <span class="sc">%&gt;%</span> <span class="fu">as.factor</span>() </span>
-<span id="cb32-2"><a href="uygulamalar.html#cb32-2" aria-hidden="true" tabindex="-1"></a>cl <span class="sc">%&gt;%</span> <span class="fu">levels</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb351"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb351-1"><a href="uygulamalar.html#cb351-1" aria-hidden="true" tabindex="-1"></a>cl<span class="ot">&lt;-</span>diamonds<span class="sc">$</span>clarity <span class="sc">%&gt;%</span> <span class="fu">as.factor</span>() </span>
+<span id="cb351-2"><a href="uygulamalar.html#cb351-2" aria-hidden="true" tabindex="-1"></a>cl <span class="sc">%&gt;%</span> <span class="fu">levels</span>()</span></code></pre></div>
 <pre><code>## [1] &quot;I1&quot;   &quot;SI2&quot;  &quot;SI1&quot;  &quot;VS2&quot;  &quot;VS1&quot;  &quot;VVS2&quot; &quot;VVS1&quot; &quot;IF&quot;</code></pre>
-<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="uygulamalar.html#cb34-1" aria-hidden="true" tabindex="-1"></a>cl <span class="sc">%&gt;%</span> <span class="fu">nlevels</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb353"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb353-1"><a href="uygulamalar.html#cb353-1" aria-hidden="true" tabindex="-1"></a>cl <span class="sc">%&gt;%</span> <span class="fu">nlevels</span>()</span></code></pre></div>
 <pre><code>## [1] 8</code></pre>
 <p><strong>Soru4.</strong> Mağazanın ‘Ideal’ cut tipine sahip ürünlerden elde ettiği ortalama kazanç nedir?</p>
-<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="uygulamalar.html#cb36-1" aria-hidden="true" tabindex="-1"></a>diamonds <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(cut) <span class="sc">%&gt;%</span> <span class="fu">summarise</span>(<span class="at">mean.pr=</span><span class="fu">mean</span>(price))</span></code></pre></div>
+<div class="sourceCode" id="cb355"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb355-1"><a href="uygulamalar.html#cb355-1" aria-hidden="true" tabindex="-1"></a>diamonds <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(cut) <span class="sc">%&gt;%</span> <span class="fu">summarise</span>(<span class="at">mean.pr=</span><span class="fu">mean</span>(price))</span></code></pre></div>
 <pre><code>## # A tibble: 5 x 2
 ##   cut       mean.pr
 ## * &lt;ord&gt;       &lt;dbl&gt;
@@ -489,7 +496,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 4 Premium     4584.
 ## 5 Ideal       3458.</code></pre>
 <p>Alternatif,</p>
-<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="uygulamalar.html#cb38-1" aria-hidden="true" tabindex="-1"></a>diamonds <span class="sc">%&gt;%</span> <span class="fu">filter</span>(cut<span class="sc">==</span><span class="st">&quot;Ideal&quot;</span>) <span class="sc">%&gt;%</span> <span class="fu">summarise</span>(<span class="fu">mean</span>(price))</span></code></pre></div>
+<div class="sourceCode" id="cb357"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb357-1"><a href="uygulamalar.html#cb357-1" aria-hidden="true" tabindex="-1"></a>diamonds <span class="sc">%&gt;%</span> <span class="fu">filter</span>(cut<span class="sc">==</span><span class="st">&quot;Ideal&quot;</span>) <span class="sc">%&gt;%</span> <span class="fu">summarise</span>(<span class="fu">mean</span>(price))</span></code></pre></div>
 <pre><code>## # A tibble: 1 x 1
 ##   `mean(price)`
 ##           &lt;dbl&gt;

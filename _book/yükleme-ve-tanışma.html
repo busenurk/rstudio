@@ -24,7 +24,7 @@
 <meta name="author" content="Dr. Busenur Kızılaslan" />
 
 
-<meta name="date" content="2021-01-04" />
+<meta name="date" content="2021-07-12" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,6 +33,7 @@
   
 <link rel="prev" href="genel-bakış.html"/>
 <link rel="next" href="temel-nesneler.html"/>
+<script src="libs/header-attrs-2.7.1/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -50,9 +51,6 @@
 
 
 
-<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
-<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
 <script src="libs/htmlwidgets-1.5.2/htmlwidgets.js"></script>
 <script src="libs/plotly-binding-4.9.2.1/plotly.js"></script>
 <script src="libs/typedarray-0.1/typedarray.min.js"></script>
@@ -63,18 +61,18 @@
 
 
 <style type="text/css">
-code.sourceCode > span { display: inline-block; line-height: 1.25; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-code.sourceCode > span:empty { height: 1.2em; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -94,7 +92,7 @@ pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-le
 div.sourceCode
   {   }
 @media screen {
-code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -143,56 +141,68 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="./">R Ders Notları</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Ön Bilgi</a><ul>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Ön Bilgi</a>
+<ul>
 <li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#hakkımda"><i class="fa fa-check"></i><b>1.1</b> Hakkımda</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="motivasyon.html"><a href="motivasyon.html"><i class="fa fa-check"></i><b>2</b> Motivasyon</a></li>
-<li class="chapter" data-level="3" data-path="genel-bakış.html"><a href="genel-bakış.html"><i class="fa fa-check"></i><b>3</b> Genel Bakış</a><ul>
-<li class="chapter" data-level="3.1" data-path="genel-bakış.html"><a href="genel-bakış.html#r-nedir"><i class="fa fa-check"></i><b>3.1</b> R: Nedir?</a><ul>
+<li class="chapter" data-level="3" data-path="genel-bakış.html"><a href="genel-bakış.html"><i class="fa fa-check"></i><b>3</b> Genel Bakış</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="genel-bakış.html"><a href="genel-bakış.html#r-nedir"><i class="fa fa-check"></i><b>3.1</b> R: Nedir?</a>
+<ul>
 <li class="chapter" data-level="3.1.1" data-path="genel-bakış.html"><a href="genel-bakış.html#rstudio"><i class="fa fa-check"></i><b>3.1.1</b> RStudio</a></li>
 </ul></li>
 <li class="chapter" data-level="3.2" data-path="genel-bakış.html"><a href="genel-bakış.html#r-neden"><i class="fa fa-check"></i><b>3.2</b> R: Neden?</a></li>
 <li class="chapter" data-level="3.3" data-path="genel-bakış.html"><a href="genel-bakış.html#r-help"><i class="fa fa-check"></i><b>3.3</b> R: Help</a></li>
 <li class="chapter" data-level="3.4" data-path="genel-bakış.html"><a href="genel-bakış.html#paketler"><i class="fa fa-check"></i><b>3.4</b> Paketler</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="yükleme-ve-tanışma.html"><a href="yükleme-ve-tanışma.html"><i class="fa fa-check"></i><b>4</b> Yükleme ve Tanışma</a><ul>
+<li class="chapter" data-level="4" data-path="yükleme-ve-tanışma.html"><a href="yükleme-ve-tanışma.html"><i class="fa fa-check"></i><b>4</b> Yükleme ve Tanışma</a>
+<ul>
 <li class="chapter" data-level="4.1" data-path="yükleme-ve-tanışma.html"><a href="yükleme-ve-tanışma.html#yükleme"><i class="fa fa-check"></i><b>4.1</b> Yükleme</a></li>
 <li class="chapter" data-level="4.2" data-path="yükleme-ve-tanışma.html"><a href="yükleme-ve-tanışma.html#tanışma"><i class="fa fa-check"></i><b>4.2</b> Tanışma</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="temel-nesneler.html"><a href="temel-nesneler.html"><i class="fa fa-check"></i><b>5</b> Temel Nesneler</a><ul>
+<li class="chapter" data-level="5" data-path="temel-nesneler.html"><a href="temel-nesneler.html"><i class="fa fa-check"></i><b>5</b> Temel Nesneler</a>
+<ul>
 <li class="chapter" data-level="5.1" data-path="temel-nesneler.html"><a href="temel-nesneler.html#aritmetik-arithmetic"><i class="fa fa-check"></i><b>5.1</b> Aritmetik (Arithmetic)</a></li>
 <li class="chapter" data-level="5.2" data-path="temel-nesneler.html"><a href="temel-nesneler.html#nesneleri-tanımlama-assigning-objects"><i class="fa fa-check"></i><b>5.2</b> Nesneleri Tanımlama (Assigning Objects)</a></li>
 <li class="chapter" data-level="5.3" data-path="temel-nesneler.html"><a href="temel-nesneler.html#vektörler-vectors"><i class="fa fa-check"></i><b>5.3</b> Vektörler (Vectors)</a></li>
 <li class="chapter" data-level="5.4" data-path="temel-nesneler.html"><a href="temel-nesneler.html#matrisler-matrices-ve-diziler-arrays"><i class="fa fa-check"></i><b>5.4</b> Matrisler (Matrices) ve Diziler (Arrays)</a></li>
 <li class="chapter" data-level="5.5" data-path="temel-nesneler.html"><a href="temel-nesneler.html#listeler-ve-data-frameler-lists-and-data-frames"><i class="fa fa-check"></i><b>5.5</b> Listeler ve Data Frameler (Lists and Data Frames)</a></li>
-<li class="chapter" data-level="5.6" data-path="temel-nesneler.html"><a href="temel-nesneler.html#sayısal-olmayan-değerler-non-numeric-values"><i class="fa fa-check"></i><b>5.6</b> Sayısal Olmayan Değerler (Non-Numeric Values)</a><ul>
+<li class="chapter" data-level="5.6" data-path="temel-nesneler.html"><a href="temel-nesneler.html#sayısal-olmayan-değerler-non-numeric-values"><i class="fa fa-check"></i><b>5.6</b> Sayısal Olmayan Değerler (Non-Numeric Values)</a>
+<ul>
 <li class="chapter" data-level="5.6.1" data-path="temel-nesneler.html"><a href="temel-nesneler.html#mantıksal-değerler"><i class="fa fa-check"></i><b>5.6.1</b> Mantıksal Değerler</a></li>
 <li class="chapter" data-level="5.6.2" data-path="temel-nesneler.html"><a href="temel-nesneler.html#karakterler"><i class="fa fa-check"></i><b>5.6.2</b> Karakterler</a></li>
 <li class="chapter" data-level="5.6.3" data-path="temel-nesneler.html"><a href="temel-nesneler.html#faktörler-factors"><i class="fa fa-check"></i><b>5.6.3</b> Faktörler (Factors)</a></li>
 </ul></li>
 <li class="chapter" data-level="5.7" data-path="temel-nesneler.html"><a href="temel-nesneler.html#eksik-gözlemler-missing-values"><i class="fa fa-check"></i><b>5.7</b> Eksik Gözlemler (Missing Values)</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="import-export-işlemleri.html"><a href="import-export-işlemleri.html"><i class="fa fa-check"></i><b>6</b> Import Export İşlemleri</a><ul>
+<li class="chapter" data-level="6" data-path="import-export-işlemleri.html"><a href="import-export-işlemleri.html"><i class="fa fa-check"></i><b>6</b> Import Export İşlemleri</a>
+<ul>
 <li class="chapter" data-level="6.1" data-path="import-export-işlemleri.html"><a href="import-export-işlemleri.html#import-işlemleri"><i class="fa fa-check"></i><b>6.1</b> Import İşlemleri</a></li>
 <li class="chapter" data-level="6.2" data-path="import-export-işlemleri.html"><a href="import-export-işlemleri.html#export-işlemleri"><i class="fa fa-check"></i><b>6.2</b> Export İşlemleri</a></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="bazı-önemli-komutlar.html"><a href="bazı-önemli-komutlar.html"><i class="fa fa-check"></i><b>7</b> Bazı Önemli Komutlar</a><ul>
+<li class="chapter" data-level="7" data-path="bazı-önemli-komutlar.html"><a href="bazı-önemli-komutlar.html"><i class="fa fa-check"></i><b>7</b> Bazı Önemli Komutlar</a>
+<ul>
 <li class="chapter" data-level="7.1" data-path="bazı-önemli-komutlar.html"><a href="bazı-önemli-komutlar.html#sort"><i class="fa fa-check"></i><b>7.1</b> Sort</a></li>
 <li class="chapter" data-level="7.2" data-path="bazı-önemli-komutlar.html"><a href="bazı-önemli-komutlar.html#rank"><i class="fa fa-check"></i><b>7.2</b> Rank</a></li>
 <li class="chapter" data-level="7.3" data-path="bazı-önemli-komutlar.html"><a href="bazı-önemli-komutlar.html#order"><i class="fa fa-check"></i><b>7.3</b> Order</a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="dplyr.html"><a href="dplyr.html"><i class="fa fa-check"></i><b>8</b> DPLYR</a></li>
-<li class="chapter" data-level="9" data-path="grafikler.html"><a href="grafikler.html"><i class="fa fa-check"></i><b>9</b> Grafikler</a><ul>
+<li class="chapter" data-level="9" data-path="grafikler.html"><a href="grafikler.html"><i class="fa fa-check"></i><b>9</b> Grafikler</a>
+<ul>
 <li class="chapter" data-level="9.1" data-path="grafikler.html"><a href="grafikler.html#mevcut-grafik-üzerine-ekleme-yapmak"><i class="fa fa-check"></i><b>9.1</b> Mevcut grafik üzerine ekleme yapmak</a></li>
-<li class="chapter" data-level="9.2" data-path="grafikler.html"><a href="grafikler.html#önemli-grafik-paketleri"><i class="fa fa-check"></i><b>9.2</b> Önemli grafik paketleri</a><ul>
+<li class="chapter" data-level="9.2" data-path="grafikler.html"><a href="grafikler.html#önemli-grafik-paketleri"><i class="fa fa-check"></i><b>9.2</b> Önemli grafik paketleri</a>
+<ul>
 <li class="chapter" data-level="9.2.1" data-path="grafikler.html"><a href="grafikler.html#lattice"><i class="fa fa-check"></i><b>9.2.1</b> lattice</a></li>
 <li class="chapter" data-level="9.2.2" data-path="grafikler.html"><a href="grafikler.html#ggplot2"><i class="fa fa-check"></i><b>9.2.2</b> ggplot2</a></li>
 <li class="chapter" data-level="9.2.3" data-path="grafikler.html"><a href="grafikler.html#plotly"><i class="fa fa-check"></i><b>9.2.3</b> plotly</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="10" data-path="kontrol-yapıları.html"><a href="kontrol-yapıları.html"><i class="fa fa-check"></i><b>10</b> Kontrol Yapıları</a><ul>
+<li class="chapter" data-level="10" data-path="kontrol-yapıları.html"><a href="kontrol-yapıları.html"><i class="fa fa-check"></i><b>10</b> Kontrol Yapıları</a>
+<ul>
 <li class="chapter" data-level="10.1" data-path="kontrol-yapıları.html"><a href="kontrol-yapıları.html#if-else"><i class="fa fa-check"></i><b>10.1</b> if-else</a></li>
-<li class="chapter" data-level="10.2" data-path="kontrol-yapıları.html"><a href="kontrol-yapıları.html#loops"><i class="fa fa-check"></i><b>10.2</b> loops</a><ul>
+<li class="chapter" data-level="10.2" data-path="kontrol-yapıları.html"><a href="kontrol-yapıları.html#loops"><i class="fa fa-check"></i><b>10.2</b> loops</a>
+<ul>
 <li class="chapter" data-level="10.2.1" data-path="kontrol-yapıları.html"><a href="kontrol-yapıları.html#for"><i class="fa fa-check"></i><b>10.2.1</b> for</a></li>
 <li class="chapter" data-level="10.2.2" data-path="kontrol-yapıları.html"><a href="kontrol-yapıları.html#while"><i class="fa fa-check"></i><b>10.2.2</b> while</a></li>
 <li class="chapter" data-level="10.2.3" data-path="kontrol-yapıları.html"><a href="kontrol-yapıları.html#repeat"><i class="fa fa-check"></i><b>10.2.3</b> repeat</a></li>
@@ -200,7 +210,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="11" data-path="fonksiyonlar.html"><a href="fonksiyonlar.html"><i class="fa fa-check"></i><b>11</b> Fonksiyonlar</a></li>
-<li class="chapter" data-level="12" data-path="apply-ailesi.html"><a href="apply-ailesi.html"><i class="fa fa-check"></i><b>12</b> Apply Ailesi</a></li>
+<li class="chapter" data-level="12" data-path="uygulamalar.html"><a href="uygulamalar.html"><i class="fa fa-check"></i><b>12</b> Uygulamalar</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="uygulamalar.html"><a href="uygulamalar.html#cs_1-nyc-flights"><i class="fa fa-check"></i><b>12.1</b> CS_1 (NYC Flights)</a></li>
+<li class="chapter" data-level="12.2" data-path="uygulamalar.html"><a href="uygulamalar.html#cs_2-sean-lahman-baseball-database"><i class="fa fa-check"></i><b>12.2</b> CS_2 (Sean ‘Lahman’ Baseball Database)</a></li>
+<li class="chapter" data-level="12.3" data-path="uygulamalar.html"><a href="uygulamalar.html#cs_3-diamonds"><i class="fa fa-check"></i><b>12.3</b> CS_3 (Diamonds)</a></li>
+</ul></li>
 <li class="chapter" data-level="13" data-path="referans.html"><a href="referans.html"><i class="fa fa-check"></i><b>13</b> Referans</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -222,9 +237,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="yükleme-ve-tanışma" class="section level1">
+<div id="yükleme-ve-tanışma" class="section level1" number="4">
 <h1><span class="header-section-number">Bölüm4</span> Yükleme ve Tanışma</h1>
-<div id="yükleme" class="section level2">
+<div id="yükleme" class="section level2" number="4.1">
 <h2><span class="header-section-number">4.1</span> Yükleme</h2>
 <p>R’ın güncel versiyonun indirilmesi için <a href="http://www.cran.r-project.org">CRAN</a> (The Comprehensive R Archive Network) sayfası ziyaret edilmelidir. Bilgisayarınızdaki mevcut işletim sistemi için uygun olan versiyon indirilmelidir.</p>
 <p><br></p>
@@ -245,7 +260,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><br></p>
 <hr />
 </div>
-<div id="tanışma" class="section level2">
+<div id="tanışma" class="section level2" number="4.2">
 <h2><span class="header-section-number">4.2</span> Tanışma</h2>
 <p>R programlama dilini kullanmak için console erişimi yeterlidir. Console yalın haliyle kullanılabildiği gibi RStudio aracılığı ile de kullanılabilir.</p>
 <p><img src="images/00.png" style="width:70.0%" />
@@ -255,7 +270,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><img src="images/01.png" />
 <br></p>
 <p>R kullanarak yaptığınız çalışmalarda lütfen referans vermeyi unutmayınız.</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="yükleme-ve-tanışma.html#cb8-1"></a><span class="kw">citation</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="yükleme-ve-tanışma.html#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">citation</span>()</span></code></pre></div>
 <pre><code>## 
 ## To cite R in publications use:
 ## 
