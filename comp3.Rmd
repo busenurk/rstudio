@@ -1,0 +1,1993 @@
+--- 
+title: "R Ders Notları"
+author: "Dr. Busenur Kızılaslan"
+date: "`r Sys.Date()`"
+output: pdf_document
+documentclass: book
+bibliography:
+- book.bib
+- packages.bib
+biblio-style: apalike
+link-citations: yes
+description: R programming language lecture notes
+site: bookdown::bookdown_site
+---
+
+# Ön Bilgi
+
+
+<img src="/Users/busenursarica/Documents/GitHub/rstudio/images/vulcan.jpg" style="float: right;" width="230" height="300" title="Sheldon"/> 
+
+
+R ders notları temelde _BSP2043 - Bilgisayar III_ ve _BSP2044 - Bilgisayar IV_ derslerine kaynaklık etmesi amacıyla tasarlanmış olup konu çerçevesinde kendisini geliştirmek isteyen herkesin faydalanabilmesi hedeflenmiştir.
+
+Kaynak, temel matematik ve ingilizce bilgisine sahip olan herkesin anlayıp uygulayabileceği basitlikte bir anlatıma sahiptir. 
+
+Ders dili Türkçe'dir. Bu bakımdan genel anlatımda Türkçe kullanılacaktır. Literatürü rahat takip edebilmeniz, komut karmaşası yaşamamanız ve araştırma sürecinde zengin forum imkanından yararlanabilmeniz adına temel terimler orijinal haliyle kullanılacaktır. 
+
+Aynı zamanda referans verilen kaynaklar da orijinal dili ile paylaşılacaktır. Bu nedenle İngilizce eksikliğinizi gidermeniz önerilir. 
+
+Kaynaklar;
+
+- Kitaplar
+
+[The R Book - Michael J. Crawley](https://www.cs.upc.edu/~robert/teaching/estadistica/TheRBook.pdf)
+
+[R for Data Science - Hadley Wickham, Garrett Grolemund](https://r4ds.had.co.nz)
+
+[Introduction to Data Science - Rafael A. Irizarry](https://rafalab.github.io/dsbook/)
+
+[R Programming for Data Science - Roger D. Peng](https://bookdown.org/rdpeng/rprogdatascience/)
+
+[The Book of R - Tilman M. Davies](https://web.itu.edu.tr/~tokerem/The_Book_of_R.pdf)
+
+<br>
+
+- Eğitimler
+
+[HarvardX - Data Science: R Basics](https://www.edx.org/course/data-science-r-basics) 
+
+[HarvardX - Data Science: Visualization](https://www.edx.org/course/data-science-visualization)
+
+[HarvardX - Data Science: Probability](https://www.edx.org/course/data-science-probability)
+
+<br>
+
+Katkı ve öneriler için: `busenur.sarica@marmara.edu.tr` 
+
+İyi eğlenceler!
+
+## Hakkımda
+
+<img src="/Users/busenursarica/Documents/GitHub/rstudio/images/busenur1.jpg" style="float: right;" width="270" height="350" title="Busenur" /> 
+
+2012 yılında Mimar Sinan G. S. Üniversitesi istatistik bölümünde lisans öğrenimimi tamamlamamın ardından 2014 yılı itibariyle Marmara Üniversitesi istatistik bölümünde araştırma görevlisi olarak göreve başladım. Eş zamanlı olarak başladığım yüksek lisans öğrenimimi yine Mimar Sinan G. S. Üniversitesi istatistik anabilim dalında tamamlarken artık çalışma alanım bulanık mantık ([fuzzy logic](https://en.wikipedia.org/wiki/Fuzzy_logic)) olarak şekillenmişti. Bir buçuk yılda tamamladığım yüksek lisansın ardından farklı bakış açısı kazanma fikriyle yönümü Yıldız Teknik Üniversitesi'ne çevirdim. 2015 yılında istatistik bölümünde başladığım doktora öğrenimimi 2020 yılında yine bulanık mantık ile öngörü üzerine hazırladığım tezim ile tamamladım. Doktora öğrenimim sırasında İstanbul Teknik Üniversitesi endüstri mühendisliği bölümünden de çeşitli dersler alarak alanında uzman hocaların^[[Prof. Dr. Cengiz Kahraman](http://akademi.itu.edu.tr/kahramanc/)] bilgilerinden faydalanma imkanı buldum. 
+
+Akademik kariyer hedefiyle başlamadığım öğrenim yaşamımda ufku açık, aydınlık ve birikimli hocalarım yolumu bulmama yardımcı olmuştur. 2018 yılında Polonya'da gerçekleşen [International Conference on Trends and Perspectives in Linear Statistical Inference (LinStat'2018)](http://www.linstat2018.put.poznan.pl/ysa.html) kapsamında sunduğum, doktora tezimin bir kısmından oluşan çalışma ile aldığım Young Scientists Awards ikincilik ödülü de yanlış yolda olmadığımı göstermiştir. 
+
+Üzerimde emeği olan herkese teşekkürlerimle!
+
+<br>
+
+[**CV**](https://avesis.marmara.edu.tr/busenur.sarica), [**Google Scholar**](https://scholar.google.com.tr/citations?user=OKlYJEgAAAAJ&hl=tr), [**Linkedin**](https://www.linkedin.com/in/busenur-kızılaslan-795ab54a)
+
+
+
+
+
+
+<!--chapter:end:index.Rmd-->
+
+# Motivasyon
+
+**'Bu dersi neden alıyorum?'** sorusuna karşılık olarak alacağınız cevap **'ilerleyen dönemlerde göreceğiniz derslerin uygulamalarında ihtiyaç duyacaksınız'**dan çok daha fazlası! Herhangi bir programlama diline hakim olmak veriyi anlamlandırabilmek adına zaten önemliyken özellikle R, Python gibi açık kaynak ve hızla gelişmeye devam eden programlama dillerini biliyor olmak sizleri donanımlı kılacaktır. 
+
+<br>
+
+<center>
+
+![](/Users/busenursarica/Documents/GitHub/rstudio/images/steve.png){width=85%}
+
+</center>
+
+<br>
+
+Programlama bilgisine sahip olmak iş yaşamındaki ihtiyacınızı karşılamasının yanı sıra günlük yaşamdaki problem çözme yeteneğinizin gelişmesine de yardımcı olmaktadır. Programlama yapısını öğrenen kişinin diğer programlama dillerini öğrenmesi kolaylaşmaktadır. İş başvurularında birden fazla programlama dili biliyor olmanın sizi öne çıkaracağı da aşikar. Burada sorulması gereken asıl soru **'hangi programlama dilini/dillerini öğrenmeliyim?'** olmalıdır. Ders kapsamında R programlama dili ve özellikleri açıklanacaktır.
+
+<br>
+
+<center>
+
+![](/Users/busenursarica/Documents/GitHub/rstudio/images/bill.png){width=85%}
+</center>
+
+
+
+
+
+
+<!--chapter:end:01-Motivasyon.Rmd-->
+
+# Genel Bakış
+
+## R: Nedir?
+
+<img src="/Users/busenursarica/Documents/GitHub/rstudio/images/Rlogo.png" style="float: right;" width="250" height="200" title="R" />
+
+İstatistiksel analiz ve veri görselleştirme amacıyla geliştirilen R, açık kaynak olup ücretsizdir. R, dizayn olarak var olan iki dilden etkilenmiştir; Becker, Chambers & Wilks’in S programlama dili ve Sussman’ın Scheme programlama dilidir. R, başlangıçta Yeni Zelanda Auckland'daki Auckland Üniversitesi İstatistik Bölümü'nde Ross Ihaka ve Robert Gentleman tarafından yazılmıştır. Ek olarak, büyük bir grup insan, kod ve hata raporları göndererek katkıda bulunmuştur. Tarihçeyi merak edenler  *A Brief History of S* [@Becker2004] kaynağını inceleyebilir.
+
+1997 ortalarından itibaren çekirdek bir yapı *(The R Core Team)* yönetimi sürdürmektedir. 
+
+
+[Resmi internet adresi](http://www.r-project.org)
+
+[Yükleme adresi](http://www.cran.r-project.org)
+
+[The R Journal](https://journal.r-project.org): R kullanıcıları için hakemli ve açık erişimli dergi
+
+[Kitaplar](https://www.r-project.org/doc/bib/R-books.html): R kullancıları için çeşitli alanlarda/dillerde kaynak kitaplar
+
+[Faydalı adres1](http://www.statmethods.net)
+
+[Faydalı adres2](https://stackoverflow.com/questions/tagged/r)
+
+<br>
+
+```
+Hangi komutun ne işe yaradığını anımsayamıyorsanız veya bir hata ile karşılaştıysanız
+GOOGLE kullanın.
+```
+
+~~~
+Programlama öğrenmenin en iyi yolu denemek ve hata yapmaktır.
+~~~
+
+
+***
+
+### RStudio
+
+<img src="/Users/busenursarica/Documents/GitHub/rstudio/images/RStudio.png" style="float: right;" width="250" height="90" title="RStudio" />
+
+R üzerinde doğrudan çalışabilir veya bir grafik ara yüzü olan RStudio'nun zengin özelliklerinden faydalanma imkanından yararlanabilirsiniz. Uygulama kolaylığı sağlayan bir entegre geliştirme ortamı *(integrated development environment (IDE))* olan RStudio, Windows, Mac ve Linux ile çalışabilir. RStudio'yu kullanışlı kılan birçok özellik mevcuttur, bunlardan birkaçı şu şekilde sıralanabilir.
+
+- Script 
+
+- Kodlama geçmişi, güçlü grafiksel altyapı
+
+- Cheatsheetler
+
+- Değişken ve fonksiyon tamamlama özelliği
+
+***
+
+## R: Neden?
+
+Veri analizi için kullanılabilecek SAS, SPSS, Excel, MATLAB gibi birçok yazılım  mevcutken neden R kullanıyoruz?
+
+- Ücretsiz (open source)
+
+- Geniş kullanım kitlesi
+
+  - Dünyada 2 milyondan fazla kullanıcıya sahip
+
+  - Sürekli gelişmeye devam eden yapısı
+
+  - Geniş forum ağı
+
+- Uygulama ve kullanım kolaylığı
+
+- Grafik ve görsel üretimindeki başarısı
+
+- Paket kullanım imkanı
+
+- Raporlama kolaylığı ve RMarkdown sayesinde kolay sunum
+
+
+<br>
+
+R aynı zamanda bazı dezavantajlara da sahiptir.
+
+- Güncelleneme gereksinimi
+
+- Uzmanlaşmanın diğer programlara göre biraz daha zor olması
+
+
+***
+
+## R: Help
+
+<img src="/Users/busenursarica/Documents/GitHub/rstudio/images/help.jpg" style="float: right;" width="200" height="200" title="Help" />
+
+R'da karşılacağınız problemler için menüde yer alan `Help` kısmını kullanabilir veya [Stackoverflow](https://stackoverflow.com/questions/tagged/r) gibi forumlardan faydalanabilirsiniz. Windows, Mac işletim sistemleri ve genel sorular için üç farklı [FAQ (Frequently Asked Questions)](https://cran.r-project.org/faqs.html) kısmı mevcuttur.
+ 
+ <br>
+ 
+Kullanacağınız fonksiyonun ismini biliyorsanız `?` kullanarak yine help içeriğinden faydalanabilirsiniz.
+
+```{r}
+?sum
+```
+
+Kullanacağınız fonksiyonun ismini biliyor fakat hangi pakette yer aldığını bilmiyorsanız bu noktada `find` komutu size yardımcı olacaktır.
+
+```{r}
+find("sum")
+```
+Kullanacağınız fonksiyon ile ilgili örnek araştırmak isterseniz `example` komutu işinizi görecektir.
+
+```{r}
+example(sum)
+```
+
+
+***
+
+## Paketler
+
+R programlama dili ile kendi döngülerinizi oluşturabilir, özgün kodlarınızı yazabilirsiniz, aynı zamanda paketler yardımı ile yazılmış olan zengin hazır kod içeriğinden de faydalanabilirsiniz (internet bağlantısı gerektirir). Bu zengin içeriğe hazırladığınız paketler ile dahil olma imkanınız da mevcut.
+
+
+>Paket indirme konusunda problem yaşıyorsanız R'ı yönetici olarak çalıştırmayı deneyin. 
+
+>Paket yükleme işleminin hızlı olabilmesi için size en yakın mirror seçimini yapmalısınız.
+
+
+<br>
+
+> Paketler kullanım kolaylığı ve zamandan kazanç sağlamakla birlikte kullanılmadan önce içeriğin dikkatlice incelenmesi önemlidir. Tanımlamaları iyi anlaşılmadan kullanılan paketlerle yanlış sonuçlar elde edilmesi kaçınılmazdır. 
+
+<br>
+
+![](/Users/busenursarica/Documents/GitHub/rstudio/images/P1.png){width=85%}
+
+![](/Users/busenursarica/Documents/GitHub/rstudio/images/P2.png){width=85%}
+
+![](/Users/busenursarica/Documents/GitHub/rstudio/images/P3.png){width=85%}
+
+![](/Users/busenursarica/Documents/GitHub/rstudio/images/P4.png){width=85%}
+
+***
+
+
+
+
+
+<!--chapter:end:02-Genel-Bakış.Rmd-->
+
+# Yükleme ve Tanışma
+## Yükleme
+
+R'ın güncel versiyonun indirilmesi için [CRAN](http://www.cran.r-project.org) (The Comprehensive R Archive Network) sayfası ziyaret edilmelidir. Bilgisayarınızdaki mevcut işletim sistemi için uygun olan versiyon indirilmelidir. 
+
+<br>
+
+![](/Users/busenursarica/Documents/GitHub/rstudio/images/D1.png)
+
+<br>
+
+Uygun işletim sistemi seçildikten sonra `install R for the first time` tıklanarak temel versiyon seçilmelidir.
+
+<br>
+
+![](/Users/busenursarica/Documents/GitHub/rstudio/images/D2.png)
+
+Gelen ekranda seçtiğiniz işletim sistemine uygun olan güncel R versiyonu görülecektir. `Download` işlemi başlatılır ve uygun seçenekler dahilinde indirme işlemi ve kurulum tamamlanır.
+
+<br>
+
+![](/Users/busenursarica/Documents/GitHub/rstudio/images/D3.png)
+
+R yükleme işlemi tamamlandıktan sonra RStudio kurulum işlemine başlanır. [RStudio](https://rstudio.com/products/rstudio/download/) sayfasına gidilir, bilgisayarınızdaki işletim sistemine uygun olan RStudio Desktop versiyonu indirilir ve kurulur. 
+
+<br>
+
+<img src="/Users/busenursarica/Documents/GitHub/rstudio/images/play.png" style="float: left;" width="150" height="110" title="Play"/>
+
+[Yükleme destek videosu (R-Windows)](https://www.youtube.com/watch?v=Ohnk9hcxf9M&feature=youtu.be)
+
+[Yükleme destek videosu (R-Mac)](https://www.youtube.com/watch?v=uxuuWXU-7UQ&feature=youtu.be)
+
+[Yükleme destek videosu (RStudio)](https://www.youtube.com/watch?v=bM7Sfz-LADM&feature=youtu.be)
+
+<br>
+
+***
+
+## Tanışma
+
+R programlama dilini kullanmak için console erişimi yeterlidir. Console yalın haliyle kullanılabildiği gibi RStudio aracılığı ile de kullanılabilir.
+
+![](/Users/busenursarica/Documents/GitHub/rstudio/images/00.png){width=70%}
+<br>
+
+RStudio editor, görsel ve uygulama avantajları sayesinde uygulama kolaylığı sağlamaktadır.
+
+<br>
+
+![](/Users/busenursarica/Documents/GitHub/rstudio/images/01.png)
+<br>
+
+R kullanarak yaptığınız çalışmalarda lütfen referans vermeyi unutmayınız.
+```{r}
+citation()
+```
+
+<br>
+
+Yeni script oluşturmak için;
+
+<br>
+
+![](/Users/busenursarica/Documents/GitHub/rstudio/images/02.png)
+<br>
+
+![](/Users/busenursarica/Documents/GitHub/rstudio/images/03.png)
+<br>
+
+RStudio cheatsheat yapısı sayesinde bir çok konu başlığında özet bilgiye ulaşmak mümkün.   
+
+<br>
+
+![](/Users/busenursarica/Documents/GitHub/rstudio/images/04.png)
+
+***
+
+<!--chapter:end:03-Yükleme-ve-Tanışma.Rmd-->
+
+---
+output:
+  pdf_document: default
+  html_document: default
+---
+# Temel Nesneler
+Bu bölümde kodlama için ihtiyaç duyacağınız temel yapılar açıklanacak ve uygulamalar ile desteklenecektir. **Farklı uygulamalar ders esnasında eş zamanlı yapılacağından lütfen online dersleri takip ediniz.** 
+
+
+## Aritmetik (Arithmetic)
+
+R, en basit haliyle hesap makinesi olarak kullanılabilir. Toplama `+`, çıkarma `-`, çarpma `*`, bölme `/` operatörleri ile gerçekleştirilir.
+```{r}
+5+4
+```
+<br>
+
+Birden fazla matematiksel işlem aynı satırda gerçekleştirilebilir.
+```{r}
+3+4; 6*4; 10-2
+```
+
+<br>
+
+İşlemler parantez yardımıyla önceliğine göre yazılabilir, yazılmadığı taktirde matematiksel işlem önceliği geçerlidir.
+```{r}
+10*2-3
+```
+
+<br>
+
+İşlem devam edecek biçimde tanımlanırsa console `+` simgesi ile devam edecek ve işlem tamamlanana kadar yeni işleme geçmenize engel olacaktır. İşlemi tamamlamalı veya yeni işleme geçmek için `esc` tuşunu kullanmalısınız. 
+```{r}
+10+20+30+
+  40
+```
+
+<br>
+
+Yapılan işlemler sonucu elde edilen çok büyük veya çok küçük sonuçlar için output exponent olarak verilir.
+
+```{r}
+12000*3000
+```
+
+
+> 1.3e2   (130 anlamına gelir. e2: ondalık noktasını iki basamak sağa taşı)
+
+> 1.4e-1  (0.14 anlamına gelir. e-1: ondalık noktasını bir basamak sola taşı)
+
+<br>
+
+Uygulamada elde edilen sonucun integer (tamsayı) olması gerekebilir. Bu noktada elde edilen output üste, alta veya 0.5 üzeri ya da altı olma durumuna göre farklı komutlar yardımı ile yuvarlanabilir. 
+
+- **floor:** alta yuvarla
+
+```{r}
+floor(5.2); floor(5.7)
+```
+<br>
+
+- **ceilign:** üste yuvarla
+```{r}
+ceiling(3.2); ceiling(3.8)
+```
+
+<br>
+
+- **round:** 0.5 üzeri ise üste, 0.5 altı ise alta yuvarla
+```{r}
+round(5.6); round(5.3)
+```
+
+<span style="background-color: #FFFF99 ">Negatif sayılarda komutların nasıl işlediğini inceleyebilirsiniz. </span>
+
+<br>
+
+**round** komutu ile virgülden sonra kaç basamak olması gerektiğini belirterek yuvarlama işlemi yapabilirsiniz.
+```{r}
+round(1.248,2)
+```
+Kullanılabilecek matematiksel fonksiyonlara örnek olarak [@Crawley2012]
+
+<img src="/Users/busenursarica/Documents/GitHub/rstudio/images/mfunc.png" />
+
+***
+
+## Nesneleri Tanımlama (Assigning Objects) 
+
+Temel işlevlerden bir diğeri kullanılacak değişkenlerin tanımlanmasıdır. Değişken için seçilecek isim mümkün olan en kısa haliyle tanımlanarak kavram kargaşası önlenmelidir.
+
+- R, büyük ve küçük harfe duyarlıdır, dolayısıyla tanımlanan $B$ ve $b$ iki farklı değişkeni temsil eder.
+
+- Değişken ismi iki veya daha fazla kelimeden oluşacaksa kelimeler arasında boşluk yerine nokta kullanılmalıdır. (~~neura link~~)
+
+- Değişken ismi sayı veya sembol ile başlayamaz. (~~1a~~, ~~&b~~)
+
+Değişken tanımlama işlemi `<-` operatörü ile gerçekleştirilir. Tanımlanan değişken adı ile çağrılmazsa veya `print` komutu kullanılmazsa çıktı yazdırılmaz.
+
+```{r echo=TRUE}
+x<-3
+print(x)
+```
+
+
+Sayısal olmayan değer tanımlamaları tırnak içerisinde yapılmalıdır.
+```{r}
+msg<- "hello world"
+```
+
+Tanımlanan değişken veya fonksiyon ile ilgili notlar `#` ile tanımlanır. 
+
+```{r}
+x.ort<-20  # ortalama değer
+```
+
+Çıktıda basılan `[.]` kaçıncı gözlemden devam edildiğini gösterir. Örneğin 30 gözleminin `[26]` ifadesinin yardımı ile 26. gözlem olduğunu kolaylıkla söyleyebiliriz. `[.]` ifadeleri asıl seride yer almaz, yalnızca yol gösterici olarak çıktıda gözlenir.
+```{r}
+x<-5:50
+x
+```
+
+
+***
+
+## Vektörler (Vectors)
+
+Vektör oluşturmak için `c()` operatör kullanılmaktadır. Vektörler 
+
+- numeric 
+- character 
+- logical
+- integer
+- complex
+
+yapıları içerebilir. **Vektörler yalnızca aynı yapıda gözlemler içerebilir.**
+
+```{r}
+x <- c(0.5, 0.6) # numeric 
+x <- c(TRUE, FALSE) # logical
+x <- c(T, F) # logical
+x <- c("a", "b", "c") # character
+x <- 9:29 # integer
+x <- c(1+0i, 2+4i) # complex
+```
+
+`T` ve `F`, `TRUE` ve `FALSE`'a karşılık kullanılan kısaltma yapılardır. 
+
+```{r}
+x <- c(T, F) # logical
+x
+```
+
+Aynı zamanda `vector` komutu ile de vektör oluşturabilirsiniz. Vektörü tanımlarken belirlenen içerik yapısına göre oluşturulur.
+
+```{r}
+x <- vector("numeric", length = 7)
+x
+```
+
+Complex elemanları içerecek bir vektör oluşturmak istendiğinde;
+```{r}
+x <- vector("complex", length = 7)
+x
+```
+
+>Aynı değişken adı birden fazla tanımlamada kullanılırsa yapılan son tanımlama geçerli olacaktır. Kod yazarken kullandığınız değişken isimlerine ve doğru yazıma dikkat ediniz.
+
+<br>
+
+Vektör uzunluğu `length()` komutu ile sorgulanır.
+
+```{r}
+x<-c(1:68)
+length(x)
+```
+
+
+**Vektör aynı yapıda gözlemlerden oluşmuyorsa?**
+
+Bu durumda tüm gözlemler tek bir yapı olarak algılanır. Herhangi bir değişkenin hangi yapıda gözlem içerdiği `class()` komutu ile sorgulanabilir.
+
+```{r}
+y <- c(1.7, "a")  # character 
+class(y)
+```
+
+<br>
+
+```{r}
+y <- c(TRUE, 2) # numeric
+class(y)
+```
+
+<br>
+
+```{r}
+y <- c("a", TRUE) # character
+class(y)
+```
+
+<br>
+
+>Vektör farklı yapıda gözlemler için verimli kullanılamıyor olabilir ancak bu işlemi gerçekleştirebilen `list` komutu mevcuttur. İlerleyen başlıklarda bu komut detaylandırılacaktır.
+
+
+<br>
+
+Kodlama yaparken sıklıkla kullanılan bir işlem türü de vektör yapısının değiştirilmesidir. Vektör içeriğinin aynı yapıda olması kuralına sadık kalarak tüm vektör içeriği farklı bir yapıya aktarılabilir. Burada `as.numeric`, `as.logical` gibi komutlardan faydalanılır.
+
+```{r}
+x <- 0:6
+class(x)
+```
+
+x vektörünün `integer` yapıda olduğunu gördükten sonra `as.character` komutu ile yeni x vektörünü `character` olarak tanımlayabiliriz. 
+```{r}
+x<-as.character(x)
+x; class(x)
+
+```
+
+<br>
+
+Bazı durumlarda R dönüşüm için çözüm üretemez ve `NA` çıktı verir.
+
+```{r}
+x <- c("a", "b", "c")
+as.numeric(x)
+```
+
+R, eksik gözlemleri **NA (non available)** olarak tanımlar. İmkansız değerleri ise **NaN (not a number)** olarak tanımlar.
+
+Sık kullanılan komutlardan bir diğeri `seq()`, bu fonksiyon sayesinde istediğiniz aralıkta ve artış seviyesinde vektör üretebilirsiniz.
+
+```{r}
+x<-1:20  #1'den 20'ye 1'er artan seri
+x
+```
+
+
+```{r}
+x<-seq(from=5,to=20,by=5) #5'den 20'ye 5'er artan seri
+x
+```
+
+
+Serinin bitiş noktasını belirtmeden de tanımlama yapmak mümkündür, bu durumda serinin uzunluğunun ne olduğun fonksiyonda belirtilmelidir.
+
+```{r}
+x<-seq(from=0.04,by=0.01,length=11)
+x
+```
+
+
+Gözlemleri sıralamak için `sort()` komutu kullanılır. `sort()` kodu  default olarak küçükten büyüğe sıralama yapar, sıralama yönünü değiştirme işlemi `decreasing` ile gerçekleştirilir.
+
+```{r}
+y <- c(4,2,0,9,5,3,10)
+sort(y)
+```
+
+<br>
+
+```{r}
+sort(y, decreasing=TRUE)  # büyükten küçüğe sıralama
+```
+
+<br>
+
+Tekrarlı oralarak işlem yapmak için kullanılan fonksiyon `rep()` şeklinde tanımlanmaktadır. 
+
+```{r}
+rep(y,times=3)
+```
+
+Vektörler için kullanışlı fonksiyonlardan bazıları aşağıdaki listede sizlerle paylaşılmıştır [@Crawley2012]. 
+
+
+<img src="/Users/busenursarica/Documents/GitHub/rstudio/images/vecfon.png" />
+
+
+
+***
+
+## Matrisler (Matrices) ve Diziler (Arrays)
+
+Matrisler, boyut niteliğine sahip vektörlerdir. Matris yapısında _satır (row)_ ve _sütun (column)_ ($r*c$) olmak üzere iki boyut mevcuttur. Matris içeriği de vektörde olduğu gibi tek tip yapıdan oluşmalıdır. m içeriği boş bir matris olmak üzere;
+
+```{r}
+m <- matrix(nrow = 2, ncol = 3)
+m
+```
+
+<br>
+
+Matris boyutu `dim()` komutu ile sorgulanır. 
+```{r}
+dim(m)
+```
+
+<br>
+
+Matris yapısında gözlemler sütun şeklinde sıralanır.
+
+```{r}
+m <- matrix(1:6, nrow = 2, ncol = 3) 
+m
+```
+
+Elemanların aynı satırdan devam ettiği matris üretmek isteniyorsa `byrow=TRUE` bilgisi eklenmelidir.
+
+```{r}
+n<-matrix(1:6,2,3,byrow = TRUE); n
+```
+
+<br>
+
+Vektörler parçalanarak da matris yapısı oluşturabilirler. 
+
+```{r}
+m <- 1:10 ;m
+dim(m) <- c(2, 5) ;m
+```
+
+<br>
+
+Matrisler, satır veya sütunların birleştirilmesi yoluyla da oluşturulabilir. Satıların bir araya getirilmesi için `rbind` komutu kullanılırken, sütunların bir araya getirilmesi için `cbind` komutu kullanılmaktadır. 
+
+```{r}
+x <- 1:3
+y <- 10:12
+cbind(x, y)
+
+rbind(x, y)
+```
+
+<br>
+
+- [,4] anlamı ilgili değişkenin  4. sütunu tüm satırları
+
+- [2,] anlamı ilgili değişkenin 2. satırı tüm sütunları
+
+<br>
+
+Mevcut yapıyı sorgulamak ve değiştirmek de mümkündür.
+```{r}
+x<-c(1,2,3,4,5,6,7,8,9);x
+is.vector(x)
+```
+<br>
+```{r}
+y<-as.matrix(x);y
+class(y)
+```
+<br>
+
+Matrisin transpozu `t()` fonksiyonu ile alınır.
+
+```{r}
+m1<-matrix(c(1:8),4,2);m1
+t(m1) 
+```
+
+<br>
+
+Matrislerde satır ve sütunlar için isim tanımlama işlemi satır veya sütun tanımlamasına bağlı olarak sırasıyla `rownames()` ve `colnames()` fonksiyonları ile gerçekleştirilir.
+
+```{r}
+rownames(m1)<-c("x1","x2","x3","x4")
+colnames(m1)<-c("y1","y2"); m1
+```
+<br>
+
+Matrislerde işlem kolaylığı sağlamak adına bazı fonksiyonlar tanımlanmıştır. Satır toplam veya ortalama, sütun toplam veya ortalama işlemleri için tanımlı fonksiyonlar aşağıda yer almaktadır.
+
+**rowSums():** satır toplam
+
+**colSums():** sütun toplam
+
+**rowMeans():** satır ortalama
+
+**colMeans():** sütun ortalama
+
+<br>
+
+```{r}
+rowSums(m1)
+colMeans(m1)
+```
+<br>
+
+Matrislerde çarpma işlemi `%*%` operatörü ile gerçekleştirilir. 
+
+```{r}
+c1<-matrix(c(1,2,3,4),2,2)
+c2<-matrix(c(1,3,1,2),2,2); c1; c2
+```
+```{r}
+c1*c2
+c1%*%c2
+```
+<br>
+
+Herhangi bir matrisin tersini alma işlemi `solve()` komutu ile gerçekleştirilir.
+
+<br>
+
+Diziler matrislerdeki satır ve sütune ek olarak bir boyut (h) daha içerir. Birden fazla matrisin yer aldığı $r*c*h$ boyutlu bir yapı olarak düşünülebilir. Dizi içeriği aynı tipte verilerden oluşmalıdır.
+
+```{r}
+array(1:12, dim = c(2, 2, 3))
+```
+
+***
+
+## Listeler ve Data Frameler (Lists and Data Frames)
+
+Listeler vektörlerin özel bir halidir. Vektörler içeriğinde aynı yapıda eleman bulundurma koşuluna sahipken, listeler için böyle bir koşul yoktur. Özetle, listeler farklı yapıda ve boyutta veri tiplerini içerebilir.
+
+Liste oluşturmak için ihtiyaç duyulacak fonksiyon `list()`dir.
+
+```{r}
+x <- list(c(1,2,3), "istatistik", TRUE, 1 + 4i);x
+
+```
+<br>
+
+Boş bir liste oluşturmak için `vector()` fonksiyonundan faydalanabilirsiniz.
+
+```{r}
+x <- vector("list", length = 3);x
+```
+
+<br>
+
+Data frameler de iki boyutlu yapılardır. Sütun içerisinde veri tipi aynı olmalıdır ancak sütunlar arası veri tipi farklılık gösterebilir. Regresyon ve farklı istatistiksel hesaplamalarda data frameler sıklıkla kullanılır. Aynı zamanda `as.data.frame()` fonksiyonu yardımıyla matrisler data framelere dönüştürülebilir. Data frame yapısında yer alan değişkenlerin boyutlarının aynı büyüklükte olması gereklidir.
+
+```{r}
+x<-data.frame(Gün=c("Pzts","Salı","Çarş","Perş", "Cuma"), Vaka=c(1000,1110,1125,1153,1196));x
+```
+<br>
+
+`str` komutu yardımıyla data frame yapısının içerik detaylarına ulaşılabilir.
+
+```{r}
+str(x)
+```
+
+<br>
+`data` olarak isimlendirilen data frame yapısındaki veri ile ilgili farklı seçim işlemleri aşağıdaki tabloda belirtilmiştir.
+
+<img src="/Users/busenursarica/Documents/GitHub/rstudio/images/dframe.png" style="float: center;" width="800" height="320" title="Data Frame" /> 
+
+***
+
+## Sayısal Olmayan Değerler (Non-Numeric Values)
+
+Programlama yaparken sayısal verilerin yanında sayısal olmayan veri tipleri de kullanılmaktadır. Sayısal olmayan veri tipleri;
+
+- Mantık (logical)
+- Karakter (character)
+- Faktör (factor)
+
+olmak üzere üç başlık altında toplanmaktadır.
+
+### Mantıksal Değerler
+
+Mantıksal değerler `TRUE` veya `FALSE` olarak tanımlanabilir. Mantıksal değerler fonksiyonların içinde de sıklıkla kullanılmaktadır. Örneğin `sort` fonksiyonunda sıralamanın artan veya azalan olmasını belirleyen decreasing=FALSE, ya da matriste eleman dizilimini belirleyen byrow=TRUE gibi. `TRUE` ve `FALSE` kısaltması olarak `T` ve `F` de kullanılabilir.
+
+```{r}
+p<-c(T,F,T,T,T,F,T,F);p
+```
+
+|Operatör|Anlamı|
+|:------:|:-----|
+|==|Eşittir| 
+|!=|Eşit değildir|
+|>|Büyüktür|
+|<|Küçüktür|
+|>=|Büyük eşittir|
+|<=|Küçük eşittir|
+
+<br>
+```{r}
+1==2
+```
+<br>
+```{r}
+1>2
+```
+<br>
+```{r}
+1!=(2+5)
+```
+<br>
+```{r}
+h<-c(3,2,1,4,1,2,1,-1,0,3)
+m<-c(4,1,2,1,1,0,0,3,0,4)
+length(h)==length(m)
+```
+<br>
+```{r}
+h==m
+```
+
+<br>
+
+İki mantıksal değeri karşılaştırmak için kullanılan operatörler ve sonuçlar
+
+<img src="/Users/busenursarica/Documents/GitHub/rstudio/images/logi.png" style="float: center;" width="450" height="400" title="Data Frame" />
+
+<br>
+
+```{r}
+x<-c(T,F,F,T)
+y<-c(F,F,T,T)
+x&y
+x&&y
+```
+<br>
+
+```{r}
+x|y
+x||y
+```
+<br>
+
+Mantıksal değerler ikili yapıları gereği 1 `TRUE` ve 0 `FALSE` olarak tanımlanır.
+
+```{r}
+TRUE+TRUE
+```
+<br>
+```{r}
+T+T+F+T+T+T+F
+```
+<br>
+
+```{r}
+1&&1
+```
+
+<br>
+```{r}
+1||0
+```
+<br>
+
+Benzer mantık işlemleri karakter veriler için de uygulanabilir.
+
+```{r}
+"alpha"=="alpha"
+```
+<br>
+```{r}
+"alpha"!="beta"
+```
+
+***
+
+### Karakterler
+
+Diğer bir yaygın kullanılan veri tipi de karakterlerdir.
+
+```{r}
+x<-"OpenAI, kâr amacı gütmeyen bir yapay zeka araştırma şirketidir."
+x; length(x)
+```
+<br>
+
+R, dizeyi tek bir varlık olarak ele alır. Diğer bir deyişle, x, 1 uzunluğunda bir vektördür çünkü R, tek tek sözcükler veya karakterler yerine yalnızca farklı dizelerin toplam sayısını sayar. Tek tek karakterlerin sayısını saymak için `nchar` fonksiyonunu kullanabilirsiniz.
+
+```{r}
+nchar(x)
+```
+<br>
+
+ ![cat-writing-animation](http://i.giphy.com/8PFKtXiNCWC40.gif)
+
+`cat` ve `paste` yardımıyla birleştirmek istediğiniz argümanları bir araya getirebilirsiniz.
+
+```{r paged.print=TRUE}
+gpt3<-c("içerik üretmek için derin öğrenmeyi kullanan",
+        "Generative Pre-trained Transformer 3",
+        "insanların yazdığı metinlere benzer")
+```
+<br>
+
+```{r}
+cat(gpt3[2],"(kısaca GPT-3)",",",gpt3[3],gpt3[1],"özbağlanımlı dil modelidir.")
+```
+<br>
+
+```{r}
+paste(gpt3[2],"(kısaca GPT-3)",",",gpt3[3],gpt3[1],"özbağlanımlı dil modelidir.")
+```
+<br>
+
+Elde etmeniz gereken boşluk içermeyen bir metinse bu bilgiyi de fonksiyon içeriğinde belirterek (`sep=""`) uygun çıktıyı elde edebilirsiniz.
+
+```{r}
+paste("bir","iki","üç","dört", sep="")
+```
+<br>
+Benzer şekilde boşluklar farklı sembollerle de doldurulabilir.
+```{r}
+paste("bir","iki","üç","dört", sep="**")
+paste("bir","iki","üç","dört", sep="--")
+```
+<br>
+
+Metin içerisinde belli bir kısmı almak istediğinizde `substr` komutu işlemi kolaylıkla gerçekleştirecektir.
+
+```{r}
+x<-"OpenAI, kâr amacı gütmeyen bir yapay zeka araştırma şirketidir."
+substr(x,start=32 ,stop=41)
+```
+
+***
+
+### Faktörler (Factors) 
+
+Faktörler, kategorik verileri temsil etmek için kullanılır ve sıralanmamış veya sıralanmamış olabilir. Kategorik veriler, veri biliminde önemli bir rol oynamaktadır. Bir faktör, her tam sayının bir etikete sahip olduğu bir tamsayı vektörü olarak düşünülebilir.
+
+Faktör nesneleri, `factor()` işlevi ile oluşturulabilir.
+
+```{r}
+k<-factor(c("evet","hayır","evet","evet","evet","hayır"));k
+```
+<br>
+
+```{r}
+class(k)
+```
+
+
+
+<br>
+
+`table()` fonksiyonu ile verideki faktörlerin sıklığını gözlemek mümkündür.
+
+```{r}
+table(k)
+```
+
+<br>
+
+Faktör seviyeleri varsayılan yapıda alfabetik olarak sıralanmaktadır, seviyelerin sırasına müdahale etmek `levels` komutu ile mümkündür.
+
+```{r}
+k<-factor(c("evet","hayır","evet","evet","evet","hayır"));k  # alfabetik
+k2<-factor(c("evet","hayır","evet","evet","evet","hayır"), levels=c("hayır","evet"));k2
+```
+
+<br>
+
+Verideki mevcut faktör seviyelerini yine `levels` komutu ile sorgulayabilirsiniz.
+
+```{r}
+aylar<-factor(c("mart","ağustos","ekim","ocak", "nisan","eylül","haziran","temmuz","şubat",
+                "mayıs","kasım", "aralık"))
+
+length(aylar)
+class(aylar)
+levels(aylar) #alfabetik
+```
+
+***
+
+## Eksik Gözlemler (Missing Values)
+
+Eksik gözlemler veri setinde NA veya NaN olarak tanımlanmaktadır.
+
+- `is.na()` NA sorgulama için kullanılır.
+- `is.nan()` NaN sorgulama için kullanılır.
+- NA integer veya character olabilir.
+- NaN aynı zamanda NA iken tersi doğru değildir.
+
+NA ve NaN içeren bir seri oluşturup mevcut olma durumunu sorgulamak istersek;
+
+```{r}
+x <- c(1, 2, NA, 10, 3, NaN)
+is.na(x)
+is.nan(x)
+```
+
+
+<!--chapter:end:04-Temel-Nesneler.Rmd-->
+
+# Import Export İşlemleri
+
+Etkin bir R oturumunun her zaman kendisiyle ilişkilendirilmiş bir çalışma dizini vardır. Veri dosyalarını kaydederken veya içe aktarırken açık bir şekilde bir dosya yolu belirtmediğiniz sürece, R varsayılan olarak bu çalışma dizinini kullanır. Çalışma dizininin konumunu kontrol etmek için `getwd()` fonksiyonu kullanılabilir.
+
+```{r}
+getwd()
+```
+
+<br>
+
+Dosya yolları her zaman çift tırnak işareti içine alınır.
+`setwd()` fonsiyonunu kullanarak varsayılan çalışma dizinini aşağıdaki gibi değiştirebilirsiniz:
+
+```{r message=FALSE, warning=FALSE}
+setwd("/Users/busenursarica/Documents")
+```
+<br>
+
+Çalışma dizininde yer alan dosyalar list.files() fonksiyonu ile listelenebilir.
+
+```{r}
+list.files()
+```
+
+## Import İşlemleri
+
+Bilgisayarınızda bulunan veri setlerini de R'a çekerek kullanabilirsiniz. `read.table()`, `read.csv()`, `read_excel()` gibi komutlar bu bakımdan işinizi görecektir. Bu noktada çektiğiniz verinin yapısı önem arz etmektedir. Konu ile ilgili  farklı yapıda örnekler aşağıda yer almaktadır.
+
+<br>
+
+Kullanacağınız veri dosya uzantısı `.csv` ise `read.csv()` fonksiyonunu veriyi R'a taşımak için kullanabilirsiniz.
+```{r}
+d<-read.csv("/Users/busenursarica/Desktop/annual.en.csv")
+head(d)
+```
+
+-------
+
+**CSV uzantısı ne anlama gelir?**
+
+Virgülle ayrılmış değerler (CSV) dosyası, bir veri listesi içeren düz bir metin dosyasıdır. Bu dosyalar genellikle farklı uygulamalar arasında veri alışverişi yapmak için kullanılır. Örneğin, veritabanları ve iletişim yöneticileri genellikle CSV dosyalarını destekler.
+
+Bu dosyalar bazen karakterle ayrılmış seğerler veya virgülle ayrılmış dosyalar olarak adlandırılabilir. Verileri ayırmak (veya sınırlandırmak) için çoğunlukla virgül karakterini kullanırlar, ancak bazen noktalı virgül gibi diğer karakterleri kullanırlar. Buradaki fikir, karmaşık verileri bir uygulamadan bir CSV dosyasına aktarabilmeniz ve ardından bu CSV dosyasındaki verileri başka bir uygulamaya aktarabilmenizdir.
+
+Bu yapıdaki veriler insan tarafından okunabilir ve not defteri gibi bir metin düzenleyici veya microsoft excel ile kolayca görüntülenebilir.
+
+-----------
+
+
+```{r}
+library(readxl)
+taiex <- read_excel("taiex.xlsx")
+head(taiex)
+
+```
+
+<br>
+
+Web sitesinde yer alan bir veri setini de R'a çekerek kullanabilirsiniz.
+
+```{r}
+w.url <- "http://courses.washington.edu/b517/Datasets/string.txt"
+dw <- read.table(w.url, header = T)
+head(dw)
+```
+
+<br>
+
+Veri çekmenin bir diğer yolu da environment paneli içerisindeki import dataset yapısının kullanılmasıdır. Bu yapı sayesinde de farklı uzantıdaki veri setleri R'a çekilebilir.
+
+<br>
+
+Mevcut veri setinizi R'a çekmek yerine R'da yer alan veri setlerini de kullanabilirsiniz.
+
+```{r}
+head(mtcars)
+```
+
+<br>
+
+Kütüphanede yer alan farklı veri setlerini de çağırarak kullanabilirsiniz.
+
+```{r message=FALSE, warning=FALSE}
+#install.package("tseries")
+library(tseries)
+data(ice.river)
+head(ice.river)
+```
+
+
+## Export İşlemleri
+
+R'da elde edilen yapıların kaydedilmesi için kullanılan fonksiyonlardan biri `write.table()`'dır. Veri okuma kısmında `read.table()`'ın farklı versiyonları bulunduğu gibi `write` komutu için de `write.csv()` gibi farklı uzantılar için özelleştirilmiş fonksiyonlar bulunmaktadır.
+
+```{r}
+dn<-data.frame(a=c(10,34,12),b=c("deneme","bir","iki"),c=pi)
+write.table(dn, file = "dn.csv", sep = ",",col.names = NA)
+```
+
+**Not:** `file` kısmına yalnızca dosya adı yazılırsa, dosya çalışma dizinine kaydolacaktır.
+
+
+
+
+
+
+<!--chapter:end:05-Import-Export-İşlemleri.Rmd-->
+
+# Bazı Önemli Komutlar
+
+Kodlama sırasında sıklıkla kullanılan `sort()`, `rank()` ve `order()` fonksiyonları birbirine karıştırılmaktadır. Temel hedef her bir komutta sıralama olsa da kullanım amaçları ve çıktıları farklıdır.
+
+## Sort
+
+Bir vektörü elemanlarının artan veya azalan sırasına göre sıralamak, sıklıkla ihtiyaç duyulan işlevlerden biridir. Bu amaçla kullanılan fonksiyon `sort()` olmakla birlikte `decreasing` seçimine bağlı olarak artan veya azalan şekilde sıralama yapmak mümkündür.
+
+```{r}
+x<-c(4,8,2,5,1)
+sort(x, decreasing=T)
+```
+
+## Rank
+
+Rank, sıralanan vektördeki değerin konumuna referans verir ve orijinal sıra ile aynıdır. Temelde küçükten büyüğe sıralama hedeflidir, eksi işareti ile büyükten küçüğe sıralama şekline geçilebilir.
+
+```{r}
+rank(x)   # küçükten büyüğe
+rank(-x)  # büyükten küçüğe
+```
+
+
+## Order
+
+Order, orijinal değerin konumunu belirler ve sıralar. Temelde küçükten büyüğe sıralama hedeflidir, eksi işareti ile büyükten küçüğe sıralama şekline geçilebilir. Özellikle indeksleme işlemi için kullanışlı bir fonksiyodur.
+
+```{r}
+order(x)    # küçükten büyüğe
+order(-x)   # büyükten küçüğe
+```
+
+
+<!--chapter:end:06-Bazı-Önemli-Fonksiyonlar.Rmd-->
+
+# DPLYR
+
+Data frame'ler, analizlerde sıklıkla kullandığımız ve ustalıkla yönetebilmemiz gereken veri yapılarıdır. Ders kapsamında data frameler üzerine bazı kodlamalar ve değerlendirmeler yaptık, `dplyr` paketi kapsamında ise bu uygulamaların kolaylığı için önerilen yapılardan bahsedeceğiz.
+
+`dplyr` paketi, RStudio'dan Hadley Wickham tarafından geliştirilmiştir ve onun `plyr` paketinin optimize edilmiş ve sadeleştirilmiş bir versiyonudur. `dplyr` paketi ile elde edilecek tüm sonuçlar temel R yapısı ile elde edilebilir, bu bakımdan `dplyr` paketi bir yenilik getirmemektedir, paketin katkısı bu elde etme sürecini kolaylaştırmaktır.
+
+Bu kapsamda bahsedeğimiz yapılar;
+
+- **select**
+- **filter**
+- **arrange**
+- **rename**
+- **mutate**
+- **summarise**
+- **%>% (pipe operator)**
+
+Yapılması gereken ilk adım tabi ki paketi indirmek ve kütüphaneden çekmek olmalıdır.
+
+Paket yüklendiğinde bazı uyarılar alabilirsiniz çünkü `dplyr` paketinde diğer paketlerdeki fonksiyonlarla aynı adı taşıyan fonksiyonlar vardır. Şimdilik uyarıları görmezden gelebilirsiniz.
+
+<br>
+
+**select()**
+
+Büyük veri setleri ile çalışırken `select` fonksiyonu yardımıyla istenilen değişkenleri seçebilir, veya belirli bir özelliğe göre değişken filtreleme yapabilirsiniz.
+
+```{r}
+data("airquality")
+dim(airquality)
+str(airquality)
+```
+
+153 gözlem ve 6 değişkenden oluşan bu veri setinde Month ve Day değişkenleri üzerine çalışmak istenildiğini varsayalım;
+
+```{r message=FALSE, warning=FALSE}
+library(dplyr)
+head(select(airquality, Month, Day))
+```
+```{r}
+head(select(airquality, Ozone:Temp))
+```
+<br>
+
+**filter()**
+
+Büyük veri setleri ile çalışırken `filter` fonksiyonu yardımıyla istenilen gözlemleri seçebilir, veya belirli bir özelliğe göre gözlem filtreleme yapabilirsiniz.
+
+```{r}
+head(filter(airquality, Temp>65))
+```
+<br>
+
+```{r}
+filt<-filter(airquality, Temp>65 & Ozone>25)
+tail(select(filt, Wind, Day))
+```
+<br>
+
+**arrange()**
+
+Gözlemlerin değişkene bağlı olarak sıralanması amacıyla kullanılan fonksiyon `arrange`'dir.
+
+```{r}
+str(swiss)
+ss<-arrange(swiss, Fertility)
+head(select(ss, Fertility, Education),5)
+```
+<br>
+
+
+**rename()**
+
+Data frame yapısında mevcut bir değişkenin ismini değiştirmenin kolay yolu `rename` fonksiyonunu kullanmaktır. 
+
+```{r}
+head(swiss)
+```
+<br>
+
+Yapılacak tanımlamada eşitliği sol tarafı yeni tanımlanan değişken ismini, sağ tarafı ise mevcut değişken ismini temsil edecektir.
+
+```{r}
+head(rename(swiss, fer=Fertility, ag=Agriculture))
+```
+<br>
+
+**mutate()**
+
+Değişkenlere belirli işlemler uygulayarak veri setine eklemek için kullanışlı fonksiyonlardan biri `mutate`'dir.
+
+```{r}
+head(USArrests)
+head(mutate(USArrests,rateM=Murder/UrbanPop))
+```
+<br>
+
+Yalnızca dönüştürdüğünüz veri setleri ile çalışmak istediğinizde kullanmanız gereken fonksiyon ise `transmute` olacaktır.
+
+```{r}
+head(transmute(USArrests,rateM=Murder/UrbanPop, cum=Murder/sum(Murder)))
+```
+
+<br>
+
+**group_by() ve summarise()**
+
+Veriyi gruplayarak işlem yapılması gerektiğinde `group_by` komutu işinizi görecektir. Yalnızca komutu çalıştırdığınızda gruplama için seçtiğiniz değişkende sıralama açısından değişiklik olmasını beklemeyin, sıralamanın değişmemesi gruplamanın yapılmadığı anlamına gelmez.
+```{r}
+head(mtcars)
+mt2<-group_by(mtcars,cyl)
+summarise(mt2,disp = mean(disp),hp = mean(hp))
+```
+
+<br>
+
+**%>%**
+
+Pipeline veya pipe operator olarak adlandırılan yapı kod yazımını ve anlaşılmasını kolaylaştırmak için önerilmiştir. Fazla sayıda iç içe komut yazımı verimli olmamakta, hem kodu yazan hem de inceleyen kişinin işini zorlaştırmaktadır. Yazım şekli en içten en dışa doğru olup aşağıda açıklanmaktadır;
+
+third(second(first(x)))
+
+first(x) %>% second %>% third
+
+<br>
+
+```{r}
+group_by(mtcars,cyl) %>% summarise(disp = mean(disp),hp = mean(hp))
+```
+
+
+<!--chapter:end:07-DPLYR.Rmd-->
+
+# Grafikler
+
+R'in en temel işlevlerinden biri de veri görselleştirmedir, bu bakımdan grafik çeşitleri ve uygulama bakımından oldukça zengin bir yapıya sahiptir.
+
+```{r}
+foo <- c(1.1,2,3.5,3.9,4.2)
+bar <- c(2,2.2,-1.3,0,0.2)
+plot(foo,bar)
+```
+
+Grafik yapısının farklılaştırması amacıyla kullanılabilecek çok çeşitli grafiksel parametreler vardır. Bu parametreler, noktaların renklendirilmesi ve eksen etiketlerinin eklenmesi gibi basit görsel geliştirmeleri çağırır ve ayrıca grafikteki teknik yönleri kontrol edebilir. En sık kullanılan grafik parametrelerinden bazıları burada listelenmiştir; 
+
+**type:** R'ye koordinatların nasıl çizileceğini söyler (örneğin, bağımsız noktalar olarak veya çizgilerle veya hem noktalar hem de çizgilerle).
+
+```{r}
+plot(foo, bar, type="l")
+```
+
+**main, xlab, ylab:** Sırasıyla grafik başlığı, yatay eksen etiketi ve dikey eksen etiketini tanımlamak amacıyla kullanılır.
+
+```{r}
+plot(foo,bar,type="b",main="Grafik adı",xlab="x ekseni",
+     ylab="y ekseni")
+```
+
+
+**col:** Grafikte yer alan nokta ve çizgilerin renklerinin tanımlanması amacıyla kullanılır.
+
+```{r}
+plot(foo,bar,type="b",main="Grafik adı",xlab="",ylab="",col=2)
+```
+
+
+**pch:** Nokta karakterin seçiminde kullanılır, bireysel noktaların kullanıldığı grafiklerde noktanın hangi şekil ile temsil edileceğini gösterir.
+
+```{r}
+plot(foo,bar,type="b",main="Grafik adı", col=4,pch=8)
+```
+
+
+**cex:** Çizilen nokta karakterinin boyutunun belirlenmesi amacıyla kullanılır.
+
+```{r}
+plot(foo,bar,type="b",main="Grafik adı", col=4,pch=8, cex=2.3)
+```
+
+
+**lty:** Çizgi tipini belirler (noktalı veya çizgili gibi). 
+
+```{r}
+plot(foo,bar,type="b",main="Grafik adı", col=6,pch=15,cex=0.7, lty=3)
+```
+
+
+**lwd:** Grafikte yer alan çizginin kalınlığını belirler.
+
+```{r}
+plot(foo,bar,type="b",main="Grafik adı",
+col=6,pch=15,lty=3,cex=0.7,lwd=2)
+```
+
+
+**xlim, ylim:** Grafikteki yatay ve dikey eksen genişliğini (grafik alanını) belirler.
+
+```{r}
+plot(foo,bar,type="b",main="Grafik adı",xlab="",ylab="",
+                     col=6,pch=15,lty=3,cex=0.7,lwd=2,xlim=c(3,5),ylim=c(-0.5,0.2))
+```
+
+
+## Mevcut grafik üzerine ekleme yapmak
+
+Bazı durumlarda sıfırdan grafik üretmek yerine mevcut grafik üzerinde eklemeler yapmak kullanışlı olabilir, veya grafiğiniz üzerinde belirli noktalara vurgu yapma ihtiyacınız doğabilir, bu gibi durumlarda faydalanabileceğimiz fonksiyonlar aşağıda açıklanacaktır.
+
+**points:** nokta ekleme
+
+**lines, abline, segments:** çizgi ekleme
+
+**text:** metin ekleme
+
+**arrows:** ok ekleme
+
+**legend:**  etiket ekleme
+
+[Uygulamalar için lütfen ders videosuna geçiniz.](https://ues.marmara.edu.tr/Account/LoginBefore)
+
+
+## Önemli grafik paketleri
+
+### lattice
+
+Grafik elde etme üzerine ilk önerilen paketlerden biri `lattice`'dir. Bu kapsamda kullanılabilecek fonksiyonlardan birkaçı aşağıda örneklenmiştir.
+
+```{r}
+lattice::xyplot(Sepal.Width ~ Sepal.Length, data = iris)
+```
+<br>
+
+Kategorik değişken içeren verilerde, kategorilere bağlı olarak çoklu grafik elde etmek de mümkündür. Örnek uygulamada `iris`verisi için `Species` kategorik değişkendir.
+
+```{r}
+levels(iris$Species) 
+lattice::xyplot(Sepal.Width ~ Sepal.Length | Species, data = iris)
+```
+<br>
+
+Paketin temel amacı, karmaşık grafikleri tek bir fonksiyon yardımı ile çizebilmektir, bu bakımdan farklı grafik türleri aşağıda örneklenmiştir.
+
+
+```{r}
+lattice::dotplot(Species ~ Petal.Length, data = iris)
+```
+<br>
+
+```{r}
+lattice::bwplot(Species ~ Petal.Length, data = iris)
+```
+
+<br>
+
+```{r}
+library(MASS)     # Cars93 dataset icin indiriyoruz
+Cars<-dplyr::select(Cars93,Price,Type,Origin)
+head(Cars)
+lattice::bwplot(Price ~ Type | Origin, data = Cars93)
+```
+
+### ggplot2
+
+<img src="/Users/busenursarica/Documents/GitHub/rstudio/images/ggplot2.png" style="float: right;" width="80" height="100" title="R" />
+
+Grafik oluşturmak için en sık kullanılan paketlerden biri Hadley Wickham tarafından oluşturulan `ggplot2`'dir. Temeli [The Grammar of Graphics](https://amzn.to/2ef1eWp) kitabına dayanmaktadır. Etkileyici görseller elde etme imkanı sunan `ggplot2`, bu işlemi `qplot()` ve `ggplot()` fonksiyonları ile gerçekleştirmektedir.
+
+#### qplot
+
+```{r message=FALSE, warning=FALSE}
+library(ggplot2)
+attach(iris)
+qplot(Sepal.Length, Sepal.Width, color = Species, shape = Species)
+```
+<br>
+
+```{r}
+qplot(Species, Petal.Length, geom = "boxplot")
+```
+
+#### ggplot
+
+`ggplot2` paketinin temel fonksiyonu olan `ggplot()`, gelişmiş görsel raporlama imkanı sunmaktadır. Bu fonksiyonu kullanarak görselleştirme yapılacaksa anlaşılması gereken üç yapı mevcuttur, bunlar aesthetics, geoms, ve stats'dır.
+
+**aesthetics:** `aes()` fonksiyonu ile görsel seçimler yapılır, konum, renk ve poziyon gibi.
+
+**geoms** `aes()` fonksiyonu ile tanımlanan işlemlerin grafiğe aktarılmasını sağlar.Bu işlemler `geom_point()`, `geom_line()` gibi fonksiyonlar yardımı ile gerçekleştirilir.
+
+**stats** `stat_summary()`, `stat_quantile()` gibi fonksiyonlar aracılığı ile verinin özetlenmesini sağlar.
+
+```{r}
+p <- ggplot(iris) +   
+  geom_point(aes(x = Petal.Length, y = Petal.Width, shape = Species, color = Species)) +
+  xlab("Petal Length") +  # Add axis labels
+  ylab("Petal Width") +
+  ggtitle("Petal Length and Petal Width of Iris Flowers")
+
+print(p)
+```
+
+
+
+### plotly
+
+İnteraktif grafik elde etme ve html çıktı elde edebilme imkanı `plotly` paketini de oldukça popüler hale getirmiştir.
+
+```{r message=FALSE, warning=FALSE}
+library(plotly)
+head(mtcars)
+
+col1 <- colorRamp(c("red", "blue"))
+
+p<-plot_ly(mpg, x = ~cty, y = ~hwy, z = ~cyl) 
+
+add_markers(p,color = ~cyl, colors = col1)
+```
+
+
+
+
+
+
+
+
+
+
+<!--chapter:end:08-Grafikler.Rmd-->
+
+# Kontrol Yapıları
+
+## if-else 
+
+**if** acıkırsan, yemek ye.
+
+**if** alarm çalarsa, uyan.
+
+```{r}
+x=11
+if(x>10){
+  print("x, 10 dan buyuktur")
+}
+```
+
+<br>
+
+```{r}
+puan=49
+if(puan<50){print("daha fazla calis!")}
+```
+
+<br>
+
+```{r}
+z=10
+if(z==10){t<-z+3
+print(t)}
+```
+
+<br>
+
+---------
+
+**if** trafik lambası yeşil yanarsa harekete geç **else** dur.
+
+**if** kahve bardağın dolu ise iç **else** bardağı doldur.
+
+<br>
+
+```{r}
+x<-15
+if(x<10){print("x 10 dan kucuktur")
+}else {print("x 10 a esit veya buyuktur")}
+```
+
+<br>
+
+```{r}
+puan=90
+  if(puan<70){print("daha fazla calis")
+    }else{print("iyi gidiyorsun")}
+```
+
+<br>
+
+---------
+
+**if** hava cok sıcak ise; tshirt giy **else if** sıcak ve yagmurlu ise; tshirt ve ceket giy,
+**else if** soguk ise; kazak giy **else** evde kal.
+
+```{r}
+puan=82
+  if(puan<50){print("daha fazla calis!")
+  } else if(puan>=50 & puan<80){print("iyi gidiyorsun")
+      }else{print("tebrikler!")}
+```
+
+<br>
+
+--------
+
+Alternatif olarak `ifelse()` fonksiyonundan da faydalanılabilir.
+
+<br>
+
+```{r}
+puan=90
+ifelse(puan<70, "daha fazla calis","iyi gidiyorsun")
+```
+
+<br>
+
+```{r}
+h=8
+ifelse(h!=3,sqrt(h),h^2)
+```
+
+
+## loops
+
+Döngü (loop) başlığı altında veri analizinde sıklıkla ihtiyaç duyacağınız `for`, `while`, `repeat` gibi yapılar incelenecek ve önemli noktalar vurgulanacaktır.
+
+### for
+
+```{r}
+for(i in 1:5) {
+print(i)}
+```
+
+<br>
+
+```{r}
+x <- c("a", "b", "c", "d") 
+
+for(i in 1:4) {
+print(x[i])}
+```
+
+<br>
+
+```{r}
+for(i in seq_along(x)) {
+print(x[i])}
+```
+
+<br>
+
+**for** döngüsü iç içe (**nested**) yapıda da olabilir. Bu yapı genellikle çok boyutlu ve hiyerarşik (matris, list gibi) veri yapıları için kullanılır. 2-3 seviyeden fazla iç içe döngü kullanmak hem kodun yazımında hem de anlaşılmasında zorluk yaratmaktadır. Bu bakımdan fazla sayıda **nested loop** yazmak yerine fonksiyonlardan faydalanmak daha akılcı olacaktır.
+
+<br>
+```{r}
+x <- matrix(1:6, 2, 3)
+for(i in seq_len(nrow(x))) {
+for(j in seq_len(ncol(x))) {
+                print(x[i, j])
+} }
+
+```
+
+
+### while
+
+**while** döngüleri bir koşulu test ederek başlar. Doğruysa, döngü çalışmaya başlar. Döngü yürütüldüğünde, koşul tekrar test edilir ve koşul yanlış olana kadar bu işlem devam eder, ardından döngü sonlanır. **while** döngüleri dikkatli yazılmazsa sonsuz bir döngüye dönüşebilir.
+
+<br>
+
+```{r}
+count <- 0
+while(count < 6) {
+         print(count)
+ count <- count + 1}
+```
+<br>
+
+
+### repeat
+
+**repeat**, başından itibaren sonsuz bir döngü başlatır. Veri analizi uygulamalarında sıklıkla kullanılmasa da ihtiyaç duyulduğu durumlar mevcuttur. Bir **repeat** döngüsünden çıkmanın tek yolu, **break** çağrısı yapmaktır.
+
+İlgilenilen problemde çözüme yeterince yaklaşana kadar durmak istemeyeceğiniz yinelemeli bir algoritma mevcut olabilir. Bu tür bir durumda, çözüme "yeterince yaklaşmak" için kaç tane yineleme gerekeceğini genellikle önceden bilemezsiniz, **repeat**'in uygun kullanımı böyle bir problemde mümkün olabilir.
+
+
+### next, break
+
+**next**, bir döngünün yinelemesini atlamak için kullanılır.
+
+<br>
+
+```{r}
+i2<-c()
+for(i in 1:10) { if(i <= 5) {
+                ## ilk 5 iterasyonu atla
+next}
+       i2[i]<-i*3 
+}
+  print(i2)
+```
+
+<br>
+
+**break**, bir döngünün sonlandırılması için kullanılır.
+
+```{r}
+for(i in 1:10) { 
+  print(i)
+if(i > 5) {
+  break
+} }
+```
+
+
+
+
+
+
+
+<!--chapter:end:09-Kontrol-Yapıları.Rmd-->
+
+# Fonksiyonlar
+
+Fonksiyon yapısı, kod satırlarını defalarca kopyalayarak yapacağınız işlemi birkaç satırda çözmenizi  sağlayacak faydalı bir işlevdir. R'da yer alan birçok fonksiyonu kullanmakla birlikte kendi fonksiyonunuzu yazmanız da mümkündür. Çeşitli hesaplamalarda birden çok defa kullanılması gereken işlemleri fonksiyon olarak tanımlamak kullanım kolaylığı sağlayacaktır. Döngülerde olduğu gibi fonksiyonlar da iç içe yazılabilir. 
+
+Bu amaçla kullanılacak yapı `function()` olacaktır.
+
+```{r}
+f1<-function(){
+  cat("Herkese merhaba!")
+}
+
+f1()
+```
+
+<br>
+
+```{r}
+f2<-function(n){
+  for(i in 1:n){
+     cat("Herkese merhaba!\n")
+  }
+}
+
+f2(3)
+```
+
+<br>
+
+```{r}
+f3<-function(a,b){
+  a^2+b
+}
+
+f3(2,3)
+```
+
+<br>
+
+```{r}
+f4<-function(num){
+  merhaba<-"Herkese merhaba!"
+  for(i in 1:num){
+    cat(merhaba,"\n")
+  }
+  nchar(merhaba)*num
+}
+
+f4(2)
+```
+
+<br>
+
+```{r}
+f5<-function(a){
+  a^2
+}
+
+f6<-function(b){
+  f5(b)+2*b
+}
+
+f6(3)
+```
+
+<br>
+
+Uygulamaların devamı için lütfen ders videosuna geçiniz.
+
+
+
+
+<!--chapter:end:10-Fonksiyonlar.Rmd-->
+
+# Uygulamalar
+
+## CS_1 (NYC Flights)
+
+```{r message=FALSE, warning=FALSE}
+library(corrr)
+library(tidyverse)
+library(nycflights13)
+```
+
+2013 yılında NYC'den kalkan uçuşlar ile ilgili veri setlerini içeren **nycflights13** paketi ile çalışacağız. Veri seti `airlines, airports, flights, planes` ve `weather` verilerini içermektedir. (Veri setlerinin detayı için **nycflights13** paketini inceleyiniz.) 
+
+Bu çalışmada, farklı veri setlerindeki bilgileri birlikte kullanabilmeniz, dönüştürmeniz, görselleştirmeniz ve çıkarımda bulunmanız hedeflenmektedir.
+
+
+Her bir veri setini `View()` komutu ile ayrı bir tablo olarak açıp detaylı inceleyiniz, süreci kavrayabilmeniz için veri setine hakim olmanız gerekmektedir.
+
+```{r message=FALSE, warning=FALSE}
+View(planes)  #ornegin
+```
+
+Veri setlerini dikkatle incelediğinizde farklı veri setlerinin ortak değişkenler içerdiğini göreceksiniz, bu sizin veri setlerini birbirine bağlayarak daha fazla veri üzerinden çalışmanızı sağlayacaktır.
+
+Ortak değişkenler ve veri setleri için örnek olarak;
+
+planes ve flights veri setlerinde tailnum değişkeni
+
+flights ve weather veri setlerinde origin, year, month, day, hour değişkenleri
+
+flights ve airlines veri setlerinde carrier değişkeni
+
+
+**Soru1.** Havada kalış süresi (air_time) en fazla olan uçak için üretim yılı (year), üretici (manufacturer) ve model (model) bilgisi nedir? **(Kodunuzda hata alıyorsanız year değişkenini verinizde kontrol ediniz!)**
+
+```{r message=FALSE, warning=FALSE}
+
+data1<- left_join(flights,planes,by="tailnum") 
+
+data1 %>% filter(air_time==max(air_time,na.rm = T)) %>%
+  select(year.y, manufacturer,model)
+```
+
+**Soru2.** Havada kalış süresi (air_time), sıcaklık (temp), rüzgar hızı (wind_speed) ve nem (humid) arasında ne tür bir ilişki vardır? İnceleyip yorumlayınız.
+
+```{r message=FALSE, warning=FALSE}
+data2<- left_join(weather,flights,by=c("origin","year","month","day","hour"))
+data2 %>% select(air_time,temp,wind_speed,humid) %>% 
+correlate() 
+```
+
+
+**Soru3.** Her bir hava yolu şirketi (name) için ortalama ve ortanca gecikme süresilerini (dep_delay) inceleyip yorumlayınız.
+
+```{r message=FALSE, warning=FALSE}
+data3<- right_join(airlines,flights,by="carrier")
+data3 %>% filter(dep_delay>0) %>% na.omit() %>% group_by(name) %>% summarise(mean=mean(dep_delay),median=median(dep_delay))
+
+```
+
+
+
+**Soru4.** flights veri setinde yer alan gecikme süresi (dep_delay) değişkeni için 2013 yılı ortalama gecikme süresi kaçtır? (erken varışları dikkate almayınız.)
+
+
+
+```{r message=FALSE, warning=FALSE}
+flights %>% filter(dep_delay>0) %>% summarise(mean=mean(dep_delay))
+```
+
+
+
+
+## CS_2 (Sean 'Lahman' Baseball Database)
+
+```{r message=FALSE, warning=FALSE}
+library(Lahman)
+library(tidyverse)
+```
+
+
+Case Study_2 için **Lahman** paketi içerisinde yer alan `People`, `AwardsPlayers` ve `Salaries` veri setleri üzerinde çalışacaksınız. Veri setlerini inceleyiniz ve aşağıda yer alan sorular paralelinde hazırlanmış olan test sorularını yanıtlayınız.
+
+```{r message=FALSE, warning=FALSE}
+View(People)
+```
+Bu çalışmada ortak değişkenleri sizin tespit etmeniz gerekmektedir.
+
+
+**Soru1.** AwardsPlayers veri setini incelediğinizde en çok ödül alan oyuncu kimdir? (People veri seti nameFirst ve nameLast değişkenleri ile yanıtlayınız.)
+
+
+```{r message=FALSE, warning=FALSE}
+t<-table(AwardsPlayers$playerID) %>% as.data.frame()
+names(t)<-c("playerID","num.of.aw")
+data1<-People %>% left_join(t,by="playerID")    # hepsine na.omit() uygulamak?
+data1 %>% filter(num.of.aw==max(num.of.aw,na.rm=T)) %>%   
+  select(nameFirst,nameLast)
+
+```
+
+
+**Soru2.** People veri setinde yer alan weight ve height değişkenlerini kullanarak body mass index (BMI) hesaplayınız. BMI formülü ve değerlendirme tablosu aşağıda yer almaktadır.
+
+$BMI=\frac{weight}{height^{2}}*703$
+
+<br>
+
+|BMI|Classification|
+|:-:|:------------:|
+|<18.5|Under weight|
+|18.5-24.9|Normal weight|
+|25-29.9|Over weight|
+|30-34.9|Obesity class 1|
+|35-39.9|Obesity class 2|
+|40 or above|Obesity class 3|
+
+<br>
+
+Oyunculardan kaç tanesi normal weight kategorisine girmektedir?
+
+```{r message=FALSE, warning=FALSE}
+People %>% mutate(BMI=weight/(height^2)*703) %>% filter(BMI>=25 & BMI<29.9) %>% nrow()
+  
+```
+
+**Soru3.** Salaries ve AwardsPlayers veri setlerini inceleyiniz, en fazla ödül alan oyuncunun en yüksek maaşa sahip olduğu söylenebilir mi? 
+
+```{r message=FALSE, warning=FALSE}
+#soru 1 de odul sayilari hesaplandi (t)
+
+data2<-Salaries %>% left_join(t,by="playerID") 
+which.max(data2$salary)==which.max(data2$num.of.aw)
+
+slice(data2,which.max(data2$salary))     #max salary
+slice(data2,which.max(data2$num.of.aw))  #max num of awards
+```
+
+**Soru4.** En çok alınan ödül hangisidir?
+
+```{r message=FALSE, warning=FALSE}
+table(AwardsPlayers$awardID) %>% as.data.frame() %>% arrange(desc(Freq))
+```
+
+
+
+## CS_3 (Diamonds)
+
+```{r message=FALSE, warning=FALSE}
+library(ggplot2)
+library(tidyverse)
+```
+
+
+**Soru1.** diamonds veri setinde yer alan x, y ve z değişkenleri kullanılarak yeni bir t değişkeni oluşturuluyor. t değişkeni $t=x^{2}-\sqrt{y}+z^{-2}$ şeklinde tanımlanacak olursa, en düşük t değerine karşılık gelen depth değeri nedir?
+
+```{r message=FALSE, warning=FALSE}
+diamonds %>% mutate(t=x^2-sqrt(y)+(1/z)) %>% filter(t==min(t)) %>% select(depth)
+```
+
+
+
+**Soru2.** Pandemi nedeniyle azalan satışlarını hareketlendirmek isteyen bir mağaza sahibi ürünlerine cut değişkenine bağlı olarak indirim uyguluyor. İndirim oranları aşağıdaki gibidir.
+
+|Cut|Discount|
+|:-:|:------:|
+|Fair|price*0.01|
+|Good|price*0.02|
+|Very Good|price*0.025|
+|Premium|price*0.03|
+|Ideal|price*0.03|
+
+İndirimli fiyatlar üzerinden alışveriş yapan bir müşteri 'E color' ve 'SI1 clarity' ürün için en az kaç $ ödeyecektir?
+
+```{r message=FALSE, warning=FALSE}
+diamonds %>% mutate(discount = case_when(
+  cut=="Fair" ~ price*0.01,
+  cut=="Good" ~ price*0.02,
+  cut=="Very Good" ~ price*0.025,
+  cut=="Premium" ~ price*0.03,
+  cut=="Ideal" ~ price*0.03,
+),new.price=price-discount) %>% filter(color=="E" & clarity=="SI2" & new.price==min(new.price)) 
+
+
+
+
+
+```
+
+
+Alternatif,
+
+```{r message=FALSE, warning=FALSE}
+diamonds %>% mutate(discount= case_when(
+  cut=="Fair" ~ price*0.1,
+  cut=="Good" ~ price*0.12,
+  cut=="Very Good" ~ price*0.15,
+  cut=="Premium" ~ price*0.18,
+  cut=="Ideal" ~ price*0.18,
+),new.price=price-discount) %>% filter(color=="E"& clarity=="SI1") %>% arrange(new.price)
+```
+
+
+
+
+**Soru3.** diamonds verisi clarity değişkeni kaç farklı level içermektedir? (Kaç farklı clarity tipi vardır?)
+
+```{r message=FALSE, warning=FALSE}
+cl<-diamonds$clarity %>% as.factor() 
+cl %>% levels()
+cl %>% nlevels()
+
+```
+
+**Soru4.** Mağazanın 'Ideal' cut tipine sahip ürünlerden elde ettiği ortalama kazanç nedir?
+
+```{r message=FALSE, warning=FALSE}
+diamonds %>% group_by(cut) %>% summarise(mean.pr=mean(price))
+```
+
+Alternatif,
+
+```{r message=FALSE, warning=FALSE}
+diamonds %>% filter(cut=="Ideal") %>% summarise(mean(price))
+```
+
+**Soru5.** Mağazanın cut tipine göre elde ettiği price ortalamaları incelendiğinde en az kazanç sağlayan cut tipi hangisidir?
+ 
+
+
+<!--chapter:end:11-Uygulamalar.Rmd-->
+
+# Referans
+
+<!--chapter:end:12-Referans.Rmd-->
+
